@@ -1,0 +1,28 @@
+{
+  "name": "groupproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skwiggo/JS_infection_map_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skwiggo/JS_infection_map_project/issues"
+  },
+  "homepage": "https://github.com/skwiggo/JS_infection_map_project#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.0",
+    "webpack": "^1.13.2"
+  }
+}
