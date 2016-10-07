@@ -42,8 +42,52 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var UI = __webpack_require__(1)
+	
+	var initialize = function() {
+	  new UI();
+	}
+	
+	window.onload = initialize;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Map = __webpack_require__(2)
+	
+	var UI = function() {  
+	  var container = document.getElementById('map');
+	  var center = {lat: 0, lng: 150.644};
+	  var map = new Map(container, center, 1);
+	  map.addMarker(center);
+	}
+	
+	module.exports = UI;
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
+	var Map = function(container, coords, zoom) {
+	  console.log("hi")
+	  this.googleMap = new google.maps.Map(container, {center: coords, 
+	    zoom: zoom
+	  });
+	
+	  this.addMarker = function(coords) {
+	    var marker = new google.maps.Marker({
+	      position: coords,
+	      map: this.googleMap
+	    });
+	    return marker;
+	  }
+	  
+	}
+	
+	module.exports = Map;
 
 
 /***/ }
