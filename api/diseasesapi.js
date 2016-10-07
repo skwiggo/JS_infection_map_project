@@ -1,10 +1,9 @@
+var Diseases = require("../client/src/models/diseases")
+
 var DiseaseApi = function(app) {
 
-  var diseases = [{
-    name: "TB"
-  }]
+  var diseases = new Diseases;
   
-
   app.get("/api/diseases", function(req, res) {
     res.json({data: diseases});
   })
