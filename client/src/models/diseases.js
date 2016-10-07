@@ -1,6 +1,18 @@
 var Disease = require("./disease");
+var Fact = require('./fact');
 
 var Diseases = function() {
+
+  var tbFact1 = new Fact({
+    comment: "A quarter of all deaths in Europe are estimated to have been caused by tuberculosis infection during the 19th and early 20th century.",
+    image: "http://www.ancient-origins.net/sites/default/files/styles/large/public/First-and-Last-Communion.jpg?itok=9hHKG13z"
+  });
+
+  var tbFact2 = new Fact({
+    comment: "A quarter of all deaths in Europe are estimated to have been caused by tuberculosis infection during the 19th and early 20th century.",
+    image: "http://www.ancient-origins.net/sites/default/files/styles/large/public/First-and-Last-Communion.jpg?itok=9hHKG13z"
+  });
+
   var tuberculosis = new Disease({
     name: "Tuberculosis",
     eighteenthCentury: [
@@ -52,6 +64,8 @@ var yellowFever = new Disease({
               }
             ]
           });
+
+tuberculosis.addFact(tbFact1);
 
   return [tuberculosis, yellowFever];
 }
