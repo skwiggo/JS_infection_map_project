@@ -71,29 +71,44 @@ var Diseases = function() {
   });
 
 
+  var hivFact1 = new Fact({
+    comment: "",
+    image: ""
+  });
+
+  var hivFact2 = new Fact({
+    comment: "",
+    image: ""
+  });
+
+  var hivFact3 = new Fact({
+    comment: "",
+    image: ""
+  });
+
   var hiv = new Disease({
     name: "HIV",   
     nineteenthCentury: [],     
     twentiethCentury: [
-    {
-      name: "UK", 
-      coords: {lat: 55.378051, 
-               lng: -3.435973},
-      mortality: "high"             
+      {
+        name: "UK", 
+        coords: {lat: 55.378051, 
+                 lng: -3.435973},
+        mortality: "medium"             
       },  
         
       { 
         name: "France", 
         coords: {lat: 46.227638, 
                  lng: 2.213749},
-        mortality: "high"             
+        mortality: "medium"             
       },
 
       {
         name: "Spain", 
         coords: {lat: 40.463667, 
                 lng: -3.74922},
-        mortality: "high"             
+        mortality: "medium"             
       },
 
        {
@@ -114,7 +129,7 @@ var Diseases = function() {
          name: "DR Congo", 
          coords: {lat: -2.930652, 
                   lng: 23.285279},
-         mortality: "high"
+         mortality: "medium"
        },
 
         {
@@ -135,7 +150,7 @@ var Diseases = function() {
         name: "Argentina", 
         coords: {lat: -38.416097, 
                  lng: -63.616672},
-        mortality: "high"             
+        mortality: "medium"             
       },
       
       {
@@ -149,7 +164,7 @@ var Diseases = function() {
         name: "Mexico", 
         coords: {lat: 23.634501, 
                  lng: -102.552784},
-        mortality: "high"             
+        mortality: "medium"             
       },
        
       {
@@ -157,7 +172,183 @@ var Diseases = function() {
         coords: {lat: 1.352083, 
                  lng: 103.819836},
         mortality: "high"             
-      }       
+      },
+
+      {
+        name: "Italy", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "medium"             
+      },
+      
+      {
+        name: "Portugal", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "low"             
+      },
+
+      {
+        name: "Germany", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "medium"             
+      },
+
+      {
+        name: "Poland", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "low"             
+      },
+
+      {
+        name: "Ukraine", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "medium"             
+      },
+
+      {
+        name: "Belarus", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "low"             
+      },
+
+      {
+        name: "Romania", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "low"             
+      },
+
+      {
+        name: "Ireland", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "low"             
+      },
+
+      {
+        name: "Lithuania", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "high"             
+      },
+
+      {
+        name: "Canada", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "medium"             
+      },
+
+      {
+        name: "Australia", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "low"             
+      },
+       
+      {
+        name: "Sweden", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "low"             
+      },
+
+      {
+        name: "Egypt", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "low"             
+      },
+
+      {
+        name: "Algeria", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "low"             
+      },
+
+      {
+        name: "Morocco", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "low"             
+      },
+
+      {
+        name: "Tanzania", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+       
+      {
+        name: "Zambia", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "medium"             
+      },
+
+      {
+        name: "Mozambique", 
+        coords: {lat: , 
+                 lng:  },
+        mortality: "high"             
+      },
+
+      {
+        name: "Zimbabwe", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+       
+      {
+        name: "Kenya", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+
+      {
+        name: "Ethiopia", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+
+      {
+        name: "South Sudan", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+
+      {
+        name: "Somalia", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+
+      {
+        name: "Botswana", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "high"             
+      },
+
+      {
+        name: "Angola", 
+        coords: {lat: , 
+                 lng: },
+        mortality: "medium"             
+      },
+
     ]
   });
 
@@ -166,6 +357,10 @@ var Diseases = function() {
   zika.addFact(zikaFact2);
   zika.addFact(zikaFact3);
 
-  return [zika, yellowFever];
+  hiv.addFact(hivFact1);
+  hiv.addFact(hivFact2);
+  hiv.addFact(hivFact3);
+
+  return [zika, hiv];
 
 }
