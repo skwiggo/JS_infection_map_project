@@ -21,7 +21,7 @@ UI.prototype = {
     }
   },
   getCountry: function(disease, map) {
-    var countries = disease.eighteenthCentury;
+    var countries = disease.nineteenthCentury;
     for(country of countries) {
       this.createMarker(country.coords, map);
     }
