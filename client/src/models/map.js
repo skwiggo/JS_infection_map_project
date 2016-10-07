@@ -11,7 +11,6 @@ var Map = function(container, coords, zoom) {
     });
     return marker;
   }
-  
 }
 
 module.exports = Map;
