@@ -4,7 +4,7 @@ var path = require('path')
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-var DiseaseApi = require('./api/mapsapi.js');
+var DiseaseApi = require('./api/diseasesapi.js');
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
