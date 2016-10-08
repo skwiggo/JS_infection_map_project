@@ -1,9 +1,11 @@
 use diseases;
 
+db.dropDatabase();
+
 db.disease.insert([
 {
   name: "Dysentary"
 }
 ]);
 
-db.dropDatabase();
+db.disease.find();
