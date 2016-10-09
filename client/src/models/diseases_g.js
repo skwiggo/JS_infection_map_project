@@ -19,56 +19,6 @@ var Diseases = function() {
     name: "zika",
     nineteenthCentury: [],
     twentiethCentury: [    
-      { 
-        name: "Uganda", 
-        coords: {lat: 1.373333, 
-                 lng: 32.290275},
-        mortality: "low"             
-      },
-
-      {
-        name: "Nigeria", 
-        coords: {lat: 9.081999, 
-                lng: 8.675277},
-        mortality: "low"             
-      },
-
-       {
-         name: "Sierra Leone", 
-         coords: {lat: 8.460555, 
-                  lng: -11.779889},
-         mortality: "low"             
-       },
-       
-       {
-         name: "Senegal", 
-         coords: {lat: 14.497401, 
-                  lng: -14.452362},
-         mortality: "low"             
-       },
-
-       {
-         name: "Pakistan", 
-         coords: {lat: 30.375321, 
-                  lng: 69.345116},
-         mortality: "low"
-       },
-
-        {
-          name: "Malaysia", 
-          coords: {lat: 4.210484,  
-                   lng: 101.975766},
-          mortality: "low"             
-        },
-
-        {
-          name: "Indonesia", 
-          coords: {lat: -0.789275, 
-                  lng: 113.921327},
-          mortality: "low"             
-        }],
-
-    twentyfirstCentury: [    
           { 
             name: "Uganda", 
             coords: {lat: 1.373333, 
@@ -83,40 +33,209 @@ var Diseases = function() {
             mortality: "low"             
           },
 
-           {
-             name: "Sierra Leone", 
-             coords: {lat: 8.460555, 
-                      lng: -11.779889},
-             mortality: "low"             
-           },
+          {
+            name: "Sierra Leone", 
+            coords: {lat: 8.460555, 
+                    lng: -11.779889},
+            mortality: "low"             
+          },
            
-           {
-             name: "Senegal", 
-             coords: {lat: 14.497401, 
-                      lng: -14.452362},
-             mortality: "low"             
-           },
+          {
+            name: "Senegal", 
+            coords: {lat: 14.497401, 
+                    lng: -14.452362},
+            mortality: "low"             
+          },
 
-           {
-             name: "Pakistan", 
-             coords: {lat: 30.375321, 
-                      lng: 69.345116},
-             mortality: "low"
-           },
+          {
+            name: "Pakistan", 
+            coords: {lat: 30.375321, 
+                    lng: 69.345116},
+            mortality: "low"
+          },
 
-            {
-              name: "Malaysia", 
-              coords: {lat: 4.210484,  
-                       lng: 101.975766},
-              mortality: "low"             
-            },
+          {
+            name: "Malaysia", 
+            coords: {lat: 4.210484,  
+                    lng: 101.975766},
+            mortality: "low"             
+          },
 
-            {
-              name: "Indonesia", 
-              coords: {lat: -0.789275, 
-                      lng: 113.921327},
-              mortality: "low"             
-            }]    
+          {
+            name: "Indonesia", 
+            coords: {lat: -0.789275, 
+                    lng: 113.921327},
+            mortality: "low"             
+          }],
+
+    twentyfirstCentury: [    
+          { 
+            name: "Mexico", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Brazil", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "USA", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+           
+          {
+            name: "Ecuador", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "Columbia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"
+          },
+
+          {
+            name: "Bolivia", 
+            coords: {lat: ,  
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "El Salvador", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          { 
+            name: "Costa Rica", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "Paraguay", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "Thailand", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+           
+          {
+            name: "Indonesia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Philipines", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"
+          },
+
+          {
+            name: "Malaysia", 
+            coords: {lat: ,  
+                    lng: },
+            mortality: "medium"             
+          },
+
+          { 
+            name: "Cambodia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Pakistan", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Nigeria", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+           
+          {
+            name: "Sierra Leone", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Senegal", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"
+          },
+
+          {
+            name: "Uganda", 
+            coords: {lat: ,  
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "China", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "India", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Russia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Spain", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Germany", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          }]    
   });
 
 
@@ -142,14 +261,14 @@ var Diseases = function() {
           {
             name: "UK", 
             coords: {lat: 55.378051, 
-                     lng: -3.435973},
+                    lng: -3.435973},
             mortality: "medium"             
           },  
             
           { 
             name: "France", 
             coords: {lat: 46.227638, 
-                     lng: 2.213749},
+                    lng: 2.213749},
             mortality: "medium"             
           },
 
@@ -160,250 +279,502 @@ var Diseases = function() {
             mortality: "medium"             
           },
 
-           {
-             name: "USA", 
-             coords: {lat: 37.09024, 
-                      lng: -95.712891},
-             mortality: "high"             
-           },
+          {
+            name: "USA", 
+            coords: {lat: 37.09024, 
+                    lng: -95.712891},
+            mortality: "high"             
+          },
            
-           {
-             name: "South Africa", 
-             coords: {lat: -30.559482, 
-                      lng: 22.937506},
-             mortality: "high"             
-           },
+          {
+            name: "South Africa", 
+            coords: {lat: -30.559482, 
+                    lng: 22.937506},
+            mortality: "high"             
+          },
 
-           {
-             name: "DR Congo", 
-             coords: {lat: -2.930652, 
-                      lng: 23.285279},
-             mortality: "medium"
-           },
+          {
+            name: "DR Congo", 
+            coords: {lat: -2.930652, 
+                    lng: 23.285279},
+            mortality: "medium"
+          },
 
-            {
-              name: "Russia", 
-              coords: {lat: 62.333724,  
-                       lng: 92.189755},
-              mortality: "high"             
-            },
+          {
+            name: "Russia", 
+            coords: {lat: 62.333724,  
+                    lng: 92.189755},
+            mortality: "high"             
+          },
 
-            {
-              name: "India", 
-              coords: {lat: 20.593684, 
-                      lng: 78.96288},
-              mortality: "high"             
-            },
+          {
+            name: "India", 
+            coords: {lat: 20.593684, 
+                    lng: 78.96288},
+            mortality: "high"             
+          },
 
           {
             name: "Argentina", 
             coords: {lat: -38.416097, 
-                     lng: -63.616672},
+                    lng: -63.616672},
             mortality: "medium"             
           },
           
           {
             name: "Brazil", 
             coords: {lat: -14.235004, 
-                     lng:  -51.92528},
+                    lng:  -51.92528},
             mortality: "high"             
           },
 
           {
             name: "Mexico", 
             coords: {lat: 23.634501, 
-                     lng: -102.552784},
+                    lng: -102.552784},
             mortality: "medium"             
           },
            
           {
             name: "China", 
             coords: {lat: 1.352083, 
-                     lng: 103.819836},
+                    lng: 103.819836},
             mortality: "high"             
           },
 
           {
             name: "Italy", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "medium"             
           },
           
           {
             name: "Portugal", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "low"             
           },
 
           {
             name: "Germany", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "medium"             
           },
 
           {
             name: "Poland", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "low"             
           },
 
           {
             name: "Ukraine", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "medium"             
           },
 
           {
             name: "Belarus", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "low"             
           },
 
           {
             name: "Romania", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "low"             
           },
 
           {
             name: "Ireland", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "low"             
           },
 
           {
             name: "Lithuania", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "high"             
           },
 
           {
             name: "Canada", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "medium"             
           },
 
           {
             name: "Australia", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "low"             
           },
            
           {
             name: "Sweden", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "low"             
           },
 
           {
             name: "Egypt", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "low"             
           },
 
           {
             name: "Algeria", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "low"             
           },
 
           {
             name: "Morocco", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "low"             
           },
 
           {
             name: "Tanzania", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
            
           {
             name: "Zambia", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "medium"             
           },
 
           {
             name: "Mozambique", 
             coords: {lat: , 
-                     lng:  },
+                    lng:  },
             mortality: "high"             
           },
 
           {
             name: "Zimbabwe", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
            
           {
             name: "Kenya", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
 
           {
             name: "Ethiopia", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
 
           {
             name: "South Sudan", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
 
           {
             name: "Somalia", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
 
           {
             name: "Botswana", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "high"             
           },
 
           {
             name: "Angola", 
             coords: {lat: , 
-                     lng: },
+                    lng: },
             mortality: "medium"             
           }],
-          
+
     twentyfirstCentury: [    
-          { 
-            name: "Uganda", 
-            coords: {lat: 1.373333, 
-                     lng: 32.290275},
+          {
+            name: "UK", 
+            coords: {lat: 55.378051, 
+                    lng: -3.435973},
             mortality: "low"             
+          },  
+            
+          { 
+            name: "France", 
+            coords: {lat: 46.227638, 
+                    lng: 2.213749},
+            mortality: "low"             
+          },
+
+          {
+            name: "Spain", 
+            coords: {lat: 40.463667, 
+                    lng: -3.74922},
+            mortality: "low"             
+          },
+
+          {
+            name: "USA", 
+            coords: {lat: 37.09024, 
+                    lng: -95.712891},
+            mortality: "low"             
+          },
+           
+          {
+            name: "South Africa", 
+            coords: {lat: -30.559482, 
+                    lng: 22.937506},
+            mortality: "high"             
+          },
+
+          {
+            name: "DR Congo", 
+            coords: {lat: -2.930652, 
+                    lng: 23.285279},
+            mortality: "medium"
+          },
+
+          {
+            name: "Russia", 
+            coords: {lat: 62.333724,  
+                    lng: 92.189755},
+            mortality: "medium"             
+          },
+
+          {
+            name: "India", 
+            coords: {lat: 20.593684, 
+                    lng: 78.96288},
+            mortality: "low"             
+          },
+
+          {
+            name: "Argentina", 
+            coords: {lat: -38.416097, 
+                    lng: -63.616672},
+            mortality: "low"             
+          },
+          
+          {
+            name: "Brazil", 
+            coords: {lat: -14.235004, 
+                    lng:  -51.92528},
+            mortality: "low"             
+          },
+
+          {
+            name: "Mexico", 
+            coords: {lat: 23.634501, 
+                    lng: -102.552784},
+            mortality: "low"             
+          },
+           
+          {
+            name: "China", 
+            coords: {lat: 1.352083, 
+                    lng: 103.819836},
+            mortality: "low"             
+          },
+
+          {
+            name: "Italy", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+          
+          {
+            name: "Portugal", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Germany", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Poland", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Ukraine", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Belarus", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Romania", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Ireland", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Lithuania", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Canada", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Australia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+           
+          {
+            name: "Sweden", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Egypt", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Algeria", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "low"             
+          },
+
+          {
+            name: "Morocco", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "low"             
+          },
+
+          {
+            name: "Tanzania", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+           
+          {
+            name: "Zambia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Mozambique", 
+            coords: {lat: , 
+                    lng:  },
+            mortality: "high"             
+          },
+
+          {
+            name: "Zimbabwe", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+           
+          {
+            name: "Kenya", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Ethiopia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "South Sudan", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Somalia", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "medium"             
+          },
+
+          {
+            name: "Botswana", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
+          },
+
+          {
+            name: "Angola", 
+            coords: {lat: , 
+                    lng: },
+            mortality: "high"             
           }]
   });
 
