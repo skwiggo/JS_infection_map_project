@@ -9,8 +9,7 @@ DiseaseQuery.prototype = {
     MongoClient.connect(this.url, function(err, db){
       var collection = db.collection("disease");
       collection.find().toArray(function(err, docs){
-        // onQueryFinnished(docs);
-        console.log(docs);
+        onQueryFinnished(docs);
       })
     })
   }
