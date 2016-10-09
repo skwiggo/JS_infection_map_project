@@ -10,8 +10,8 @@ var UI = function() {
 }
 
 UI.prototype = {
-  createMarker: function(coords, map, disease) {
-    map.addMarker(coords, disease);
+  createMarker: function(country, map, disease) {
+    map.addMarker(country, disease);
   },
   getDisease: function(diseases, map) {
     console.log(diseases);
@@ -22,7 +22,7 @@ UI.prototype = {
   getCountry: function(disease, map) {
     var countries = disease.nineteenthCentury;
     for(country of countries) {
-      this.createMarker(country.coords, map, disease);
+      this.createMarker(country, map, disease);
     }
   }
 }

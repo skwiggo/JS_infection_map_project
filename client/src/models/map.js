@@ -5,13 +5,13 @@ var Map = function(container, coords, zoom) {
     });
 
   var infowindow = null;
-  function getContentString(disease){
-    console.log(disease);
+  function getContentString(disease, country){
+    console.log(country);
     var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="heading">'+ disease.name + '</h1>'+
-      '<h3 id="subHeading">Name of Country</h3>'+
+      '<h3 id="subHeading">' + country.name + '</h3>'+
       '<div id="bodyContent">' + getRandomFact(disease.facts) + '</div>' +
       '<div id="image">' + disease.facts[0].image + '</div>';
     return contentString;
@@ -22,9 +22,9 @@ var Map = function(container, coords, zoom) {
     return facts[i].comment;
   }
 
-  this.addMarker = function(coords, disease) {
+  this.addMarker = function(country, disease) {
     var marker = new google.maps.Marker({
-      position: coords,
+      position: country.coords,
       map: this.googleMap
     });
     marker.addListener('click', function() {
@@ -32,7 +32,7 @@ var Map = function(container, coords, zoom) {
         infowindow.close();
       }
       infowindow = new google.maps.InfoWindow({
-        content: getContentString(disease)
+        content: getContentString(disease, country)
       });
       infowindow.open(map, marker);
     });
