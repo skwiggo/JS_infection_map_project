@@ -1,28 +1,41 @@
 var Map = function(container, coords, zoom) {
-  this.googleMap = new google.maps.Map(container, {center: coords, 
-    zoom: zoom
-  });
+  this.googleMap = new google.maps.Map(container, {
+      center: coords, 
+      zoom: zoom
+    });
 
-  var contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h1 id="heading">Name of Disease</h1>'+
-        '<h3 id="subHeading">Name of Country</h3>'+
-        '<div id="bodyContent">' + 'lots of info about the disease' + '</div>' +
-        '<div id="image">' + 'image url' + '</div>';
+  var infowindow = null;
+  function getContentString(disease){
+    console.log(disease);
+    var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="heading">'+ disease.name + '</h1>'+
+      '<h3 id="subHeading">Name of Country</h3>'+
+      '<div id="bodyContent">' + getRandomFact(disease.facts) + '</div>' +
+      '<div id="image">' + disease.facts[0].image + '</div>';
+    return contentString;
+  } 
 
-  var infowindow = new google.maps.InfoWindow({
-      content: contentString
-  });
+  function getRandomFact(facts){
+    var i = Math.floor((Math.random() * 3));
+    return facts[i].comment;
+  }
 
-  this.addMarker = function(coords) {
+  this.addMarker = function(coords, disease) {
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googleMap
     });
     marker.addListener('click', function() {
-        infowindow.open(map, marker);
+      if (infowindow) {
+        infowindow.close();
+      }
+      infowindow = new google.maps.InfoWindow({
+        content: getContentString(disease)
       });
+      infowindow.open(map, marker);
+    });
   }
 }
 
