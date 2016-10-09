@@ -1,25 +1,14 @@
-var Diseases = require("../client/src/models/diseases")
+var diseaseQuery = require('../db/diseaseQuery.js');
 
 var DiseaseApi = function(app) {
 
-  var diseases = new Diseases;
+  var query = new diseaseQuery()
   
-  app.get("/api/diseases", function(req, res) {
-    res.json({data: diseases});
+  app.get("/api/test/diseases", function(req, res) {
+    query.all(function(info){
+      res.json(info);
+    })
   })
-
-  app.get("/api/diseases/:id", function(req, res) {
-    var diseaseId = req.params.id;
-    res.json({data: diseases[diseaseId]});
-  })
-
-  app.put("/api/diseases/:id", function(req, res) {
-    diseases[req.params.id] = req.body.name;
-    res.json({data: diseases});
-  });
-
-
-
 }
 
 module.exports = DiseaseApi;
