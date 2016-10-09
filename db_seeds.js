@@ -7,5 +7,3 @@ db.disease.insert([
   name: "Dysentary"
 }
 ]);
-
-db.disease.find();
