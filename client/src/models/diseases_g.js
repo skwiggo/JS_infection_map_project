@@ -16,18 +16,18 @@ var Diseases = function() {
   });
 
   var hivFact1 = new Fact({
-    comment: "",
-    image: ""
+    comment: "HIV (Human Immunodeficiency Virus) is a virus that infects the immune system, decreasing its ability to fight off other infections and diseases.",
+    image: "https://www.aids.gov/images/aids-infographics/what-is-hiv-aids-1.png"
   });
 
   var hivFact2 = new Fact({
-    comment: "",
-    image: ""
+    comment: "More than 35 million people live with HIV worldwide.",
+    image: "http://www.foundcare.org/cache.trustedpartner.com/images/library/Foundcare2010/Content/globe1.jpg"
   });
 
   var hivFact3 = new Fact({
-    comment: "",
-    image: ""
+    comment: "About 30 million people have died from HIV/AIDS-related causes since its discovery in 1981.",
+    image: "https://abm-website-assets.s3.amazonaws.com/biosciencetechnology.com/s3fs-public/embedded_image/2016/06/shutterstock_236439424.jpg"
   });
 
   var zika = new Disease({
