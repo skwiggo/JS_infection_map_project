@@ -29,7 +29,7 @@ var Diseases = function() {
   });
 
   var spFact3 = new Fact({
-    comment: "The majority of patients with smallpox recover, but death occurs in up to 30% of cases.",
+    comment: "Smallpox is the only human based infection that has been completely eradicated from the world. The world has been smallpox free since 1979 after a widescale vaccination programme.",
     image: "http://www.museumofhealthcare.ca/explore/exhibits/vaccinations/smallpox.html"
   });
 
