@@ -115,8 +115,8 @@ var Diseases = function() {
      
     {
       name: "China", 
-      coords: {lat: 1.352083, 
-               lng: 103.819836},
+      coords: {lat: 34.560541,  
+               lng: 102.994444},
       mortality: "high"             
     }
    ]         
@@ -220,7 +220,8 @@ tuberculosis.addFact(tbFact2);
 tuberculosis.addFact(tbFact3);
 
   return [smallPox, tuberculosis];
+
 }
 
-  module.exports = Diseases;
+module.exports = Diseases;
 
