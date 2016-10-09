@@ -4,13 +4,16 @@ var DiseaseQuery = function(){
   this.url = "mongodb://localhost:27017/diseases";
 }
 
-Disease.prototype = {
+DiseaseQuery.prototype = {
   all: function(onQueryFinished){
     MongoClient.connect(this.url, function(err, db){
       var collection = db.collection("disease");
       collection.find().toArray(function(err, docs){
-        onQueryFinnished(docs);
+        // onQueryFinnished(docs);
+        console.log(docs);
       })
     })
   }
 }
+
+module.exports = DiseaseQuery;
