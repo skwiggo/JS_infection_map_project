@@ -6,8 +6,10 @@ var Map = function(container, coords, zoom) {
   var contentString = '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">A Place</h1>'+
-        '<div id="bodyContent">' + 'lots of info about place' + '</div>';
+        '<h1 id="heading">Name of Disease</h1>'+
+        '<h3 id="subHeading">Name of Country</h3>'+
+        '<div id="bodyContent">' + 'lots of info about the disease' + '</div>' +
+        '<div id="image">' + 'image url' + '</div>';
 
   var infowindow = new google.maps.InfoWindow({
       content: contentString
