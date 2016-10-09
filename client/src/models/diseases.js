@@ -551,7 +551,7 @@ tuberculosis.addFact(tbFact1);
 tuberculosis.addFact(tbFact2);
 tuberculosis.addFact(tbFact3);
 
-  return [smallPox, tuberculosis];
+return [smallPox, tuberculosis];
 
 }
 
