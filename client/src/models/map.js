@@ -6,20 +6,20 @@ var Map = function(container, coords, zoom) {
 
   var infowindow = null;
   function getContentString(disease, country){
-    console.log(country);
+    var i = getRandomFact(disease.facts);
+    console.log(disease.facts[i].image);
     var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="heading">'+ disease.name + '</h1>'+
       '<h3 id="subHeading">' + country.name + '</h3>'+
-      '<div id="bodyContent">' + getRandomFact(disease.facts) + '</div>' +
-      '<div id="image">' + disease.facts[0].image + '</div>';
+      '<div id="bodyContent">' + disease.facts[i].comment + '</div>' +
+      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
   } 
 
   function getRandomFact(facts){
-    var i = Math.floor((Math.random() * 3));
-    return facts[i].comment;
+    return Math.floor((Math.random() * 3));
   }
 
   this.addMarker = function(country, disease) {
