@@ -12,7 +12,7 @@ var UI = function() {
 UI.prototype = {
   createMarker: function(coords, map) {
     console.log(map);
-    map.addMarker(coords);
+    map.customMarker(coords);
   },
   getDisease: function(diseases, map) {
     console.log(diseases);
