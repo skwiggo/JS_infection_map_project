@@ -9,6 +9,13 @@ var DiseaseApi = function(app) {
       res.json(info);
     })
   })
+
+  app.get("/api/test/diseases/:id", function(req, res){
+    var diseaseId = req.params.id;
+    query.all(function(info){
+      res.json(info[diseaseId]);
+    })
+  })
 }
 
 module.exports = DiseaseApi;
