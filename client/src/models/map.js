@@ -1,7 +1,16 @@
 var Map = function(container, coords, zoom) {
-  console.log("hi")
   this.googleMap = new google.maps.Map(container, {center: coords, 
     zoom: zoom
+  });
+
+  var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">A Place</h1>'+
+        '<div id="bodyContent">' + 'lots of info about place' + '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
   });
 
   this.addMarker = function(coords) {
@@ -9,7 +18,9 @@ var Map = function(container, coords, zoom) {
       position: coords,
       map: this.googleMap
     });
-    return marker;
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
   }
 }
 
