@@ -88,7 +88,6 @@ UI.prototype = {
     } 
   },
   createMarker: function(country, map, disease) {
-    
       map.addMarker(country, map, disease);
   },
   getDisease: function(disease, map) {
