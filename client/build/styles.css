@@ -55,11 +55,12 @@ body {
 }
 
 .sidenav select {
-    margin-top: 150px;
+    margin-top: 30px;
+    width: 70%;
     margin-left: 45px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s
