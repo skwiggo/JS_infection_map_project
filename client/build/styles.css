@@ -1,9 +1,13 @@
+body {
+  background-color: #A3C00F;
+}
+
 #map {
-  width: 70%;
+  width: 80%;
   height: 500px;
+  margin-top: 100px;
   margin-left: 300px;
   transition: margin-left .5s;
-  padding: 20px;
 }
 
 #infoWindowImage {
@@ -13,7 +17,7 @@
 
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 200px; /* 0 width - change this with JavaScript */
+    width: 300px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -27,18 +31,18 @@
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 30px;
     color: #818181;
     display: block;
     transition: 0.3s
 }
 
 .sidenav select {
-    margin-top: 100px;
-    margin-left: 40px;
+    margin-top: 150px;
+    margin-left: 45px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     color: #818181;
     display: block;
     transition: 0.3s
