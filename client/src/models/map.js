@@ -3,14 +3,14 @@ var markers = [];
 var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
-      zoom: zoom
+      zoom: zoom,
+      disableDefaultUI: true
   });
 }
   
 Map.prototype = {
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
-    console.log(disease.facts[i].image);
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -25,7 +25,6 @@ Map.prototype = {
     return Math.floor((Math.random() * 5));
   },
   addMarker: function(country, map, disease) {
-    console.log(disease)
     var contentio = this.getContentString(disease, country)
     var infowindow = null;
     var customIcon = {
