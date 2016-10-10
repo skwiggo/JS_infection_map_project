@@ -108,11 +108,12 @@ UI.prototype = {
       console.log(countries);
     }
     else {
-      return countries
+      countries
       console.log(countries);
     }
-    for(country of countries) {
-      this.createMarker(country, map, disease);
+    for(var i = 0; i < countries.length; i++) {  
+    // for(country of countries) {
+      this.createMarker(countries[i], map, disease);
     }
   }
 }

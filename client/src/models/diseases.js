@@ -64,18 +64,18 @@ var Diseases = function() {
   },
 
   {
-    disease: "zika",
+    disease: "Zika",
     comment: "The Zika virus was first discovered in Ugandan monkeys in 1947. It spread to the South Pacific and caused an outbreak on Yap Island in Micronesia in 2007. The island’s population was too small for scientists to observe whether the virus caused side effects like birth defects or neurological damage.",
     image: "http://www.esayap.com/images/Island1.jpg"
   },
   {
-    disease: "zika",
+    disease: "Zika",
     comment: "In early 2015, Brazil experienced a spike in Zika cases, and the virus quickly spread throughout other parts of the Americas. It could have been introduced in 2014, when Brazil hosted the FIFA World Cup and an international canoeing competition. The Zika virus is now in 23 countries in the Americas.",
     image: "http://images.huffingtonpost.com/2016-05-22-1463949471-6072763-BrazilFlagMap.png"
   },
 
   {
-    disease: "zika",
+    disease: "Zika",
     comment: "Symptoms of Zika in adults are usually mild. Along with fever, joint pain, rash, or conjunctivitis (red eyes), an affected person might experience headache and muscle pain. Hospitalization is uncommon, and symptoms generally only last up to a week.",
     image: "http://image.shutterstock.com/z/stock-vector-zika-virus-symptom-icons-fever-headache-muscle-pain-joint-pain-red-eyes-rash-zika-virus-380603164.jpg"
   },
@@ -87,31 +87,31 @@ var Diseases = function() {
   },
 
   {
-    disease: "zika",
+    disease: "Zika",
     comment: "There are no approved drugs or vaccines for Zika, in large part because scientists long assumed the virus was so benign that it wasn’t worth the resources required to investigate treatment.",
     image: "http://static2.businessinsider.com/image/56a7acb5c08a80d7118bc7c5-1200/as-of-right-now-theres-no-treatment-for-the-zika-virus-which-is-why-the-cdc-is-urging-pregnant-women-to-avoid-traveling-to-countries-where-the-virus-is-growing-in-strength-labs-are-currently-doing-studies-to-find-more-answers.jpg"
   },
 
   {
-    disease: "HIV",
+    disease: "HIV/AIDS",
     comment: "HIV (Human Immunodeficiency Virus) is a virus that infects the immune system, decreasing its ability to fight off other infections and diseases. The first known human to become infected with HIV was a citizen of the Democratic Republic of the Congo whose blood was collected and tested in 1959. Scientists believe the first human infection may have occurred in the late 1940s or early 50s.",
     image: "https://c2.staticflickr.com/4/3551/3463183104_2fa0c1b251_z.jpg?zz=1"
   },
 
   {
-    disease: "HIV",
+    disease: "HIV/AIDS",
     comment: "As of 2013, there were 35.0 million people living with HIV around the globe, up from 29.8 million in 2001. Scientists attribute these staggering HIV statistics to new infections, but also to general population growth and the fact that research and treatments have allowed those with HIV to live longer lives.",
     image: "http://www.foundcare.org/cache.trustedpartner.com/images/library/Foundcare2010/Content/globe1.jpg"
   },
 
   {
-    disease: "HIV",
+    disease: "HIV/AIDS",
     comment: "About 30 million people have died from HIV/AIDS-related causes since its discovery in 1981. Geographically, the worst AIDS epidemic is in sub-Sahara Africa, with approximately 65% of all cases located there. Almost 90% of children with HIV live in sub-Sahara Africa.",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/HIV_in_Africa_2011.svg/2000px-HIV_in_Africa_2011.svg.png"
   },
 
   {
-    disease: "HIV",
+    disease: "HIV/AIDS",
     comment: "In 1988, DC Comics introduced a villain named “Hemo-Goblin.” The HIV-positive vampire was created by a group of white supremacists and used to infect minorities. Not surprisingly, Hemo-Goblin wasn’t much of a fan favorite and the character appeared in only one issue of The New Guardians.",
     image: "http://vignette4.wikia.nocookie.net/marvel_dc/images/0/0d/Hemo-Goblin_01.jpg/revision/latest?cb=20091006193609"
   },
