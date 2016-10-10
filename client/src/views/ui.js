@@ -34,7 +34,8 @@ UI.prototype = {
     } 
   },
   createMarker: function(country, map, disease) {
-      map.addMarker(country, disease);
+    console.log(disease);
+      map.addMarker(country, map, disease);
   },
   getDisease: function(disease, map) {
     console.log(disease);
