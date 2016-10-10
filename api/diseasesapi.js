@@ -17,9 +17,6 @@ var DiseaseApi = function(app) {
     diseases[req.params.id] = req.body.name;
     res.json({data: diseases});
   });
-
-
-
 }
 
 module.exports = DiseaseApi;
