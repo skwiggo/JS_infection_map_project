@@ -4,6 +4,8 @@ var Query = require('./queryRequest.js');
 
 var Diseases = function() {
 
+  this.request = new Query();
+
   var tbFact1 = new Fact({
     comment: "The evidence for tuberculosis can be traced back to mummies in Ancient Egypt.",
     image: "http://i.bnet.com/blogs/mummy.jpg"
