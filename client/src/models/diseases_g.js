@@ -774,13 +774,13 @@ var Diseases = function() {
   });
 
 
-  zika.addFact(zikaFact1);
-  zika.addFact(zikaFact2);
-  zika.addFact(zikaFact3);
+zika.addFact(zikaFact1);
+zika.addFact(zikaFact2);
+zika.addFact(zikaFact3);
 
-  hiv.addFact(hivFact1);
-  hiv.addFact(hivFact2);
-  hiv.addFact(hivFact3);
+hiv.addFact(hivFact1);
+hiv.addFact(hivFact2);
+hiv.addFact(hivFact3);
 
   return [zika, hiv];
 
