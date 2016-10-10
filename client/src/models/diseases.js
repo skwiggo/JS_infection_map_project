@@ -4,8 +4,6 @@ var Query = require('./queryRequest.js');
 
 var Diseases = function() {
 
-  this.request = new Query();
-
   var tbFact1 = new Fact({
     comment: "The evidence for tuberculosis can be traced back to mummies in Ancient Egypt.",
     image: "http://i.bnet.com/blogs/mummy.jpg"
@@ -35,8 +33,6 @@ var Diseases = function() {
     comment: "Smallpox is the only human based infection that has been completely eradicated from the world. The world has been smallpox free since 1979 after a widescale vaccination programme.",
     image: "http://www.museumofhealthcare.ca/explore/exhibits/vaccinations/smallpox.html"
   });
-
- 
 
   var zikaFact1 = new Fact({
     comment: "The Zika virus has been linked to a surge in the number of babies born with microcephaly, a birth defect which causes infants to be born with abnormally small heads and brain damage.",
@@ -69,7 +65,6 @@ var Diseases = function() {
   });
 
 
-
 }
 
 Diseases.prototype = {
@@ -80,9 +75,7 @@ Diseases.prototype = {
         console.log("request completed")
       if(this.status != 200) return;
       var jsonString = this.responseText;
-      // console.log("api data:", jsonString);
       var apiData = JSON.parse(jsonString);
-      // console.log(apiData);
       var diseases = self.populateDiseases(apiData);
     })
   },
