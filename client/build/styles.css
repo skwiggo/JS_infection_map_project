@@ -158,5 +158,10 @@ body {
 
 #dateslider {
   margin-top: 20px;
-  margin-left: 85px;
+  margin-left: 55px;
+  width: 200px;
+}
+
+p {
+  margin-left: 90px;
 }
