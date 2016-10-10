@@ -5,9 +5,12 @@ var Map = function(container, coords, zoom) {
       center: coords, 
       zoom: zoom
     });
-  var infowindow = null;
-  function getContentString(disease, country) {
-    var i = getRandomFact(disease.facts);
+}
+
+  
+  Map.prototype = {
+  getContentString: function(disease, country) {
+    var i = this.getRandomFact(disease.facts);
     console.log(disease.facts[i].image);
     var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
@@ -17,17 +20,15 @@ var Map = function(container, coords, zoom) {
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' +
       '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
-  }; 
-
-  function getRandomFact(facts){
+  },
+  getRandomFact: function(facts){
     return Math.floor((Math.random() * 3));
-  }
-}
-
-  
-  Map.prototype = {
-    addMarker: function(country, disease) {
-    var customIcon = {
+  },
+    addMarker: function(country, map, disease) {
+      console.log(disease)
+      var contentio = this.getContentString(disease, country)
+      var infowindow = null;
+      var customIcon = {
       url: "https://cdn2.iconfinder.com/data/icons/medicine-7/512/sneeze-512.png",
       scaledSize: new google.maps.Size(22, 32)
     }
@@ -42,7 +43,8 @@ var Map = function(container, coords, zoom) {
         infowindow.close();
       }
       infowindow = new google.maps.InfoWindow({
-        content: getContentString(disease, country)
+        content: contentio
+
       });
       infowindow.open(map, marker);
     });
