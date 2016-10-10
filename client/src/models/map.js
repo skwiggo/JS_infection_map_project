@@ -4,11 +4,10 @@ var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
       zoom: zoom
-    });
+  });
 }
-
   
-  Map.prototype = {
+Map.prototype = {
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
     console.log(disease.facts[i].image);
@@ -24,14 +23,14 @@ var Map = function(container, coords, zoom) {
   getRandomFact: function(facts){
     return Math.floor((Math.random() * 3));
   },
-    addMarker: function(country, map, disease) {
-      console.log(disease)
-      var contentio = this.getContentString(disease, country)
-      var infowindow = null;
-      var customIcon = {
+  addMarker: function(country, map, disease) {
+    console.log(disease)
+    var contentio = this.getContentString(disease, country)
+    var infowindow = null;
+    var customIcon = {
       url: "https://cdn2.iconfinder.com/data/icons/medicine-7/512/sneeze-512.png",
       scaledSize: new google.maps.Size(22, 32)
-    }
+    };
     var marker = new google.maps.Marker({
       position: country.coords,
       map: this.googleMap,
@@ -50,31 +49,17 @@ var Map = function(container, coords, zoom) {
     });
   },
   setMapOnAll: function(map) {
-      for(var i = 0; i < markers.length; i++) {
-        markers[i].setMap(map);
-      }
-    },
+    for(var i = 0; i < markers.length; i++) {
+      markers[i].setMap(map);
+    }
+  },
   clearMarkers: function() {
-      this.setMapOnAll(null);
-    },
+    this.setMapOnAll(null);
+  },
   deleteMarkers: function() {
-      this.clearMarkers();
-      markers = [];
+    this.clearMarkers();
+    markers = [];
   }
 }
-
-
-  
-
-  // this.customMarker = function(coords) {
-  //   var customIcon = {
-  //     url: "https://cdn2.iconfinder.com/data/icons/medicine-7/512/sneeze-512.png",
-  //     scaledSize: new google.maps.Size(22, 32)
-  //   };
-  //   var marker = new google.maps.Marker({position: coords, map: this.googleMap, icon: customIcon
-  //   });
-  //   return marker;
-  // }
-// }
 
 module.exports = Map;

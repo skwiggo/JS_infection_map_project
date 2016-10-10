@@ -3,9 +3,10 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 0, lng: 150.644};
+  var center = {lat: 42.384902, lng: 11.918695};
   this.diseases = new Diseases();
   var map = new Map(container, center, 1);
+  map.googleMap.setZoom(2);
 
   // this.getDisease(this.diseases, map);
   this.selectDropdown(map);
