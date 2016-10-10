@@ -11,6 +11,7 @@ var UI = function() {
 }
 
 UI.prototype = {
+<<<<<<< HEAD
   selectDropdown: function (map) {
     var select = document.querySelector('select');
     
@@ -20,6 +21,10 @@ UI.prototype = {
 
       this.handleSelectChanged(event, this.diseases, map, value, select);
     }.bind(this)
+=======
+  createMarker: function(country, map, disease) {
+    map.addMarker(country, disease);
+>>>>>>> de51f4984955c8c4bfbddfd49fb321787b45f629
   },
   handleSelectChanged: function(event, diseases, map, value, select) {
     // var disease = this.diseases[value].name;
@@ -48,7 +53,7 @@ UI.prototype = {
     var countries = disease.nineteenthCentury;
     console.log(disease)
     for(country of countries) {
-      this.createMarker(country.coords, map);
+      this.createMarker(country, map, disease);
     }
   }
 }
