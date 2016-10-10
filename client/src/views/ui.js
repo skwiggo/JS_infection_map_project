@@ -47,7 +47,7 @@ UI.prototype = {
   },
   addDropdown: function(map, select) {
     var dropdown2 = document.querySelector('#diseasios');
-    dropdown2.style.visibility = "visible";
+    dropdown2.style.display = "block";
     dropdown2.onchange = function(){
       var value = (dropdown2.selectedIndex);
       this.handleSelectChangio(event, this.diseases, map, value, dropdown2)
@@ -67,7 +67,7 @@ UI.prototype = {
   },
   addDropdownio: function(event, diseases, map) {
     var dropdown3 = document.querySelector('#diseasiosios');
-    dropdown3.style.visibility = "visible";
+    dropdown3.style.display = "block";
     dropdown3.onchange = function() {
       var value = (dropdown3.selectedIndex);
       this.handleSelectChangioio(event, this.diseases, map, value, dropdown3);

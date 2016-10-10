@@ -35,11 +35,11 @@ body {
 }
 
 #diseasios {
-  visibility: hidden;
+  display: none;
 }
 
 #diseasiosios {
-  visibility: hidden;
+  display: none;
 }
 
 .sidenav {
