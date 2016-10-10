@@ -3,7 +3,7 @@ var queryRequest = function(){
 }
 
 queryRequest.prototype = {
-  database: function(url, callback){
+  api: function(url, callback){
     var request = new XMLHttpRequest();
     request.open("GET", url);
     request.onload = callback;
