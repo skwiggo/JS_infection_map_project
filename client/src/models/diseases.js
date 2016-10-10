@@ -1,5 +1,6 @@
 var Disease = require("./disease");
 var Fact = require('./fact');
+var query = require('./queryRequest.js');
 
 var Diseases = function() {
 
