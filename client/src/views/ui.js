@@ -46,7 +46,6 @@ UI.prototype = {
   handleSelectChangio: function(event, diseases, map, value, select) {
     map.deleteMarkers();
     var option = select.options[value].value;
-    console.log(option);
     for(disease of diseases) {  
       if(option === disease.name) {
         console.log(disease)
@@ -59,7 +58,9 @@ UI.prototype = {
   addDropdownio: function(event, diseases, map, value, select) {
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.visibility = "visible";
-    dropdown3.onchange = this.handleSelectChangioio(event, this.diseases, map, value, select);
+    dropdown3.onchange = function() {
+      this.handleSelectChangioio(event, this.diseases, map, value, select);
+    }.bind(this)
   }, 
   handleSelectChangioio: function(event, diseases, map, value, select) {
     map.deleteMarkers();
