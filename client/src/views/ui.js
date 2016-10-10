@@ -9,9 +9,8 @@ var UI = function() {
   // console.log(this.diseases);
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
-  var resetbtn = document.getElementById("view-all");
-  resetbtn.onclick = function () {
-    console.log(map);
+  var resetButton = document.getElementById("view-all");
+  resetButton.onclick = function () {
     map.deleteMarkers();
   }
   
@@ -105,11 +104,11 @@ UI.prototype = {
     var slider = document.getElementById("dateslider");
     var countries = disease.nineteenthCentury;
     
-    if (slider.value === "2") {
+    if (slider.value === "1900") {
       countries = disease.twentiethCentury;
       console.log(countries);
     }
-    else if (slider.value === "3") {
+    else if (slider.value === "2000") {
       countries = disease.presentDay;
       console.log(countries);
     }
@@ -121,7 +120,7 @@ UI.prototype = {
     // for(country of countries) {
       this.createMarker(countries[i], map, disease);
     }
-  },
+  }
 }
 
 module.exports = UI;
