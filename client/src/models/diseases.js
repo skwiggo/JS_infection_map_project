@@ -7,6 +7,7 @@ var Diseases = function() {
   this.request = new Query();
 
   var tbFact1 = new Fact({
+    disease: "tb",
     comment: "A quarter of all deaths in Europe are estimated to have been caused by tuberculosis infection during the 19th and early 20th century. Famous people who died from tuberculosis during this period included: John Keats, Frédéric Chopin, Charlotte, Emily and Anne Bronte, Anton Chekhov and Franz Kafka.",
     image: "http://emilyspoetryblog.com/wp-content/uploads/2016/04/Emily-Bronte.jpg"
   });
@@ -109,7 +110,7 @@ var Diseases = function() {
 }
 
 Diseases.prototype = {
-  all: function(){
+  all: function(onCompleted){
     var self = this;
     var url = "http://localhost:3000/api/diseases";
       this.request.api(url, function(){
@@ -118,15 +119,24 @@ Diseases.prototype = {
       var jsonString = this.responseText;
       var apiData = JSON.parse(jsonString);
       var diseases = self.populateDiseases(apiData);
+      onCompleted(diseases);
     })
   },
   populateDiseases: function(apiData){
     var diseases = [];
+    var facts = populatefacts();
     for(var data of apiData){
       var disease = new Disease(data);
       diseases.push(disease);
     }
     return diseases;
+  },
+  populatefacts: function(){
+    var infoFact = [];
+    for(fact of facts){
+      var info = new Fact(fact);
+      infoFact.push(info);
+    }
   }
 }
 
