@@ -3,19 +3,27 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 42.384902, lng: 11.918695};
+  var center = {lat: 36.584902, lng: 68.918695};
   var diseaseList = new Diseases();
   this.diseases;
-  // console.log(this.diseases);
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
-
   this.loadData(diseaseList, map, this.selectDropdown);
-
   // this.getDisease(this.diseases, map);
+
+  var resetBtn = document.getElementById('reset');
+  resetBtn.onclick = function (){
+    map.deleteMarkers();
+    var dropdown = document.getElementById('disease-select').value = "disabled";
+    var dropdown2 = document.querySelector('#diseasios');
+    dropdown2.style.display = "none";
+    var dropdown3 = document.querySelector('#diseasiosios');
+    dropdown3.style.display = "none";
+  };
 }
 
 UI.prototype = {
+
   loadData: function(diseaseList, map, callback){
     diseaseList.all(function(data){
       var self = this;
@@ -23,6 +31,7 @@ UI.prototype = {
         callback(map, self);
     }.bind(this));
   },
+
   selectDropdown: function (map, newThis) {
     var self = newThis;
     var select = document.querySelector('select');
@@ -33,6 +42,7 @@ UI.prototype = {
       self.handleSelectChanged(event, self.diseases, map, value, select);
     }.bind(this);  
   },
+
   handleSelectChanged: function(event, diseases, map, value, select) {
     map.deleteMarkers();
     var option = select.options[value].value;
@@ -45,6 +55,7 @@ UI.prototype = {
     } 
     this.addDropdown(map, select, value);
   },
+
   addDropdown: function(map, select) {
     var dropdown2 = document.querySelector('#diseasios');
     dropdown2.style.display = "block";
@@ -53,6 +64,7 @@ UI.prototype = {
       this.handleSelectChangio(event, this.diseases, map, value, dropdown2)
     }.bind(this);
   },
+
   handleSelectChangio: function(event, diseases, map, value, dropdown2) {
     map.deleteMarkers();
     var option = dropdown2.options[value].value;
@@ -65,6 +77,7 @@ UI.prototype = {
     } 
     this.addDropdownio(event, diseases, map, value);
   },
+
   addDropdownio: function(event, diseases, map) {
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "block";
@@ -73,6 +86,7 @@ UI.prototype = {
       this.handleSelectChangioio(event, this.diseases, map, value, dropdown3);
     }.bind(this)
   }, 
+
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
     map.deleteMarkers();
     var option = dropdown3.options[value].value;
@@ -85,20 +99,20 @@ UI.prototype = {
       }
     } 
   },
+
   createMarker: function(country, map, disease) {
-    
       map.addMarker(country, map, disease);
   },
+
   getDisease: function(disease, map) {
-    
     for(diseasio of disease) {
       console.log(diseasio)
       this.getCountry(diseasio, map);
     }
   },
+
   getCountry: function(disease, map) {
     var countries = disease.nineteenthCentury;
-    
     for(country of countries) {
       this.createMarker(country, map, disease);
     }

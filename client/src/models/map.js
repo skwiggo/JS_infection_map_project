@@ -7,7 +7,9 @@ var Map = function(container, coords, zoom) {
       disableDefaultUI: true
   });
 }
-  
+// keep outside of constructor to only display one at a time
+var infowindow = null;
+
 Map.prototype = {
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
@@ -26,10 +28,11 @@ Map.prototype = {
   },
   addMarker: function(country, map, disease) {
     var contentio = this.getContentString(disease, country)
-    var infowindow = null;
+    
     var customIcon = {
-      url: "https://cdn2.iconfinder.com/data/icons/medicine-7/512/sneeze-512.png",
-      scaledSize: new google.maps.Size(22, 32)
+      url: setIcon(disease.name),
+      // TODO: update when century becomes selectable
+      scaledSize: setIconSize(country.mortality)
     };
     var marker = new google.maps.Marker({
       position: country.coords,
@@ -62,5 +65,52 @@ Map.prototype = {
     markers = [];
   }
 }
+
+function setIcon(diseaseName){
+  switch(diseaseName.toLowerCase()){
+    // name of the disease
+    case "tuberculosis": 
+      // icon to show for above disease
+      return "http://www.clker.com/cliparts/q/I/Q/u/Z/1/marker-hi.png";
+      break;
+    case "smallpox": 
+      // icon to show for above disease
+      return "http://www.pd4pic.com/images/landmark-map-marker-green-location-google-maps.png";
+      break;
+    case "hiv/aids": 
+      // icon to show for above disease
+      return "http://www.clker.com/cliparts/e/3/F/I/0/A/google-maps-marker-for-residencelamontagne-hi.png";
+      break;
+    case "zika": 
+      // icon to show for above disease
+      return "http://www.clker.com/cliparts/I/l/L/S/W/9/map-marker.svg";
+      break;
+    // default if no case is matched
+    default:
+      return null;
+      break; 
+  }
+}
+
+function setIconSize(mortality){
+  console.log(mortality.toLowerCase());
+  switch(mortality){
+    // mortality rate
+    case "low": 
+      // size at which to display above mortality rate
+      return new google.maps.Size(12, 22);
+    case "medium": 
+      // size at which to display above mortality rate
+      return new google.maps.Size(22, 32);
+    case "high": 
+      // size at which to display above mortality rate
+      return new google.maps.Size(32, 42);
+    // default if no case is matched
+    default: 
+      return new google.maps.Size(22, 32);
+      break;
+  }
+}
+
 
 module.exports = Map;

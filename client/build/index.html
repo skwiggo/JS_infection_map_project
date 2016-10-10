@@ -8,31 +8,32 @@
 </head>
 <body>
   <div id="mySidenav" class="sidenav">
-  <img id="logo" src='http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=101360163'/>
-  <div id= "logo-title">INFECTED</div>
+  <img id="logo" src='http://vignette4.wikia.nocookie.net/left4dead/images/d/d2/Biohazard_symbol.png/revision/latest?cb=20101101203629'/>
+  <div id="logo-title">INFECTED</div>
     <div id="dropdown">
-      <select class="diseases">
-        <option selected disabled>Diseases</option>
+      <select id="disease-select" class="diseases">
+        <option value="disabled" selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
         <option value="smallPox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
       <select id="diseasios">
-        <option selected disabled>Diseases</option>
+        <option selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
         <option value="smallPox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
       <select id="diseasiosios">
-        <option selected disabled>Diseases</option>
+        <option selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
         <option value="smallPox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
-      <button id="view-all">Reset</button>
+      <button id="view-all">View All</button>
+      <button id="reset">Reset</button>
     </div>
     <div class="onoffswitch">
         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
@@ -43,6 +44,8 @@
     </div>
   </div>
 
-  <div id="map"></div>
+<!--   <div id="map-container"> -->
+    <div id="map"></div>
+<!--   </div> -->
 </body>
 </html>
