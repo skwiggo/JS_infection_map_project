@@ -11,6 +11,7 @@ var Map = function(container, coords, zoom) {
 var infowindow = null;
 
 Map.prototype = {
+  
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
     var contentString = '<div id="infoWindowStyles">'+
@@ -18,14 +19,17 @@ Map.prototype = {
       '</div>'+
       '<h1 id="heading">'+ disease.name + '</h1>'+
       '<h3 id="subHeading">' + country.name + '</h3>' +
-      '<h3 id="subHeading">' + "Infection Rating: " + country.mortality + '</h3>' +
-      '<div id="bodyContent">' + disease.facts[i].comment + '</div>' +
-      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
+      '<h3 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h3>' +
+      '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
+      // +
+      // '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
   },
+
   getRandomFact: function(facts){
     return Math.floor((Math.random() * 5));
   },
+
   addMarker: function(country, map, disease) {
     var contentio = this.getContentString(disease, country)
     
@@ -45,21 +49,25 @@ Map.prototype = {
         infowindow.close();
       }
       infowindow = new google.maps.InfoWindow({
-        content: contentio
+        content: contentio,
+        disableAutoPan: true
       });
       var center = {lat: 42.384902, lng: 11.918695};
       this.googleMap.setCenter(center);
       infowindow.open(map, marker);
     }.bind(this));
   },
+
   setMapOnAll: function(map) {
     for(var i = 0; i < markers.length; i++) {
       markers[i].setMap(map);
     }
   },
+
   clearMarkers: function() {
     this.setMapOnAll(null);
   },
+
   deleteMarkers: function() {
     this.clearMarkers();
     markers = [];
