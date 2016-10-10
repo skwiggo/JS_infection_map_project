@@ -4,18 +4,28 @@ var Fact = require('./fact');
 var Diseases = function() {
 
   var tbFact1 = new Fact({
-    comment: "The evidence for tuberculosis can be traced back to mummies in Ancient Egypt.",
-    image: "http://i.bnet.com/blogs/mummy.jpg"
+    comment: "A quarter of all deaths in Europe are estimated to have been caused by tuberculosis infection during the 19th and early 20th century. Famous people who died from tuberculosis during this period included: John Keats, Frédéric Chopin, Charlotte, Emily and Anne Bronte, Anton Chekhov and Franz Kafka.",
+    image: "http://emilyspoetryblog.com/wp-content/uploads/2016/04/Emily-Bronte.jpg"
   });
 
   var tbFact2 = new Fact({
-    comment: "A quarter of all deaths in Europe are estimated to have been caused by tuberculosis infection during the 19th and early 20th century.",
-    image: "http://www.ancient-origins.net/sites/default/files/styles/large/public/First-and-Last-Communion.jpg?itok=9hHKG13z"
+    comment: "The World Health Organization estimates that 9 million people get TB every year, and an estimated 1.5 to 3 million people die from TB every year. The disease leaves more than 10 million children orphaned each year.",
+    image: "http://www.tommallens.com/wp-content/uploads/2014/02/people-in-the-world.png"
   });
 
   var tbFact3 = new Fact({
-    comment: "TB is the leading killer of people living with HIV.",
-    image: "https://pbs.twimg.com/profile_images/710836583235260417/WzC93R20.jpg"
+    comment: "Tuberculosis appears to be one of the most ancient diseases in human history. Skeletons of Egyptian mummies show clear evidence of the disease dating back 6,000 years, although some scientists believe it is much older than that.",
+    image: "http://i.telegraph.co.uk/multimedia/archive/01670/tuberculosis_1670496i.jpg"
+  });
+
+  var tbFact4 = new Fact({
+    comment: "It is widely believed that Tuberculosis was first documented in Greek literature by Hippocrates. In his 'Book Of the Epidemics' (410-400 BCE) he described a disease of “weakness of the lung” associated with fever, chills, “constant sweats” and a cough “brought up rarely and with difficulty”.",
+    image: "http://www-tc.pbs.org/wgbh/nova/assets/img/hippocratic-oath-today/image-01-large.jpg"
+  });
+
+  var tbFact5 = new Fact({
+    comment: "TB is usually treatable and curable. Standard TB is treated with four antimicrobial medicines over a six-month period. But without access to a strict, appropriate regimen, the disease can persist and spread. TB also has the potential to develop drug resistance.",
+    image: "http://newsfromafrica.org/wp-content/uploads/2016/09/tuberculosis-drugs.jpg"
   });
 
   var spFact1 = new Fact({
@@ -29,6 +39,16 @@ var Diseases = function() {
   });
 
   var spFact3 = new Fact({
+    comment: "Smallpox is the only human based infection that has been completely eradicated from the world. The world has been smallpox free since 1979 after a widescale vaccination programme.",
+    image: "http://www.museumofhealthcare.ca/explore/exhibits/vaccinations/smallpox.html"
+  });
+
+  var spFact4 = new Fact({
+    comment: "Smallpox is the only human based infection that has been completely eradicated from the world. The world has been smallpox free since 1979 after a widescale vaccination programme.",
+    image: "http://www.museumofhealthcare.ca/explore/exhibits/vaccinations/smallpox.html"
+  });
+
+  var spFact5 = new Fact({
     comment: "Smallpox is the only human based infection that has been completely eradicated from the world. The world has been smallpox free since 1979 after a widescale vaccination programme.",
     image: "http://www.museumofhealthcare.ca/explore/exhibits/vaccinations/smallpox.html"
   });
@@ -48,19 +68,39 @@ var Diseases = function() {
     image: "http://i2.cdn.turner.com/cnnnext/dam/assets/160128185001-zika-mutant-male-mosquitos-mclaughlin-pkg-00020830-large-169.jpg"
   });
 
+  var zikaFact4 = new Fact({
+    comment: "Symptoms of Zika in adults are generally mild, and can include a slight fever, rash, red eyes, headache and joint pain in the hands and feet.",
+    image: "http://i2.cdn.turner.com/cnnnext/dam/assets/160128185001-zika-mutant-male-mosquitos-mclaughlin-pkg-00020830-large-169.jpg"
+  });
+
+  var zikaFact5 = new Fact({
+    comment: "Symptoms of Zika in adults are generally mild, and can include a slight fever, rash, red eyes, headache and joint pain in the hands and feet.",
+    image: "http://i2.cdn.turner.com/cnnnext/dam/assets/160128185001-zika-mutant-male-mosquitos-mclaughlin-pkg-00020830-large-169.jpg"
+  });
+
   var hivFact1 = new Fact({
-    comment: "HIV (Human Immunodeficiency Virus) is a virus that infects the immune system, decreasing its ability to fight off other infections and diseases.",
-    image: "https://www.aids.gov/images/aids-infographics/what-is-hiv-aids-1.png"
+    comment: "HIV (Human Immunodeficiency Virus) is a virus that infects the immune system, decreasing its ability to fight off other infections and diseases. The first known human to become infected with HIV was a citizen of the Democratic Republic of the Congo whose blood was collected and tested in 1959. Scientists believe the first human infection may have occurred in the late 1940s or early 50s.",
+    image: "https://c2.staticflickr.com/4/3551/3463183104_2fa0c1b251_z.jpg?zz=1"
   });
 
   var hivFact2 = new Fact({
-    comment: "More than 35 million people live with HIV worldwide.",
+    comment: "As of 2013, there were 35.0 million people living with HIV around the globe, up from 29.8 million in 2001. Scientists attribute these staggering HIV statistics to new infections, but also to general population growth and the fact that research and treatments have allowed those with HIV to live longer lives.",
     image: "http://www.foundcare.org/cache.trustedpartner.com/images/library/Foundcare2010/Content/globe1.jpg"
   });
 
   var hivFact3 = new Fact({
-    comment: "About 30 million people have died from HIV/AIDS-related causes since its discovery in 1981.",
-    image: "https://abm-website-assets.s3.amazonaws.com/biosciencetechnology.com/s3fs-public/embedded_image/2016/06/shutterstock_236439424.jpg"
+    comment: "About 30 million people have died from HIV/AIDS-related causes since its discovery in 1981. Geographically, the worst AIDS epidemic is in sub-Sahara Africa, with approximately 65% of all cases located there. Almost 90% of children with HIV live in sub-Sahara Africa.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/HIV_in_Africa_2011.svg/2000px-HIV_in_Africa_2011.svg.png"
+  });
+
+  var hivFact4 = new Fact({
+    comment: "In 1988, DC Comics introduced a villain named “Hemo-Goblin.” The HIV-positive vampire was created by a group of white supremacists and used to infect minorities. Not surprisingly, Hemo-Goblin wasn’t much of a fan favorite and the character appeared in only one issue of The New Guardians.",
+    image: "http://vignette4.wikia.nocookie.net/marvel_dc/images/0/0d/Hemo-Goblin_01.jpg/revision/latest?cb=20091006193609"
+  });
+
+  var hivFact5 = new Fact({
+    comment: "Two strains of HIV have been identified: HIV-1 (from the Central Common Chimpanzee) and HIV-2 (from the Sooty Mangabey monkey). HIV-1 is more virulent, more easily transmitted, and is the cause of the vast majority of global HIV infections. HIV-2 is harder to transmit and is mainly confined to West Africa.",
+    image: "http://www.awf.org/sites/default/files/media/gallery/wildlife/Chimpanzee/chimp_Craig_R_Sholley.jpg?itok=4QfFXY3F"
   });
 
   var smallPox = new Disease({
@@ -1320,20 +1360,28 @@ var hiv = new Disease({
 smallPox.addFact(spFact1);
 smallPox.addFact(spFact2);
 smallPox.addFact(spFact3);
+smallPox.addFact(spFact4);
+smallPox.addFact(spFact5);
 
 tuberculosis.addFact(tbFact1);
 tuberculosis.addFact(tbFact2);
 tuberculosis.addFact(tbFact3);
+tuberculosis.addFact(tbFact4);
+tuberculosis.addFact(tbFact5);
 
 zika.addFact(zikaFact1);
 zika.addFact(zikaFact2);
 zika.addFact(zikaFact3);
+zika.addFact(zikaFact4);
+zika.addFact(zikaFact5);
 
 hiv.addFact(hivFact1);
 hiv.addFact(hivFact2);
 hiv.addFact(hivFact3);
+hiv.addFact(hivFact4);
+hiv.addFact(hivFact5);
 
-return [smallPox, tuberculosis, zika, HIV];
+return [smallPox, tuberculosis, zika, hiv];
 
 }
 
