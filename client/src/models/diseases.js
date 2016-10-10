@@ -74,6 +74,7 @@ var Diseases = function() {
 
 Diseases.prototype = {
   all: function(){
+    var self = this;
     var url = "http://localhost:3000/api/diseases";
       this.request.api(url, function(){
         console.log("request completed")
@@ -81,8 +82,17 @@ Diseases.prototype = {
       var jsonString = this.responseText;
       // console.log("api data:", jsonString);
       var apiData = JSON.parse(jsonString);
-      console.log(apiData);
+      // console.log(apiData);
+      var diseases = self.populateDiseases(apiData);
     })
+  },
+  populateDiseases: function(apiData){
+    var diseases = [];
+    for(var data of apiData){
+      var disease = new Disease(data);
+      diseases.push(disease);
+    }
+    console.log(diseases);
   }
 }
 
