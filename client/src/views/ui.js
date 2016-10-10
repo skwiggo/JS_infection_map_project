@@ -16,14 +16,15 @@ UI.prototype = {
   selectDropdown: function (map) {
     var select = document.querySelector('select');
     select.onchange = function() {
+      console.log(select)
       var value = (select.selectedIndex);
           console.log(value);
       this.handleSelectChanged(event, this.diseases, map, value, select);
     }.bind(this)  
   },
   handleSelectChanged: function(event, diseases, map, value, select) {
+    console.log(map)
     map.deleteMarkers();
-    this.addDropdown();
     var option = select.options[value].value;
     console.log(option);
     for(disease of diseases) {  
@@ -33,51 +34,44 @@ UI.prototype = {
         this.getDisease(diseasio, map)
       }
     } 
+    this.addDropdown(map, select, value);
   },
-  generateSelect: function() {
-    var dropDown = document.createElement('select');
-    dropDown.idList.add('diseasios');
-    return dropDown;
+  addDropdown: function(map, select, value) {
+    var dropdown2 = document.querySelector('#diseasios');
+    dropdown2.style.visibility = "visible";
+    dropdown2.onchange = function(){
+      this.handleSelectChangio(event, this.diseases, map, value, select)
+    }.bind(this);
   },
-  generateOption: function(innerHTML) {
-    var option = document.createElement('option');
-    option.innerHTML = innerHTML
-    return option;
+  handleSelectChangio: function(event, diseases, map, value, select) {
+    map.deleteMarkers();
+    var option = select.options[value].value;
+    console.log(option);
+    for(disease of diseases) {  
+      if(option === disease.name) {
+        console.log(disease)
+        var diseasio = [disease];
+        this.getDisease(diseasio, map)
+      }
+    } 
+    this.addDropdownio(event, diseases, map, value, select);
   },
-  appendElements: function(select, tb, smallPox, zika, hiv) {
-    var div = document.querySelector('#mySidenav');
-    div.appendChild(select)
-    select.appendChild(hiv);
-    select.appendChild(tb);
-    select.appendChild(smallPox);
-    select.appendChild(zika);
-  },
-  addDropdown: function(event, diseases, map, value, select) {
-    var select = this.generateSelect();
-    var tb = this.generateOption("<option value='Tuberculosis'>Tuberculosis</option>");
-    var smallPox = this.generateOption("<option value='Smallpox'>Smallpox</option>");
-    var zika = this.generateOption("<option value='Zika'>Zika</option>");
-    var hiv = this.generateOption("<option value='HIV/AIDS'>HIV/AIDS</option>");
-    this.appendElements(select, tb, smallPox, zika, hiv);
-    var dropDown = document.querySelector('.diseasios');
-    dropDown.onchange = function(event, diseases, map, value, select) {
-      console.log(map)
-      map.deleteMarkers();
-      this.addDropdown();
-      var option = select.options[value].value;
-      console.log(option);
-      for(disease of diseases) {  
-        if(option === disease.name) {
-          console.log(disease)
-          var diseasio = [disease];
-          this.getDisease(diseasio, map)
-        }
-      } 
-    }
-  },
-  dropdownFunctionality: function() {
-    var dropDown = document.querySelector('.diseases');
-    dropDown.onclick = this.handleSelectChanged;
+  addDropdownio: function(event, diseases, map, value, select) {
+    var dropdown3 = document.querySelector('#diseasiosios');
+    dropdown3.style.visibility = "visible";
+    dropdown3.onchange = this.handleSelectChangioio(event, this.diseases, map, value, select);
+  }, 
+  handleSelectChangioio: function(event, diseases, map, value, select) {
+    map.deleteMarkers();
+    var option = select.options[value].value;
+    console.log(option);
+    for(disease of diseases) {  
+      if(option === disease.name) {
+        console.log(disease)
+        var diseasio = [disease];
+        this.getDisease(diseasio, map)
+      }
+    } 
   },
   createMarker: function(country, map, disease) {
     console.log(disease);

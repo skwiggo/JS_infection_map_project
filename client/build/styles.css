@@ -29,6 +29,14 @@ body {
   margin-left: 42px;
 }
 
+#diseasios {
+  visibility: hidden;
+}
+
+#diseasiosios {
+  visibility: hidden;
+}
+
 .sidenav {
     height: 81%; /* 100% Full-height */
     width: 320px; /* 0 width - change this with JavaScript */
