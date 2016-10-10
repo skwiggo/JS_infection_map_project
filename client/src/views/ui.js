@@ -90,16 +90,27 @@ UI.prototype = {
   createMarker: function(country, map, disease) {
       map.addMarker(country, map, disease);
   },
-  getDisease: function(disease, map) {
-    
+  getDisease: function(disease, map) { 
     for(diseasio of disease) {
       console.log(diseasio)
       this.getCountry(diseasio, map);
     }
   },
   getCountry: function(disease, map) {
+    var slider = document.getElementById("dateslider");
     var countries = disease.nineteenthCentury;
-    
+    if (slider.value === "2") {
+      countries = disease.twentiethCentury;
+      console.log(countries);
+    }
+    else if (slider.value === "3") {
+      countries = disease.presentDay;
+      console.log(countries);
+    }
+    else {
+      return countries
+      console.log(countries);
+    }
     for(country of countries) {
       this.createMarker(country, map, disease);
     }

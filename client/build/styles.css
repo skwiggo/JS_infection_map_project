@@ -6,7 +6,7 @@ body {
   width: 72%;
   height: 710px;
   margin-left: 370px;
-  margin-top: 25px;
+  margin-top: 50px;
   border-style: solid;
   transition: margin-left .5s;
 }
@@ -154,4 +154,9 @@ body {
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; 
+}
+
+#dateslider {
+  margin-top: 20px;
+  margin-left: 85px;
 }
