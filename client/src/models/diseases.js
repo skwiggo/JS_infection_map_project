@@ -1333,7 +1333,7 @@ hiv.addFact(hivFact1);
 hiv.addFact(hivFact2);
 hiv.addFact(hivFact3);
 
-return [smallPox, tuberculosis, zika, HIV];
+return [smallPox, tuberculosis, zika, hiv];
 
 }
 

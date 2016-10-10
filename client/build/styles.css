@@ -1,6 +1,7 @@
 #map {
-  width: 500px;
-  height: 500px;
+  width: 70%;
+  height: 600px;
+  margin-left: 200px;
 }
 
 #infoWindowImage {
