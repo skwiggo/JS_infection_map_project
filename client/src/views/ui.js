@@ -36,7 +36,7 @@ UI.prototype = {
   },
   generateSelect: function() {
     var dropDown = document.createElement('select');
-    dropDown.classList.add('diseases')
+    dropDown.classList.add('diseases');
     return dropDown;
   },
   generateOption: function(text) {
@@ -54,12 +54,25 @@ UI.prototype = {
   },
   addDropdown: function() {
     var select = this.generateSelect();
-    var tb = this.generateOption("tb");
-    var smallPox = this.generateOption("smallpox");
-    var zika = this.generateOption("zika");
-    var hiv = this.generateOption("hiv");
+    var tb = this.generateOption("Tuberculosis");
+    var smallPox = this.generateOption("Smallpox");
+    var zika = this.generateOption("Zika");
+    var hiv = this.generateOption("HIV/AIDS");
     this.appendElements(select, tb, smallPox, zika, hiv);
-
+    var dropDown = document.querySelector('.diseases');
+  },
+  dropdownFunctionality: function() {
+    map.deleteMarkers();
+    this.addDropdown();
+    var option = select.options[value].value;
+    console.log(option);
+    for(disease of diseases) {  
+      if(option === disease.name) {
+        console.log(disease)
+        var diseasio = [disease];
+        this.getDisease(diseasio, map);
+      }
+    } 
   },
   createMarker: function(country, map, disease) {
     console.log(disease);

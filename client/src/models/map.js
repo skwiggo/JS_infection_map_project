@@ -21,7 +21,7 @@ Map.prototype = {
     return contentString;
   },
   getRandomFact: function(facts){
-    return Math.floor((Math.random() * 3));
+    return Math.floor((Math.random() * 5));
   },
   addMarker: function(country, map, disease) {
     console.log(disease)
