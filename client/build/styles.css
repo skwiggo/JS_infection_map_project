@@ -67,6 +67,7 @@ body {
 }
 
 #view-all {
+  position:relative;
   margin-top: 30px;
   margin-left: 45px;
   font-size: 20px;
@@ -75,9 +76,8 @@ body {
   border-style: solid;
   border-color: #818181;
   border-radius: 5px;
-  padding: 5px;
+  padding: 2px;
   padding-left:10px;
   padding-right:10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-
 }
