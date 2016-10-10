@@ -36,12 +36,12 @@ UI.prototype = {
   },
   generateSelect: function() {
     var dropDown = document.createElement('select');
-    dropDown.classList.add('diseases');
+    dropDown.idList.add('diseasios');
     return dropDown;
   },
-  generateOption: function(text) {
+  generateOption: function(innerHTML) {
     var option = document.createElement('option');
-    option.innerText = text;
+    option.innerHTML = innerHTML
     return option;
   },
   appendElements: function(select, tb, smallPox, zika, hiv) {
@@ -52,27 +52,32 @@ UI.prototype = {
     select.appendChild(smallPox);
     select.appendChild(zika);
   },
-  addDropdown: function() {
+  addDropdown: function(event, diseases, map, value, select) {
     var select = this.generateSelect();
-    var tb = this.generateOption("Tuberculosis");
-    var smallPox = this.generateOption("Smallpox");
-    var zika = this.generateOption("Zika");
-    var hiv = this.generateOption("HIV/AIDS");
+    var tb = this.generateOption("<option value='Tuberculosis'>Tuberculosis</option>");
+    var smallPox = this.generateOption("<option value='Smallpox'>Smallpox</option>");
+    var zika = this.generateOption("<option value='Zika'>Zika</option>");
+    var hiv = this.generateOption("<option value='HIV/AIDS'>HIV/AIDS</option>");
     this.appendElements(select, tb, smallPox, zika, hiv);
-    var dropDown = document.querySelector('.diseases');
+    var dropDown = document.querySelector('.diseasios');
+    dropDown.onchange = function(event, diseases, map, value, select) {
+      console.log(map)
+      map.deleteMarkers();
+      this.addDropdown();
+      var option = select.options[value].value;
+      console.log(option);
+      for(disease of diseases) {  
+        if(option === disease.name) {
+          console.log(disease)
+          var diseasio = [disease];
+          this.getDisease(diseasio, map)
+        }
+      } 
+    }
   },
   dropdownFunctionality: function() {
-    map.deleteMarkers();
-    this.addDropdown();
-    var option = select.options[value].value;
-    console.log(option);
-    for(disease of diseases) {  
-      if(option === disease.name) {
-        console.log(disease)
-        var diseasio = [disease];
-        this.getDisease(diseasio, map);
-      }
-    } 
+    var dropDown = document.querySelector('.diseases');
+    dropDown.onclick = this.handleSelectChanged;
   },
   createMarker: function(country, map, disease) {
     console.log(disease);
