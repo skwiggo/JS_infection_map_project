@@ -36,7 +36,7 @@ UI.prototype = {
   },
   generateSelect: function() {
     var dropDown = document.createElement('select');
-    dropDown.idList.add('diseasios');
+    dropDown.classList.add('diseasios');
     return dropDown;
   },
   generateOption: function(innerHTML) {
