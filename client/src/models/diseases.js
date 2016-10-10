@@ -104,7 +104,7 @@ var Diseases = function() {
   });
 
   var smallPox = new Disease({
-    name: "smallPox",
+    name: "Smallpox",
     nineteenthCentury: [{
                           name: "UK", 
                           coords: {lat: 55.378051, 
@@ -615,7 +615,7 @@ var tuberculosis = new Disease({
 
 
 var zika = new Disease({
-  name: "zika",
+  name: "Zika",
   nineteenthCentury: [],
   twentiethCentury: [ { 
                         name: "Uganda", 
@@ -836,7 +836,7 @@ var zika = new Disease({
 });
 
 var hiv = new Disease({
-  name: "HIV",   
+  name: "HIV/AIDS",   
   nineteenthCentury: [],     
   twentiethCentury: [ {
                         name: "UK", 
