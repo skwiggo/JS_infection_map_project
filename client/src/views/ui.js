@@ -44,7 +44,7 @@ UI.prototype = {
   },
 
   handleSelectChanged: function(event, diseases, map, value, select) {
-    map.deleteMarkers();
+    // map.deleteMarkers();
     var option = select.options[value].value;
     for(disease of diseases) {  
       if(option === disease.name) {
@@ -66,7 +66,7 @@ UI.prototype = {
   },
 
   handleSelectChangio: function(event, diseases, map, value, dropdown2) {
-    map.deleteMarkers();
+    // map.deleteMarkers();
     var option = dropdown2.options[value].value;
     for(disease of diseases) {  
       if(option === disease.name) {
@@ -88,7 +88,7 @@ UI.prototype = {
   }, 
 
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
-    map.deleteMarkers();
+    // map.deleteMarkers();
     var option = dropdown3.options[value].value;
     console.log(option);
     for(disease of diseases) {  
