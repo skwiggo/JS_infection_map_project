@@ -15,7 +15,7 @@ Map.prototype = {
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="heading">'+ disease.name + '</h1>'+
-      '<h3 id="subHeading">' + country.name + '</h3>'+
+      '<h3 id="subHeading">' + country.name + '</h3>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' +
       '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
