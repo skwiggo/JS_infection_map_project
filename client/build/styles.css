@@ -162,6 +162,8 @@ body {
   width: 200px;
 }
 
-p {
-  margin-left: 90px;
+#sliderheader {
+  margin-top: 100px;
+  margin-left: 60px;
+  font-family: helvetica;
 }

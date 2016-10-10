@@ -9,7 +9,12 @@ var UI = function() {
   // console.log(this.diseases);
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
-
+  var resetbtn = document.getElementById("view-all");
+  resetbtn.onclick = function () {
+    console.log(map);
+    map.deleteMarkers();
+  }
+  
   this.loadData(diseaseList, map, this.selectDropdown);
 
   // this.getDisease(this.diseases, map);
@@ -116,7 +121,7 @@ UI.prototype = {
     // for(country of countries) {
       this.createMarker(countries[i], map, disease);
     }
-  }
+  },
 }
 
 module.exports = UI;
