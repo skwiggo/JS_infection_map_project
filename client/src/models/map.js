@@ -11,11 +11,12 @@ Map.prototype = {
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
     console.log(disease.facts[i].image);
-    var contentString = '<div id="content">'+
+    var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="heading">'+ disease.name + '</h1>'+
       '<h3 id="subHeading">' + country.name + '</h3>' +
+      '<h3 id="subHeading">' + "Infection Rating: " + country.mortality + '</h3>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' +
       '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
@@ -43,10 +44,11 @@ Map.prototype = {
       }
       infowindow = new google.maps.InfoWindow({
         content: contentio
-
       });
+      var center = {lat: 42.384902, lng: 11.918695};
+      this.googleMap.setCenter(center);
       infowindow.open(map, marker);
-    });
+    }.bind(this));
   },
   setMapOnAll: function(map) {
     for(var i = 0; i < markers.length; i++) {
