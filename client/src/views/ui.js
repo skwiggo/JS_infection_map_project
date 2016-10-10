@@ -6,6 +6,7 @@ var UI = function() {
   var center = {lat: 0, lng: 150.644};
   this.diseases = new Diseases();
   var map = new Map(container, center, 1);
+  this.diseases.all();
 
   // this.getDisease(this.diseases, map);
   this.selectDropdown(map);
