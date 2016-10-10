@@ -16,13 +16,10 @@ var DiseaseApi = function(app) {
       res.json(info[diseaseId]);
     })
   })
-
   // app.put("/api/diseases/:id", function(req, res) {
   //   diseases[req.params.id] = req.body.name;
   //   res.json({data: diseases});
   // });
-
-
 
 }
 

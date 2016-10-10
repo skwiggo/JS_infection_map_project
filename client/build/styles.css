@@ -1,9 +1,88 @@
+body {
+  background-color: #FFFFFF;
+}
+
 #map {
-  width: 500px;
-  height: 500px;
+  width: 72%;
+  height: 710px;
+  margin-left: 370px;
+  margin-top: 25px;
+  border-style: solid;
+  transition: margin-left .5s;
 }
 
 #infoWindowImage {
   width: 40%;
   height: 40%;
+}
+
+#logo {
+  width: 40%;
+  height: 20%;
+  margin-left: 90px;
+}
+
+#logo-title {
+  font-size: 45px; 
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 42px;
+}
+
+.sidenav {
+    height: 81%; /* 100% Full-height */
+    width: 320px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF; /* Blue */
+    border-style: solid;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    margin-top: 25px;
+    margin-left: 25px;
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav select {
+    margin-top: 30px;
+    width: 70%;
+    margin-left: 45px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    transition: 0.3s
+}
+
+#view-all {
+  position:relative;
+  margin-top: 30px;
+  margin-left: 45px;
+  font-size: 20px;
+  background-color: #f9f9f9;
+  color: #000000;
+  border-style: solid;
+  border-color: #818181;
+  border-radius: 5px;
+  padding: 2px;
+  padding-left:10px;
+  padding-right:10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#infoWindowStyles {
+    height: 250px;
+    width: 250px;
 }
