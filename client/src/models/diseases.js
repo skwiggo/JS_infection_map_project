@@ -92,7 +92,7 @@ Diseases.prototype = {
       var disease = new Disease(data);
       diseases.push(disease);
     }
-    console.log(diseases);
+    return diseases;
   }
 }
 
