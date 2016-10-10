@@ -4,29 +4,50 @@ var Diseases = require('../models/diseases');
 var UI = function() {  
   var container = document.getElementById('map');
   var center = {lat: 0, lng: 150.644};
-  var diseases = new Diseases();
+  this.diseases = new Diseases();
   var map = new Map(container, center, 1);
-  this.getDisease(diseases, map);
+
+  // this.getDisease(this.diseases, map);
+  this.selectDropdown(map);
 }
 
 UI.prototype = {
-  createMarker: function(country, map, disease) {
-    map.addMarker(country, disease);
+  selectDropdown: function (map) {
+    var select = document.querySelector('select');
+    select.onchange = function() {
+      var value = (select.selectedIndex);
+          console.log(value);
+      this.handleSelectChanged(event, this.diseases, map, value, select);
+    }.bind(this)  
   },
-  getDisease: function(diseases, map) {
-    console.log(diseases);
+  handleSelectChanged: function(event, diseases, map, value, select) {
+    var option = select.options[value].value;
+    console.log(option);
     for(disease of diseases) {
-      this.getCountry(disease, map);
+      if(option === disease.name) {
+        console.log(disease)
+        var diseasio = [disease];
+        this.getDisease(diseasio, map)
+      }
+    } 
+  },
+  createMarker: function(country, map, disease) {
+      map.addMarker(country, disease);
+  },
+  getDisease: function(disease, map) {
+    console.log(disease);
+    for(diseasio of disease) {
+      console.log(diseasio)
+      this.getCountry(diseasio, map);
     }
   },
   getCountry: function(disease, map) {
     var countries = disease.nineteenthCentury;
+    console.log(disease)
     for(country of countries) {
       this.createMarker(country, map, disease);
     }
   }
 }
-
-
 
 module.exports = UI;
