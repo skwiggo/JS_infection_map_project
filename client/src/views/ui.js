@@ -21,6 +21,7 @@ UI.prototype = {
     }.bind(this)  
   },
   handleSelectChanged: function(event, diseases, map, value, select) {
+    map.deleteMarkers();
     var option = select.options[value].value;
     console.log(option);
     for(disease of diseases) {
