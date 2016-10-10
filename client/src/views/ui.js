@@ -99,6 +99,7 @@ UI.prototype = {
   getCountry: function(disease, map) {
     var slider = document.getElementById("dateslider");
     var countries = disease.nineteenthCentury;
+    
     if (slider.value === "2") {
       countries = disease.twentiethCentury;
       console.log(countries);

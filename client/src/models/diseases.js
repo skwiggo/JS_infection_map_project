@@ -81,7 +81,7 @@ var Diseases = function() {
   },
 
   {
-    disease: "zika",
+    disease: "Zika",
     comment: "The virus is spread primarily by mosquito. According to the World Health Organization, all countries in the Americas will have the disease sometime in the future with the exception of mainland Chile and Canada because the mosquito can’t live there.",
     image: "http://i2.cdn.turner.com/cnnnext/dam/assets/160128185001-zika-mutant-male-mosquitos-mclaughlin-pkg-00020830-large-169.jpg"
   },
@@ -117,7 +117,7 @@ var Diseases = function() {
   },
 
   {
-    disease: "HIV",
+    disease: "HIV/AIDS",
     comment: "Two strains of HIV have been identified: HIV-1 (from the Central Common Chimpanzee) and HIV-2 (from the Sooty Mangabey monkey). HIV-1 is more virulent, more easily transmitted, and is the cause of the vast majority of global HIV infections. HIV-2 is harder to transmit and is mainly confined to West Africa.",
     image: "http://www.awf.org/sites/default/files/media/gallery/wildlife/Chimpanzee/chimp_Craig_R_Sholley.jpg?itok=4QfFXY3F"
   }
