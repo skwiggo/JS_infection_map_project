@@ -11,7 +11,7 @@ Map.prototype = {
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
     console.log(disease.facts[i].image);
-    var contentString = '<div id="content">'+
+    var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="heading">'+ disease.name + '</h1>'+
