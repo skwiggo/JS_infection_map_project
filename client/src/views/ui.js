@@ -25,7 +25,7 @@ UI.prototype = {
     map.deleteMarkers();
     var option = select.options[value].value;
     console.log(option);
-    for(disease of diseases) {
+    for(disease of diseases) {  
       if(option === disease.name) {
         console.log(disease)
         var diseasio = [disease];
