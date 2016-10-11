@@ -18,30 +18,23 @@ var Map = function(container, coords, zoom) {
                   { weight: 10 }
                 ]
               }, {
-                featureType: 'road',
-                elementType: 'labels',
+                featureType: 'landscape.natural.landcover',
+                elementType: 'geometry.fill',
                 stylers: [
-                  { saturation: -50 },
+                  { color: '#3F4B3B'},
+                  { saturation: -100 },
                   { invert_lightness: false }
                 ]
               }, {
-                featureType: 'landscape',
-                elementType: 'geometry',
+                featureType: 'landscape.natural.terrain',
+                elementType: 'geometry.fill',
                 stylers: [
                   { hue: '#3F4B3B' },
                   { gamma: 1.4 },
-                  { saturation: 100 },
+                  { saturation: -100 },
                   { lightness: 0 }
                 ]
-              }, {
-                featureType: 'poi.school',
-                elementType: 'geometry',
-                stylers: [
-                  { hue: '#3F4B3B' },
-                  { lightness: -15 },
-                  { saturation: 99 }
-                ]
-              }
+              }, 
            ] 
        });
    }
@@ -67,7 +60,7 @@ var Map = function(container, coords, zoom) {
                      { invert_lightness: true }
                    ]
                  }, {
-                   featureType: 'landscape',
+                   featureType: 'landscape.natural.landcover',
                    elementType: 'geometry',
                    stylers: [
                      { hue: '#f0f0f0' },
