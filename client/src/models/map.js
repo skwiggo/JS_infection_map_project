@@ -107,9 +107,20 @@ Map.prototype = {
   getRandomFact: function(facts){
     return Math.floor((Math.random() * 5));
   },
+  markerOffset: function(){
+    var rng = Math.floor(Math.random() * 2);
+    var offset = Math.random() * 3;
+    console.log(rng)
+    if(rng === 1) return offset * -1;
+    // console.log(offset)
+    return offset;
+  },
 
   addMarker: function(country, map, disease) {
-    var contentio = this.getContentString(disease, country)
+    var contentio = this.getContentString(disease, country);
+    var latOffset = this.markerOffset();
+    var lngOffset = this.markerOffset();
+    var coords = {lat: (country.coords.lat + latOffset), lng: (country.coords.lng + lngOffset)};
     
     var customIcon = {
       url: setIcon(disease.name),
@@ -117,7 +128,7 @@ Map.prototype = {
       scaledSize: setIconSize(country.mortality)
     };
     var marker = new google.maps.Marker({
-      position: country.coords,
+      position: coords,
       map: this.googleMap,
       icon: customIcon
     });
@@ -130,8 +141,6 @@ Map.prototype = {
         content: contentio,
         disableAutoPan: true
       });
-      var center = {lat: 42.384902, lng: 11.918695};
-      this.googleMap.setCenter(center);
       infowindow.open(map, marker);
     }.bind(this));
   },
@@ -175,7 +184,7 @@ function setIcon(diseaseName){
 
 
 function setIconSize(mortality){
-  console.log(mortality.toLowerCase());
+  // console.log(mortality.toLowerCase());
   switch(mortality){
     case "low": 
       return new google.maps.Size(12, 22);
