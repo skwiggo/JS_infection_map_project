@@ -8,7 +8,7 @@ var UI = function() {
   this.diseases;
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
-
+  map.generate21stCenturyMap();
   this.loadData(diseaseList, map, this.selectDropdown);
  
   var resetBtn = document.getElementById('reset');
