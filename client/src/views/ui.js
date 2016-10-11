@@ -9,10 +9,7 @@ var UI = function() {
   this.diseases;
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
-<<<<<<< HEAD
-   
-=======
->>>>>>> develop
+
   this.loadData(diseaseList, map, this.selectDropdown);
   
   var resetBtn = document.getElementById('reset');
@@ -130,21 +127,7 @@ UI.prototype = {
  getCountry: function(disease, map) {
    var slider = document.getElementById("dateslider");
    var countries = disease.nineteenthCentury;
-   
-   if (slider.value === "1900") {
-     countries = disease.twentiethCentury;
-     console.log(countries);
-   }
-   else if (slider.value === "2000") {
-     countries = disease.presentDay;
-     console.log(countries);
-   }
-   else {
-     countries
-     console.log(countries);
-   }
    for(var i = 0; i < countries.length; i++) {  
-   // for(country of countries) {
      this.createMarker(countries[i], map, disease);
    }
  }
