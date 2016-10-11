@@ -4,7 +4,7 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 32.584902, lng: 78.918695};
+  var center = {lat: 32.584902, lng:114.918695};
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);

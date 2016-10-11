@@ -38,7 +38,7 @@ body {
   margin-top: 50px;
   width: 35%;
   height: 15%;
-  margin-left: 97px;
+  margin-left: 85px;
   margin-bottom: 20px;
 }
 
@@ -46,7 +46,7 @@ body {
   font-size: 48px; 
   font-weight: bold;
   margin-top: 20px;
-  margin-left: 40px;
+  margin-left: 12px;
 }
 
 #diseasios {
@@ -59,7 +59,7 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 24%;
+  width: 22%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -76,8 +76,8 @@ body {
 
 .sidenav select {
   margin-top: 30px;
-  width: 70%;
-  margin-left: 42px;
+  width: 77%;
+  margin-left: 25px;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 18px;
@@ -88,8 +88,8 @@ body {
 
 #view-all {
   margin-top: 30px;
-  margin-left: 50px;
-  font-size: 20px;
+  margin-left: 25px;
+  font-size: 18px;
   background-color: #f9f9f9;
   color: #000000;
   border-style: solid;
@@ -104,7 +104,7 @@ body {
 #reset {
   margin-top: 30px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: #f9f9f9;
   color: #000000;
   border-style: solid;
@@ -117,7 +117,7 @@ body {
 }
 
 .onoffswitch {
-  margin-left: 66px;
+  margin-left: 38px;
   margin-top:40px;
   position: relative; width: 182px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -177,8 +177,8 @@ body {
 #slider {
   position: absolute; 
   z-index:99;
-  margin-top: 710px;
-  margin-left: 825px;
+  margin-top: 645px;
+  margin-left: 665px;
   width: 730px;
   height: 50px;
   border-style: solid;
