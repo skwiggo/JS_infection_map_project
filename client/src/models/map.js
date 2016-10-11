@@ -133,8 +133,6 @@ Map.prototype = {
                          }
                       ])
                   },
-
-  
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
     var contentString = '<div id="infoWindowStyles">'+
@@ -207,10 +205,8 @@ Map.prototype = {
     this.clearMarkers();
     markers = [];
   }
-  
 }
-
-
+  
 function setIcon(diseaseName){
   switch(diseaseName.toLowerCase()){
     case "tuberculosis": 
@@ -235,7 +231,6 @@ function setIcon(diseaseName){
   }
 }
 
-
 function setIconSize(mortality){
   // console.log(mortality.toLowerCase());
   switch(mortality){
@@ -251,8 +246,6 @@ function setIconSize(mortality){
     default: 
       return new google.maps.Size(22, 32);
       break;
-  }
-}
-
+    }
 
 module.exports = Map;
