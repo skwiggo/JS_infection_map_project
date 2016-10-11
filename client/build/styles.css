@@ -16,12 +16,24 @@ body {
 }
 
 #infoWindowImage {
-  width: 40%;
-  height: 40%;
+  width: 90px;
+  height: 60px;
 }
 
 .gm-style-iw {
   width:100%;
+  background-color: #c9d6de;
+  text-align: center;
+  height: 250px;
+  width: 80px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding: none;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
 
 #bodyContent {
@@ -31,7 +43,7 @@ body {
 
 #infoWindowStyles {
   height: 200px;
-  width: 550px;
+  width: 320px;
 }
 
 #logo {
@@ -50,11 +62,11 @@ body {
   margin-bottom: 55px;
 }
 
-#diseasios {
+#diseasio-selector {
   display: none;
 }
 
-#diseasiosios {
+#selector-of-diseases {
   display: none;
 }
 

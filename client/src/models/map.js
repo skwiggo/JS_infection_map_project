@@ -3,7 +3,6 @@ var markers = [];
 // keep outside of constructor to only display one infowindow at a time
 var infowindow = null;
 
-
 var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
@@ -158,7 +157,6 @@ Map.prototype = {
     // console.log(offset)
     return offset;
   },
-
   addMarker: function(country, map, disease) {
     var contentio = this.getContentString(disease, country);
     var latOffset = this.markerOffset();
@@ -188,24 +186,20 @@ Map.prototype = {
       infowindow.open(map, marker);  
     }.bind(this));
   },
-
   setMapOnAll: function(map) {
     for(var i = 0; i < markers.length; i++) {
       markers[i].setMap(map);
     }
   },
-
   clearMarkers: function() {
     this.setMapOnAll(null);
   },
-
   deleteMarkers: function() {
     this.clearMarkers();
     markers = [];
   }
   
 }
-
 
 function setIcon(diseaseName){
   switch(diseaseName.toLowerCase()){
@@ -228,7 +222,6 @@ function setIcon(diseaseName){
   }
 }
 
-
 function setIconSize(mortality){
   // console.log(mortality.toLowerCase());
   switch(mortality){
@@ -247,6 +240,4 @@ function setIconSize(mortality){
   }
 }
 
-
 module.exports = Map;
-

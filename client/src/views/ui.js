@@ -89,7 +89,6 @@ UI.prototype = {
     } 
     this.addDropdownio(event, diseases, map, value);
   },
-
   addDropdownio: function(event, diseases, map) {
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.visibility = "visible";
@@ -99,7 +98,6 @@ UI.prototype = {
       this.handleSelectChangioio(event, this.diseases, map, value, dropdown3);
     }.bind(this)
   }, 
-
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
     var option = dropdown3.options[value].value;
     for(disease of diseases) {  
@@ -109,11 +107,9 @@ UI.prototype = {
       }
     } 
   },
-
   createMarker: function(country, map, disease) {
       map.addMarker(country, map, disease);
   },
-
   getDisease: function(disease, map) { 
     for(diseasio of disease) {
       this.getCountry(diseasio, map);
