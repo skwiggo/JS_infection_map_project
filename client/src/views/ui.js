@@ -7,6 +7,7 @@ var UI = function() {
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
+  map.generate20thCenturyMap();
   map.googleMap.setZoom(2);
 
   this.loadData(diseaseList, map, this.selectDropdown);
