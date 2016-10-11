@@ -1,5 +1,5 @@
 var zikaSeeds = {
-                      name: "zika",
+                      name: "Zika",
                       nineteenthCentury: [],
                       twentiethCentury: [ { 
                                             name: "Uganda", 
