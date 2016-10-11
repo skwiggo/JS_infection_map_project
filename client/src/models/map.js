@@ -34,17 +34,18 @@ Map.prototype = {
   },
   markerOffset: function(){
     var rng = Math.floor(Math.random() * 2);
-    var offset = Math.random() * 2;
-    if(rng === 1) offset * -1;
-    // console.log(rng);
+    var offset = Math.random() * 3;
+    console.log(rng)
+    if(rng === 1) return offset * -1;
+    // console.log(offset)
     return offset;
   },
 
   addMarker: function(country, map, disease) {
     var contentio = this.getContentString(disease, country);
-    var offset = this.markerOffset();
-    var coords = {lat: (country.coords.lat + offset), lng: (country.coords.lng + offset)};
-    // console.log("marker", country);
+    var latOffset = this.markerOffset();
+    var lngOffset = this.markerOffset();
+    var coords = {lat: (country.coords.lat + latOffset), lng: (country.coords.lng + lngOffset)};
     
     var customIcon = {
       url: setIcon(disease.name),
