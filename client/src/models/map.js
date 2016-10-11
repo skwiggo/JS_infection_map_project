@@ -44,38 +44,38 @@ Map.prototype = {
               ])
           },
 
-          generate20thCenturyMap: function(map) {
-             this.googleMap.set('styles', [
-                  {
-                    featureType: 'water',
-                        elementType: 'geometry',
-                        stylers: [
-                          { color: '#0080ff' },
-                          { saturation: -50 },
-                          { invert_lightness: false }
-                        ]
-                      }, {
-                        featureType: 'landscape.natural.landcover',
-                        elementType: 'geometry.fill',
-                        stylers: [
-                          { color: '#4f953b'},
-                          { saturation: -50 },
-                          { invert_lightness: false }
-                        ]
-                      }, {
-                        featureType: 'landscape.natural.terrain',
-                        elementType: 'geometry.fill',
-                        stylers: [
-                          { hue: '#3F4B3B' },
-                          { gamma: 6 },
-                          { saturation: -100 },
-                          { lightness: 0 }
-                        ]
-                         }
-                      ])
-                  },
-                  generate21stCenturyMap: function(map) {
-                     this.googleMap.set('styles', [
+    generate20thCenturyMap: function(map) {
+       this.googleMap.set('styles', [
+            {
+              featureType: 'water',
+                  elementType: 'geometry',
+                  stylers: [
+                    { color: '#0080ff' },
+                    { saturation: -50 },
+                    { invert_lightness: false }
+                  ]
+                }, {
+                  featureType: 'landscape.natural.landcover',
+                  elementType: 'geometry.fill',
+                  stylers: [
+                    { color: '#4f953b'},
+                    { saturation: -50 },
+                    { invert_lightness: false }
+                  ]
+                }, {
+                  featureType: 'landscape.natural.terrain',
+                  elementType: 'geometry.fill',
+                  stylers: [
+                    { hue: '#3F4B3B' },
+                    { gamma: 6 },
+                    { saturation: -100 },
+                    { lightness: 0 }
+                  ]
+                   }
+                ])
+            },
+        generate21stCenturyMap: function(map) {
+         this.googleMap.set('styles', [
           {
             featureType: 'road',
                 elementType: 'geometry',
@@ -100,39 +100,39 @@ Map.prototype = {
                   { saturation: -100 },
                   { lightness: 0 }
                 ]
-                                         }
-                                      ])
-                                  },
-                          generate22ndCenturyMap: function(map) {
-                             this.googleMap.set('styles', [
-                                  {
-                                    featureType: 'water',
-                                        elementType: 'geometry',
-                                        stylers: [
-                                          { color: '#a6172d' },
-                                          { saturation: -50 },
-                                          { invert_lightness: false }
-                                        ]
-                                      }, {
-                                        featureType: 'landscape.natural.landcover',
-                                        elementType: 'geometry.fill',
-                                        stylers: [
-                                          { color: '#8c9184'},
-                                          { saturation: -100 },
-                                          { invert_lightness: false }
-                                        ]
-                                      }, {
-                                        featureType: 'landscape.natural.terrain',
-                                        elementType: 'geometry.fill',
-                                        stylers: [
-                                          { hue: '#8c9184' },
-                                          { gamma: 6 },
-                                          { saturation: -100 },
-                                          { lightness: 0 }
-                                        ]
-                                         }
-                                      ])
-                                  },
+               }
+            ])
+          },
+          generate22ndCenturyMap: function(map) {
+             this.googleMap.set('styles', [
+                  {
+                    featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [
+                          { color: '#a6172d' },
+                          { saturation: -50 },
+                          { invert_lightness: false }
+                        ]
+                      }, {
+                        featureType: 'landscape.natural.landcover',
+                        elementType: 'geometry.fill',
+                        stylers: [
+                          { color: '#8c9184'},
+                          { saturation: -100 },
+                          { invert_lightness: false }
+                        ]
+                      }, {
+                        featureType: 'landscape.natural.terrain',
+                        elementType: 'geometry.fill',
+                        stylers: [
+                          { hue: '#8c9184' },
+                          { gamma: 6 },
+                          { saturation: -100 },
+                          { lightness: 0 }
+                        ]
+                         }
+                      ])
+                  },
 
   
   getContentString: function(disease, country) {
@@ -172,12 +172,16 @@ Map.prototype = {
       // TODO: update when century becomes selectable
       scaledSize: setIconSize(country.mortality)
     };
-    var marker = new google.maps.Marker({
+   
+    var marker19th = new google.maps.Marker({
       position: coords,
       map: this.googleMap,
       icon: customIcon
+     
     });
+   
     markers.push(marker);
+  
     marker.addListener('click', function() {
       if (infowindow) {
         infowindow.close();

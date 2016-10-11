@@ -138,7 +138,6 @@ UI.prototype = {
         map.deleteMarkers();
         countries = disease.presentDay;
         map.generate21stCenturyMap();
-        map.Map();
      }
       else {
         countries; 
