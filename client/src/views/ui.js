@@ -1,6 +1,7 @@
 var Map = require('../models/map');
 var Diseases = require('../models/diseases');
 
+
 var UI = function() {  
   var container = document.getElementById('map');
   var center = {lat: 36.584902, lng: 68.918695};
@@ -10,7 +11,6 @@ var UI = function() {
   map.googleMap.setZoom(2);
   this.loadData(diseaseList, map, this.selectDropdown);
   // this.getDisease(this.diseases, map);
-
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
@@ -21,6 +21,7 @@ var UI = function() {
     dropdown3.style.display = "none";
   };
 }
+
 
 UI.prototype = {
 
@@ -36,9 +37,7 @@ UI.prototype = {
     var self = newThis;
     var select = document.querySelector('select');
     select.onchange = function() {
-      
       var value = (select.selectedIndex);
-      
       self.handleSelectChanged(event, self.diseases, map, value, select);
     }.bind(this);  
   },
@@ -48,7 +47,6 @@ UI.prototype = {
     var option = select.options[value].value;
     for(disease of diseases) {  
       if(option === disease.name) {
-        
         var diseasio = [disease];
         this.getDisease(diseasio, map)
       }
@@ -118,5 +116,6 @@ UI.prototype = {
     }
   }
 }
+
 
 module.exports = UI;

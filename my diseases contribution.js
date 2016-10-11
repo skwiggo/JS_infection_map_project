@@ -46,42 +46,6 @@ var Diseases = function() {
                 ]
               });
 
-  USA
-  South Africa
-  DR Congo
-  Russia
-  India
-  Argentina
-  Brazil
-  Mexico
-  China
-
-
-var yellowFever = new Disease({
-  name: "Yellow Fever",        
-  eighteenthCentury: [
-              {
-                name: "UK", 
-                coords: {lat: 55.378051, 
-                         lng: -3.435973},
-                mortality: "low"             
-              },  
-              
-              { 
-                name: "France", 
-                coords: {lat: 46.227638, 
-                         lng: 2.213749},
-                mortality: "low"             
-              },
-              
-              {
-                name: "Spain", 
-                coords: {lat: 40.463667, 
-                        lng: -3.74922},
-                mortality: "low"             
-              }
-            ]
-          });
 
 tuberculosis.addFact(tbFact1);
 tuberculosis.addFact(tbFact2);

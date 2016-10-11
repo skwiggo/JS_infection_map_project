@@ -5,12 +5,6 @@ body {
   height: 100%;
   width: 100%;
 }
-#map-container{
-  min-height: 100%;
-  width: 79%;
-  margin-left: 21%;
-  position:fixed;
-}
 
 #map {
   position: absolute;
@@ -22,21 +16,14 @@ body {
   height: 100%;
 }
 
-#infoWindowImage {
+/*#infoWindowImage {
   width: 40%;
   height: 40%;
-}
+}*/
 
 #infoWindowStyles {
   height: 200px;
   width: 550px;
-}
-
-#navlogo {
-  float: left;
-  width: 46px;
-  height: 50px;
-  margin-right: 20px;
 }
 
 #logo {
@@ -72,22 +59,11 @@ body {
   color: #fff;
   background-color: #000000;
   background: -webkit-linear-gradient(top, #000000, #414141);
-  background: -moz-linear-gradient(bottom, #000000, #414141); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom, #000000, #414141);
-  /*border-style: solid;*/
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
   padding-top: 20px; 
   transition: 0.5s;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 30px;
-  color: #818181;
-  display: block;
-  transition: 0.3s
 }
 
 .sidenav select {
