@@ -130,7 +130,7 @@ Diseases.prototype = {
     var self = this;
     var url = "http://localhost:3000/api/diseases";
       this.request.api(url, function(){
-        console.log("request completed")
+        // console.log("request completed")
       if(this.status != 200) return;
       var jsonString = this.responseText;
       var apiData = JSON.parse(jsonString);
