@@ -3,11 +3,10 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 32.584902, lng:71.918695};
+  var center = {lat: 32.584902, lng:70.918695};
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
-  map.generate21stCenturyMap();
   map.googleMap.setZoom(2);
 
   this.loadData(diseaseList, map, this.selectDropdown);
@@ -125,23 +124,25 @@ UI.prototype = {
   var countries = disease.nineteenthCentury;
   slider.oninput = function() {
     if (slider.value === '1800') {
+        map.deleteMarkers();
         countries = disease.nineteenthCentury;
         map.generate19thCenturyMap();
-        map.deleteMarkers();
       }
       else if (slider.value === '1900') {
+        map.deleteMarkers();
         countries = disease.twentiethCentury;
         map.generate20thCenturyMap();
-        map.deleteMarkers();
       }
       else if (slider.value === '2000') {
+        map.deleteMarkers();
         countries = disease.presentDay;
         map.generate21stCenturyMap();
      }
       else {
-        countries; 
+        map.deleteMarkers();
+        countries = disease.twentySecondCentury;
         map.generate22ndCenturyMap();
-    }
+    } 
     for(var i = 0; i < countries.length; i++) { 
       this.createMarker(countries[i], map, disease);
     }
