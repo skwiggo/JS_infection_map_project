@@ -10,7 +10,7 @@ var UI = function() {
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
   this.loadData(diseaseList, map, this.selectDropdown);
-  // this.getDisease(this.diseases, map);
+  
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
@@ -21,6 +21,19 @@ var UI = function() {
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "none";
   };
+  
+  var viewAllBtn = document.getElementById('view-all');
+  viewAllBtn.onclick = function (){
+    map.deleteMarkers();
+    var dropdown = document.getElementById('disease-select').value = "disabled";
+    var dropdown2 = document.querySelector('#diseasios');
+    dropdown2.style.display = "none";
+    dropdown2.value = "disabled";
+    var dropdown3 = document.querySelector('#diseasiosios');
+    dropdown3.style.display = "none";
+    // need to add in line that adds all markers for all diseases
+  };
+
 }
 
 

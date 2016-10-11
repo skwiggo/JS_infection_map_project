@@ -104,10 +104,13 @@ function setIconSize(mortality){
   switch(mortality){
     case "low": 
       return new google.maps.Size(12, 22);
+      break;
     case "medium": 
       return new google.maps.Size(22, 32);
+      break;
     case "high": 
       return new google.maps.Size(32, 42);
+      break;
     default: 
       return new google.maps.Size(22, 32);
       break;
