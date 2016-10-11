@@ -104,6 +104,7 @@ UI.prototype = {
  
  getCountry: function(disease, map) {
   var slider = document.querySelector('#dateslider'); 
+  var label = document.getElementById('rangeValLabel');
   var countries;
   slider.oninput = function() {
     if (slider.value === '1800') {
@@ -126,6 +127,7 @@ UI.prototype = {
         countries = disease.twentySecondCentury;
         map.generate22ndCenturyMap();
     } 
+    label.value = slider.value + "s";
     for(var i = 0; i < countries.length; i++) { 
       this.createMarker(countries[i], map, disease);
     }
