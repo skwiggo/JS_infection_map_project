@@ -15,22 +15,22 @@ var UI = function() {
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('#disease-selector').value = "disabled";
-    var dropdown2 = document.querySelector('#diseasios');
+    var dropdown = document.getElementById('#disease-select').value = "disabled";
+    var dropdown2 = document.querySelector('#diseasio-selector');
     dropdown2.style.display = "none";
     dropdown2.value = "disabled";
-    var dropdown3 = document.querySelector('#diseasiosios');
+    var dropdown3 = document.querySelector('#selector-of-diseases');
     dropdown3.style.display = "none";
   };
   
   var viewAllBtn = document.getElementById('view-all');
   viewAllBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('#disease-selector').value = "disabled";
-    var dropdown2 = document.querySelector('#diseasios');
+    var dropdown = document.getElementById('#disease-select').value = "disabled";
+    var dropdown2 = document.querySelector('#diseasio-selector');
     dropdown2.style.display = "none";
     dropdown2.value = "disabled";
-    var dropdown3 = document.querySelector('#diseasiosios');
+    var dropdown3 = document.querySelector('#selector-of-diseases');
     dropdown3.style.display = "none";
     this.showAll(this.diseases, map);
   }.bind(this);
