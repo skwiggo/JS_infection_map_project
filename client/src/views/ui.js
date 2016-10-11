@@ -132,6 +132,7 @@ UI.prototype = {
    }
    else {
      countries
+     map.generate19thCenturyMap();
      // console.log(countries);
    }
    for(var i = 0; i < countries.length; i++) {  
