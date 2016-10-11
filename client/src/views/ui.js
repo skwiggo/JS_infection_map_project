@@ -17,6 +17,7 @@ var UI = function() {
     var dropdown = document.getElementById('disease-select').value = "disabled";
     var dropdown2 = document.querySelector('#diseasios');
     dropdown2.style.display = "none";
+    dropdown2.value = "disabled";
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "none";
   };
@@ -43,7 +44,7 @@ UI.prototype = {
   },
 
   handleSelectChanged: function(event, diseases, map, value, select) {
-    // map.deleteMarkers();
+    map.deleteMarkers();
     var option = select.options[value].value;
     for(disease of diseases) {  
       if(option === disease.name) {
