@@ -39,8 +39,6 @@ var Map = function(container, coords, zoom) {
        });
    }
 
-   
-
 Map.prototype = {
   generate20thCenturyMap: function(map) {
     console.log(map)
@@ -149,6 +147,7 @@ Map.prototype = {
     this.clearMarkers();
     markers = [];
   }
+  
 }
 
 
