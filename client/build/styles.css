@@ -36,6 +36,11 @@ body {
   margin-bottom: 0px;
 }
 
+.gm-style {
+  margin: none;
+  background-color: #c9d6de;
+}
+
 #bodyContent {
   padding: 5px
   width: 50px;

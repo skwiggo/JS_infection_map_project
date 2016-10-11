@@ -90,25 +90,21 @@ UI.prototype = {
     var dropdown = document.querySelector(id);
     dropdown.style.display = "block";
     this.selectDropdown(map);
-
   },
-
   createMarker: function(country, map, disease) {
       map.addMarker(country, map, disease);
   },
-
   getDisease: function(disease, map) { 
     for(diseasio of disease) {
       this.getCountry(diseasio, map);
     }
   },
- 
- getCountry: function(disease, map) {
-  var slider = document.querySelector('#dateslider'); 
-  var label = document.getElementById('rangeValLabel');
-  var countries;
-  slider.oninput = function() {
-    if (slider.value === '1800') {
+  getCountry: function(disease, map) {
+    var slider = document.querySelector('#dateslider'); 
+    var label = document.getElementById('rangeValLabel');
+    var countries;
+    slider.oninput = function() {
+      if (slider.value === '1800') {
         map.deleteMarkers();
         countries = disease.nineteenthCentury;
         map.generate19thCenturyMap();
@@ -122,7 +118,7 @@ UI.prototype = {
         map.deleteMarkers();
         countries = disease.presentDay;
         map.generate21stCenturyMap();
-     }
+      }
       else {
         map.deleteMarkers();
         countries = disease.twentySecondCentury;
