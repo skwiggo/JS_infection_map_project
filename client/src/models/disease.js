@@ -3,6 +3,7 @@ var Disease = function(options){
   this.nineteenthCentury = options.nineteenthCentury;
   this.twentiethCentury = options.twentiethCentury;
   this.presentDay = options.presentDay;
+  this.twentySecondCentury = options.twentySecondCentury;
   this.facts = options.facts || [];
 }
 

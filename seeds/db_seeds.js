@@ -2,6 +2,7 @@ load('./smallPoxSeeds.js');
 load('./tuberculosisSeeds.js');
 load('./zikaSeeds.js');
 load('./hivSeeds.js');
+load('./zombieSeeds.js');
 
 print(hivSeeds);
 
@@ -13,5 +14,6 @@ db.disease.insert([
   smallPoxSeeds,
   tuberculosisSeeds,
   zikaSeeds,
-  hivSeeds        
+  hivSeeds,
+  zombieSeeds        
 ]);
