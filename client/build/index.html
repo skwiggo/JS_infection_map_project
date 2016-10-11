@@ -7,52 +7,48 @@
   <script type="text/javascript" src="bundle.js"></script>
 </head>
 <body>
-  <div id="mySidenav" class="sidenav">
-  <img id="logo" src='http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=101360163'/>
-  <div id= "logo-title">INFECTED</div>
-  
-      <select class="diseases">
-        <option selected disabled>Diseases</option>
+  <div id="mySidenav" class="sidenav">  
+  <img id="logo" src='http://vignette4.wikia.nocookie.net/left4dead/images/d/d2/Biohazard_symbol.png/revision/latest?cb=20101101203629'/>
+  <div id="logo-title">INFECTED</div>
+    <div id="dropdown">
+      <select id="disease-select" class="diseases">
+        <option value="disabled" selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
-        <option value="smallPox">Smallpox</option>
+        <option value="Smallpox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
       <select id="diseasios">
-        <option selected disabled>Diseases</option>
+        <option value="disabled" selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
-        <option value="smallPox">Smallpox</option>
+        <option value="Smallpox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
       <select id="diseasiosios">
-        <option selected disabled>Diseases</option>
+        <option selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
-        <option value="smallPox">Smallpox</option>
+        <option value="Smallpox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
-      <button id="view-all">Reset</button>
-      <div class="onoffswitch">
-          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-          <label class="onoffswitch-label" for="myonoffswitch">
-              <span class="onoffswitch-inner"></span>
-              <span class="onoffswitch-switch"></span>
-          </label>
-      </div>
-      
-        <h3 id="sliderheader">Display Time Period:</h3>
-        <input type="range" id="dateslider" min="1800" value="1800" max="2000" 
-          step="100" oninput="document.getElementById('rangeValLabel').innerHTML = this.value + 's';">
-          <output id="rangeValLabel" style="font-style: normal;">1800s</output>
+      <button id="view-all">View All</button>
+      <button id="reset">Reset</button>
     </div>
+    <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+    <h3 id="sliderheader">Display Time Period:</h3>
+    <input type="range" id="dateslider" min="1800" value="1800" max="2000" 
+      step="100" oninput="document.getElementById('rangeValLabel').innerHTML = this.value + 's';">
+      <output id="rangeValLabel" style="font-style: normal;">1800s</output>
   </div>
 
-  <div id="map"></div>
-
- 
-  
-
+    <div id="map"></div>
 
 </body>
 </html>
