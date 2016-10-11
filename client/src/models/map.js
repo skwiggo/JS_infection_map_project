@@ -84,6 +84,7 @@ Map.prototype = {
     this.clearMarkers();
     markers = [];
   }
+  
 }
 
 

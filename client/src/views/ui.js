@@ -127,15 +127,12 @@ UI.prototype = {
   var countries = disease.nineteenthCentury;
   slider.oninput = function() {
     if (slider.value === '1800') {
-        map.deleteMarkers();
         countries = disease.nineteenthCentury;
       }
       else if (slider.value === '1900') {
-        map.deleteMarkers();
         countries = disease.twentiethCentury;
       }
       else if (slider.value === '2000') {
-        map.deleteMarkers();
         countries = disease.presentDay;
      }
       else {
