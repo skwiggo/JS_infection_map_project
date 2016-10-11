@@ -31,7 +31,6 @@ var UI = function() {
     dropdown2.value = "disabled";
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "none";
-    // need to add in line that adds all markers for all diseases
     this.showAll(this.diseases, map);
   }.bind(this);
 
