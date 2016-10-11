@@ -1,7 +1,6 @@
 var Map = require('../models/map');
 var Diseases = require('../models/diseases');
 
-
 var UI = function() {  
   var container = document.getElementById('map');
   var center = {lat: 36.584902, lng: 68.918695};
@@ -11,7 +10,7 @@ var UI = function() {
   map.googleMap.setZoom(2);
 
   this.loadData(diseaseList, map, this.selectDropdown);
-  
+ 
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
@@ -34,7 +33,6 @@ var UI = function() {
     dropdown3.style.display = "none";
     // need to add in line that adds all markers for all diseases
   };
-
 }
 
 
@@ -124,9 +122,25 @@ UI.prototype = {
     }
   },
 
+  getSliderValue: function(disease) {
+    var slider = document.querySelector('#dateslider');
+    var countries = disease.nineteenthCentury;
+      slider.oninput = function(disease) {
+        if (slider.value === '1800') {
+          countries = disease.nineteenthCentury;
+        }
+        else if (slider.value === '1900') {
+          countries = disease.twentiethCentury;
+        }
+        else if (slider.value === '2000') {
+          countries = disease.presentDay;
+        }
+      }
+      return countries
+  },
+
  getCountry: function(disease, map) {
-   var slider = document.getElementById("dateslider");
-   var countries = disease.nineteenthCentury;
+  var countries = this.getSliderValue(disease);
    for(var i = 0; i < countries.length; i++) {  
      this.createMarker(countries[i], map, disease);
    }
