@@ -92,8 +92,8 @@ Map.prototype = {
       '<h3 id="subHeading">' + country.name + '</h3>' +
       '<h3 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h3>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
-      // +
-      // '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
+      +
+      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
   },
 
