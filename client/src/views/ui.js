@@ -3,7 +3,7 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 36.584902, lng: 68.918695};
+  var center = {lat: 32.584902, lng: 78.918695};
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
@@ -31,8 +31,8 @@ var UI = function() {
     dropdown2.value = "disabled";
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "none";
-    // need to add in line that adds all markers for all diseases
-  };
+    this.showAll(this.diseases, map);
+  }.bind(this);
 }
 
 
@@ -54,11 +54,16 @@ UI.prototype = {
       self.handleSelectChanged(event, self.diseases, map, value, select);
     }.bind(this);  
   },
+  showAll: function(diseaseList, map){
+    for(disease of diseaseList){
+      this.getCountry(disease, map);
+    }
+  },
 
   handleSelectChanged: function(event, diseases, map, value, select) {
     map.deleteMarkers();
     var option = select.options[value].value;
-    for(disease of diseases) {  
+    for(disease of diseases) { 
       if(option === disease.name) {
         var diseasio = [disease];
         this.getDisease(diseasio, map)
@@ -66,7 +71,6 @@ UI.prototype = {
     } 
     this.addDropdown(map, select, value);
   },
-
   addDropdown: function(map, select) {
     var dropdown2 = document.querySelector('#diseasios');
     dropdown2.style.display = "block";
@@ -76,13 +80,10 @@ UI.prototype = {
     }.bind(this);
 
   },
-
   handleSelectChangio: function(event, diseases, map, value, dropdown2) {
-    // map.deleteMarkers();
     var option = dropdown2.options[value].value;
     for(disease of diseases) {  
       if(option === disease.name) {
-        console.log(disease)
         var diseasio = [disease];
         this.getDisease(diseasio, map)
       }
@@ -92,6 +93,7 @@ UI.prototype = {
 
   addDropdownio: function(event, diseases, map) {
     var dropdown3 = document.querySelector('#diseasiosios');
+    dropdown3.style.visibility = "visible";
     dropdown3.style.display = "block";
     dropdown3.onchange = function() {
       var value = (dropdown3.selectedIndex);
@@ -100,12 +102,10 @@ UI.prototype = {
   }, 
 
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
-    // map.deleteMarkers();
     var option = dropdown3.options[value].value;
     console.log(option);
     for(disease of diseases) {  
       if(option === disease.name) {
-        console.log(disease)
         var diseasio = [disease];
         this.getDisease(diseasio, map)
       }
@@ -118,7 +118,7 @@ UI.prototype = {
 
   getDisease: function(disease, map) { 
     for(diseasio of disease) {
-      this.getCountry(diseasio, map)
+      this.getCountry(diseasio, map);
     }
   },
 
