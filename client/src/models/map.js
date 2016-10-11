@@ -8,10 +8,85 @@ var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
       zoom: zoom,
-      disableDefaultUI: true
-  });
-}
+      disableDefaultUI: true,
+      styles: [
+          {
+            featureType: 'road',
+                elementType: 'geometry',
+                stylers: [
+                  { color: '#5A9367' },
+                  { weight: 10 }
+                ]
+              }, {
+                featureType: 'road',
+                elementType: 'labels',
+                stylers: [
+                  { saturation: -50 },
+                  { invert_lightness: false }
+                ]
+              }, {
+                featureType: 'landscape',
+                elementType: 'geometry',
+                stylers: [
+                  { hue: '#3F4B3B' },
+                  { gamma: 1.4 },
+                  { saturation: 100 },
+                  { lightness: 0 }
+                ]
+              }, {
+                featureType: 'poi.school',
+                elementType: 'geometry',
+                stylers: [
+                  { hue: '#3F4B3B' },
+                  { lightness: -15 },
+                  { saturation: 99 }
+                ]
+              }
+           ] 
+       });
+   }
 
+   var generate20thCenturyMap = function(container, coords, zoom) {
+     this.googleMap = new google.maps.Map(container, {
+         center: coords, 
+         zoom: zoom,
+         disableDefaultUI: true,
+         styles: [
+             {
+               featureType: 'road',
+                   elementType: 'geometry',
+                   stylers: [
+                     { color: '#111111' },
+                     { weight: 1.6 }
+                   ]
+                 }, {
+                   featureType: 'road',
+                   elementType: 'labels',
+                   stylers: [
+                     { saturation: -100 },
+                     { invert_lightness: true }
+                   ]
+                 }, {
+                   featureType: 'landscape',
+                   elementType: 'geometry',
+                   stylers: [
+                     { hue: '#f0f0f0' },
+                     { gamma: 1.4 },
+                     { saturation: 82 },
+                     { lightness: 96 }
+                   ]
+                 }, {
+                   featureType: 'poi.school',
+                   elementType: 'geometry',
+                   stylers: [
+                     { hue: '#777fff' },
+                     { lightness: -15 },
+                     { saturation: 99 }
+                   ]
+                 }
+              ] 
+          });
+      }
 
 Map.prototype = {
 

@@ -122,6 +122,7 @@ UI.prototype = {
    
    if (slider.value === "1900") {
      countries = disease.twentiethCentury;
+     map.generate20thCenturyMap();
      console.log(countries);
    }
    else if (slider.value === "2000") {
