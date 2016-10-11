@@ -3,7 +3,7 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 32.584902, lng:70.918695};
+  var center = {lat: 32.584902, lng: 70.918695};
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
@@ -121,7 +121,7 @@ UI.prototype = {
  
  getCountry: function(disease, map) {
   var slider = document.querySelector('#dateslider'); 
-  var countries = disease.nineteenthCentury;
+  var countries;
   slider.oninput = function() {
     if (slider.value === '1800') {
         map.deleteMarkers();
