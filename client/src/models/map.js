@@ -221,6 +221,9 @@ function setIcon(diseaseName){
     case "zika": 
       return "http://i.imgur.com/2dVBZGd.png";
       break;
+    case "zombies": 
+      return "http://clipartsign.com/upload/2016/03/01/pictures-clip-art-cartoon-zombie-face.png";
+      break;
     default:
       return null;
       break; 
