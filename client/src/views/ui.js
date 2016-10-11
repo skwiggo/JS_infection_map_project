@@ -120,11 +120,13 @@ UI.prototype = {
  getCountry: function(disease, map) {
    var slider = document.getElementById("dateslider");
    var countries = disease.nineteenthCentury;
+
    
    if (slider.value === "1900") {
      countries = disease.twentiethCentury;
+     console.log(countries)
      map.generate20thCenturyMap();
-     // console.log(countries);
+     console.log(countries);
    }
    else if (slider.value === "2000") {
      countries = disease.presentDay;
@@ -137,6 +139,7 @@ UI.prototype = {
    }
    for(var i = 0; i < countries.length; i++) {  
    // for(country of countries) {
+    // console.log(countries)
      this.createMarker(countries[i], map, disease);
    }
  }
