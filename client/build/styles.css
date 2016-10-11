@@ -47,6 +47,7 @@ body {
   font-weight: bold;
   margin-top: 20px;
   margin-left: 12px;
+  margin-bottom: 55px;
 }
 
 #diseasios {
@@ -75,7 +76,7 @@ body {
 }
 
 .sidenav select {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 77%;
   margin-left: 25px;
   padding: 8px 8px 8px 32px;
@@ -87,9 +88,9 @@ body {
 }
 
 #view-all {
-  margin-top: 30px;
-  margin-left: 25px;
-  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 37px;
+  font-size: 14px;
   background-color: #f9f9f9;
   color: #000000;
   border-style: solid;
@@ -102,17 +103,17 @@ body {
 }
 
 #reset {
-  margin-top: 30px;
-  margin-left: 10px;
-  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 14px;
+  font-size: 14px;
   background-color: #f9f9f9;
   color: #000000;
   border-style: solid;
   border-color: #818181;
   border-radius: 5px;
   padding: 2px;
-  padding-left:25px;
-  padding-right:25px;
+  padding-left:22px;
+  padding-right:22px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
