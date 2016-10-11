@@ -183,8 +183,9 @@ Map.prototype = {
       infowindow = new google.maps.InfoWindow({
         content: contentio,
         disableAutoPan: true
+
       });
-      infowindow.open(map, marker);
+      infowindow.open(map, marker);  
     }.bind(this));
   },
 
