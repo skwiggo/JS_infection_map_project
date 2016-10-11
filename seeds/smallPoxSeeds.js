@@ -1,5 +1,5 @@
 var smallPoxSeeds =  {
-      name: "smallPox",
+      name: "Smallpox",
       nineteenthCentury: [     
           {
         name: "UK", 
