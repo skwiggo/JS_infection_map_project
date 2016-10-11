@@ -3,7 +3,7 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 32.584902, lng: 78.918695};
+  var center = {lat: 32.584902, lng:114.918695};
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
@@ -35,9 +35,7 @@ var UI = function() {
   }.bind(this);
 }
 
-
 UI.prototype = {
-
   loadData: function(diseaseList, map, callback){
     diseaseList.all(function(data){
       var self = this;
@@ -103,7 +101,6 @@ UI.prototype = {
 
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
     var option = dropdown3.options[value].value;
-    console.log(option);
     for(disease of diseases) {  
       if(option === disease.name) {
         var diseasio = [disease];
@@ -121,7 +118,6 @@ UI.prototype = {
       this.getCountry(diseasio, map);
     }
   },
-
  getCountry: function(disease, map) {
   var slider = document.querySelector('#dateslider'); 
   var countries = disease.nineteenthCentury;
@@ -131,6 +127,7 @@ UI.prototype = {
       }
       else if (slider.value === '1900') {
         countries = disease.twentiethCentury;
+        map.generate20thCenturyMap();
       }
       else if (slider.value === '2000') {
         countries = disease.presentDay;

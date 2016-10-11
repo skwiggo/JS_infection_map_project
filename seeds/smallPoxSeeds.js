@@ -86,6 +86,7 @@ var smallPoxSeeds =  {
         }
       ],
         twentiethCentury: [{
+<<<<<<< HEAD
         name: "UK", 
         coords: {lat: 55.378051, 
 <<<<<<< HEAD
@@ -198,6 +199,8 @@ var smallPoxSeeds =  {
         },
 
         {
+=======
+>>>>>>> develop
           name: "South Africa", 
           coords: {lat: -30.559482, 
                    lng: 22.937506},
@@ -216,13 +219,6 @@ var smallPoxSeeds =  {
          coords: {lat: 62.333724,  
                   lng: 92.189755},
          mortality: "low"             
-        },
-
-        {
-         name: "India", 
-         coords: {lat: 20.593684, 
-                 lng: 78.96288},
-         mortality: "none"             
         },
 
         {
@@ -253,6 +249,7 @@ var smallPoxSeeds =  {
          mortality: "low"             
         }],
 
+<<<<<<< HEAD
         presentDay: [{
         name: "UK", 
         coords: {lat: 55.378051, 
@@ -336,6 +333,9 @@ var smallPoxSeeds =  {
                   lng: 102.994444},
          mortality: "none"             
         }] 
+>>>>>>> develop
+=======
+        presentDay: [] 
 >>>>>>> develop
   }
 
