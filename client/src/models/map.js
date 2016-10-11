@@ -39,49 +39,45 @@ var Map = function(container, coords, zoom) {
        });
    }
 
-   var generate20thCenturyMap = function(container, coords, zoom) {
-     this.googleMap = new google.maps.Map(container, {
-         center: coords, 
-         zoom: zoom,
-         disableDefaultUI: true,
-         styles: [
-             {
-               featureType: 'road',
-                   elementType: 'geometry',
-                   stylers: [
-                     { color: '#111111' },
-                     { weight: 1.6 }
-                   ]
-                 }, {
-                   featureType: 'road',
-                   elementType: 'labels',
-                   stylers: [
-                     { saturation: -100 },
-                     { invert_lightness: true }
-                   ]
-                 }, {
-                   featureType: 'landscape.natural.landcover',
-                   elementType: 'geometry',
-                   stylers: [
-                     { hue: '#f0f0f0' },
-                     { gamma: 1.4 },
-                     { saturation: 82 },
-                     { lightness: 96 }
-                   ]
-                 }, {
-                   featureType: 'poi.school',
-                   elementType: 'geometry',
-                   stylers: [
-                     { hue: '#777fff' },
-                     { lightness: -15 },
-                     { saturation: 99 }
-                   ]
-                 }
-              ] 
-          });
-      }
-
 Map.prototype = {
+
+  generate20thCenturyMap: function(map) {
+    this.googleMap.set('styles', [
+            {
+              featureType: 'road',
+                  elementType: 'geometry',
+                  stylers: [
+                    { color: '#111111' },
+                    { weight: 1.6 }
+                  ]
+                }, {
+                  featureType: 'road',
+                  elementType: 'labels',
+                  stylers: [
+                    { saturation: -100 },
+                    { invert_lightness: true }
+                  ]
+                }, {
+                  featureType: 'landscape.natural.landcover',
+                  elementType: 'geometry',
+                  stylers: [
+                    { hue: '#f0f0f0' },
+                    { gamma: 1.4 },
+                    { saturation: 82 },
+                    { lightness: 96 }
+                  ]
+                }, {
+                  featureType: 'poi.school',
+                  elementType: 'geometry',
+                  stylers: [
+                    { hue: '#777fff' },
+                    { lightness: -15 },
+                    { saturation: 99 }
+                  ]
+                }
+             ] 
+         );
+  },
 
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
