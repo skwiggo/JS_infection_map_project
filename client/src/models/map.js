@@ -173,11 +173,10 @@ Map.prototype = {
       scaledSize: setIconSize(country.mortality)
     };
    
-    var marker19th = new google.maps.Marker({
+    var marker = new google.maps.Marker({
       position: coords,
       map: this.googleMap,
       icon: customIcon
-     
     });
    
     markers.push(marker);

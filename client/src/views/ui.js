@@ -122,29 +122,27 @@ UI.prototype = {
 
  getCountry: function(disease, map) {
   var slider = document.querySelector('#dateslider'); 
-  var countries = disease.nineteenthCentury;
+  var countries = disease.presentDay;
   slider.oninput = function() {
     if (slider.value === '1800') {
+        countries = disease.nineteenthCentury; 
         map.generate19thCenturyMap();
-        map.deleteMarkers();
-        countries = disease.nineteenthCentury;   
       }
       else if (slider.value === '1900') {
-        map.deleteMarkers();
         countries = disease.twentiethCentury;
         map.generate20thCenturyMap();
       }
       else if (slider.value === '2000') {
-        map.deleteMarkers();
         countries = disease.presentDay;
         map.generate21stCenturyMap();
      }
-      else {
-        countries; 
+      else if (slider.value === '2100') {
+        countries = disease.twentySecondCentury; 
         map.generate22ndCenturyMap();
     }
-    for(var i = 0; i < countries.length; i++) { 
-      this.createMarker(countries[i], map, disease)
+    for(country of countries) { 
+      map.deleteMarkers();
+      this.createMarker(country, map, disease)
     }
   }.bind(this);
  }
