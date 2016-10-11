@@ -134,7 +134,6 @@ UI.prototype = {
       }
       else if (slider.value === '2000') {
         countries = disease.presentDay;
-        map.deleteMarkers();
      }
       else {
         countries; 
