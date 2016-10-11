@@ -104,6 +104,7 @@ UI.prototype = {
   },
  
  getCountry: function(disease, map) {
+  console.log(disease)
   var slider = document.querySelector('#dateslider'); 
   var label = document.getElementById('rangeValLabel');
   var countries;

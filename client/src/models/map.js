@@ -137,9 +137,9 @@ Map.prototype = {
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h1 id="heading">'+ disease.name + '</h1>'+
-      '<h3 id="subHeading">' + country.name + '</h3>' +
-      '<h3 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h3>' +
+      '<h3 id="heading">'+ disease.name + '</h3>'+
+      '<h4 id="subHeading">' + country.name + '</h4>' +
+      '<h4 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h4>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
       +
       '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
