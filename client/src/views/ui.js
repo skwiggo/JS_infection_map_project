@@ -105,7 +105,7 @@ UI.prototype = {
  
  getCountry: function(disease, map) {
   var slider = document.querySelector('#dateslider'); 
-  var countries = disease.nineteenthCentury;
+  var countries = disease.presentDay;
   slider.oninput = function() {
     if (slider.value === '1800') {
         map.deleteMarkers();
