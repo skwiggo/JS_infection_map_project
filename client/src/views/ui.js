@@ -1,7 +1,6 @@
 var Map = require('../models/map');
 var Diseases = require('../models/diseases');
 
-
 var UI = function() {  
   var container = document.getElementById('map');
   var center = {lat: 32.584902, lng:114.918695};
@@ -9,8 +8,9 @@ var UI = function() {
   this.diseases;
   var map = new Map(container, center, 1);
   map.googleMap.setZoom(2);
+
   this.loadData(diseaseList, map, this.selectDropdown);
-  
+ 
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
@@ -76,6 +76,7 @@ UI.prototype = {
       var value = (dropdown2.selectedIndex);
       this.handleSelectChangio(event, this.diseases, map, value, dropdown2)
     }.bind(this);
+
   },
   handleSelectChangio: function(event, diseases, map, value, dropdown2) {
     var option = dropdown2.options[value].value;
@@ -112,36 +113,35 @@ UI.prototype = {
       map.addMarker(country, map, disease);
   },
 
-  getDisease: function(disease, map) {
+  getDisease: function(disease, map) { 
     for(diseasio of disease) {
       this.getCountry(diseasio, map);
     }
   },
+ 
  getCountry: function(disease, map) {
-   var slider = document.getElementById("dateslider");
-   var countries = disease.nineteenthCentury;
-
-   
-   if (slider.value === "1900") {
-     countries = disease.twentiethCentury;
-     console.log(countries)
-     map.generate20thCenturyMap();
-     console.log(countries);
-   }
-   else if (slider.value === "2000") {
-     countries = disease.presentDay;
-     // console.log(countries);
-   }
-   else {
-     countries
-     map.generate19thCenturyMap();
-     // console.log(countries);
-   }
-   for(var i = 0; i < countries.length; i++) {  
-   // for(country of countries) {
-    // console.log(countries)
-     this.createMarker(countries[i], map, disease);
-   }
+  var slider = document.querySelector('#dateslider'); 
+  var countries = disease.nineteenthCentury;
+  slider.oninput = function() {
+    if (slider.value === '1800') {
+        countries = disease.nineteenthCentury;
+        map.deleteMarkers();
+      }
+      else if (slider.value === '1900') {
+        countries = disease.twentiethCentury;
+        map.generate20thCenturyMap();
+        map.deleteMarkers();
+      }
+      else if (slider.value === '2000') {
+        countries = disease.presentDay;
+     }
+      else {
+        countries; 
+    }
+    for(var i = 0; i < countries.length; i++) { 
+      this.createMarker(countries[i], map, disease);
+    }
+  }.bind(this);
  }
 }
 
