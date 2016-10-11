@@ -4,7 +4,7 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
-  var center = {lat: 36.584902, lng: 68.918695};
+  var center = {lat: 32.584902, lng:114.918695};
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
@@ -31,14 +31,11 @@ var UI = function() {
     dropdown2.value = "disabled";
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "none";
-    // need to add in line that adds all markers for all diseases
-  };
-
+    this.showAll(this.diseases, map);
+  }.bind(this);
 }
 
-
 UI.prototype = {
-
   loadData: function(diseaseList, map, callback){
     diseaseList.all(function(data){
       var self = this;
@@ -54,6 +51,11 @@ UI.prototype = {
       var value = (select.selectedIndex);
       self.handleSelectChanged(event, self.diseases, map, value, select);
     }.bind(this);  
+  },
+  showAll: function(diseaseList, map){
+    for(disease of diseaseList){
+      this.getCountry(disease, map);
+    }
   },
 
   handleSelectChanged: function(event, diseases, map, value, select) {
@@ -98,7 +100,6 @@ UI.prototype = {
 
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
     var option = dropdown3.options[value].value;
-    console.log(option);
     for(disease of diseases) {  
       if(option === disease.name) {
         var diseasio = [disease];
@@ -116,13 +117,13 @@ UI.prototype = {
       this.getCountry(diseasio, map);
     }
   },
-
  getCountry: function(disease, map) {
    var slider = document.getElementById("dateslider");
    var countries = disease.nineteenthCentury;
    
    if (slider.value === "1900") {
      countries = disease.twentiethCentury;
+     map.generate20thCenturyMap();
      // console.log(countries);
    }
    else if (slider.value === "2000") {

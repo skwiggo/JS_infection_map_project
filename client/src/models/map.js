@@ -8,12 +8,77 @@ var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
       zoom: zoom,
-      disableDefaultUI: true
-  });
-}
+      disableDefaultUI: true,
+      styles: [
+          {
+            featureType: 'road',
+                elementType: 'geometry',
+                stylers: [
+                  { color: '#5A9367' },
+                  { weight: 10 }
+                ]
+              }, {
+                featureType: 'landscape.natural.landcover',
+                elementType: 'geometry.fill',
+                stylers: [
+                  { color: '#3F4B3B'},
+                  { saturation: -100 },
+                  { invert_lightness: false }
+                ]
+              }, {
+                featureType: 'landscape.natural.terrain',
+                elementType: 'geometry.fill',
+                stylers: [
+                  { hue: '#3F4B3B' },
+                  { gamma: 1.4 },
+                  { saturation: -100 },
+                  { lightness: 0 }
+                ]
+              }, 
+           ] 
+       });
+   }
 
+   
 
 Map.prototype = {
+  generate20thCenturyMap: function(map) {
+    console.log(map)
+     this.googleMap.set('styles', [
+             {
+               featureType: 'road',
+                   elementType: 'geometry',
+                   stylers: [
+                     { color: '#111111' },
+                     { weight: 1.6 }
+                   ]
+                 }, {
+                   featureType: 'road',
+                   elementType: 'labels',
+                   stylers: [
+                     { saturation: -100 },
+                     { invert_lightness: true }
+                   ]
+                 }, {
+                   featureType: 'landscape.natural.landcover',
+                   elementType: 'geometry',
+                   stylers: [
+                     { hue: '#f0f0f0' },
+                     { gamma: 1.4 },
+                     { saturation: 82 },
+                     { lightness: 96 }
+                   ]
+                 }, {
+                   featureType: 'poi.school',
+                   elementType: 'geometry',
+                   stylers: [
+                     { hue: '#777fff' },
+                     { lightness: -15 },
+                     { saturation: 99 }
+                   ]
+                 }
+              ])
+          },
 
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
@@ -24,8 +89,8 @@ Map.prototype = {
       '<h3 id="subHeading">' + country.name + '</h3>' +
       '<h3 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h3>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
-      // +
-      // '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
+      +
+      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
   },
 
@@ -35,7 +100,7 @@ Map.prototype = {
   markerOffset: function(){
     var rng = Math.floor(Math.random() * 2);
     var offset = Math.random() * 3;
-    console.log(rng)
+    // console.log(rng)
     if(rng === 1) return offset * -1;
     // console.log(offset)
     return offset;
@@ -90,16 +155,17 @@ Map.prototype = {
 function setIcon(diseaseName){
   switch(diseaseName.toLowerCase()){
     case "tuberculosis": 
-      return "http://www.clker.com/cliparts/q/I/Q/u/Z/1/marker-hi.png";
+    console.log("image here")
+      return "http://i.imgur.com/B8rOsNP.png";
       break;
     case "smallpox": 
-      return "http://www.pd4pic.com/images/landmark-map-marker-green-location-google-maps.png";
+      return "http://i.imgur.com/jyZWRe6.png";
       break;
     case "hiv/aids": 
-      return "http://www.clker.com/cliparts/e/3/F/I/0/A/google-maps-marker-for-residencelamontagne-hi.png";
+      return "http://i.imgur.com/VQht9IV.png";
       break;
     case "zika": 
-      return "http://www.clker.com/cliparts/I/l/L/S/W/9/map-marker.svg";
+      return "http://i.imgur.com/2dVBZGd.png";
       break;
     default:
       return null;
@@ -112,10 +178,10 @@ function setIconSize(mortality){
   // console.log(mortality.toLowerCase());
   switch(mortality){
     case "low": 
-      return new google.maps.Size(12, 22);
+      return new google.maps.Size(18, 22);
       break;
     case "medium": 
-      return new google.maps.Size(22, 32);
+      return new google.maps.Size(28, 32);
       break;
     case "high": 
       return new google.maps.Size(32, 42);
