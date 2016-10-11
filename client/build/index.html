@@ -14,21 +14,21 @@
       <select id="disease-select" class="diseases">
         <option value="disabled" selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
-        <option value="smallPox">Smallpox</option>
+        <option value="Smallpox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
       <select id="diseasios">
         <option value="disabled" selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
-        <option value="smallPox">Smallpox</option>
+        <option value="Smallpox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
       <select id="diseasiosios">
         <option selected disabled>Select Disease</option>
         <option value="Tuberculosis">Tuberculosis</option>
-        <option value="smallPox">Smallpox</option>
+        <option value="Smallpox">Smallpox</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
@@ -42,6 +42,10 @@
             <span class="onoffswitch-switch"></span>
         </label>
     </div>
+    <h3 id="sliderheader">Display Time Period:</h3>
+    <input type="range" id="dateslider" min="1800" value="1800" max="2000" 
+      step="100" oninput="document.getElementById('rangeValLabel').innerHTML = this.value + 's';">
+      <output id="rangeValLabel" style="font-style: normal;">1800s</output>
   </div>
     <div id="map"></div>
 </body>
