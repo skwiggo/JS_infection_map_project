@@ -1,5 +1,5 @@
 var hivSeeds = {
-                      name: "HIV",   
+                      name: "HIV/AIDS",   
                       nineteenthCentury: [],     
                       twentiethCentury: [ {
                                             name: "UK", 
