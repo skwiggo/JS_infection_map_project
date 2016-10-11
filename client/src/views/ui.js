@@ -59,7 +59,7 @@ UI.prototype = {
   handleSelectChanged: function(event, diseases, map, value, select) {
     map.deleteMarkers();
     var option = select.options[value].value;
-    for(disease of diseases) {  
+    for(disease of diseases) { 
       if(option === disease.name) {
         var diseasio = [disease];
         this.getDisease(diseasio, map)
@@ -76,13 +76,10 @@ UI.prototype = {
     }.bind(this);
   },
   handleSelectChangio: function(event, diseases, map, value, dropdown2) {
-    // map.deleteMarkers();
     var option = dropdown2.options[value].value;
     for(disease of diseases) {  
       if(option === disease.name) {
-        // console.log(disease)
         var diseasio = [disease];
-        // console.log(this)
         this.getDisease(diseasio, map)
       }
     } 
@@ -100,12 +97,10 @@ UI.prototype = {
   }, 
 
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
-    // map.deleteMarkers();
     var option = dropdown3.options[value].value;
     console.log(option);
     for(disease of diseases) {  
       if(option === disease.name) {
-        // console.log(disease)
         var diseasio = [disease];
         this.getDisease(diseasio, map)
       }
@@ -118,7 +113,6 @@ UI.prototype = {
 
   getDisease: function(disease, map) {
     for(diseasio of disease) {
-      // console.log(diseasio)
       this.getCountry(diseasio, map);
     }
   },
@@ -129,15 +123,15 @@ UI.prototype = {
    
    if (slider.value === "1900") {
      countries = disease.twentiethCentury;
-     console.log(countries);
+     // console.log(countries);
    }
    else if (slider.value === "2000") {
      countries = disease.presentDay;
-     console.log(countries);
+     // console.log(countries);
    }
    else {
      countries
-     console.log(countries);
+     // console.log(countries);
    }
    for(var i = 0; i < countries.length; i++) {  
    // for(country of countries) {

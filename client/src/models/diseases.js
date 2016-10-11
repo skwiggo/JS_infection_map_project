@@ -142,13 +142,14 @@ Diseases.prototype = {
     var diseases = [];
     var facts = this.populatefacts(this.facts);
     for(var data of apiData){
+      console.log(data)
       var disease = new Disease(data);
       for (var info of facts){
         if(info.disease === disease.name){
           disease.addFact(info);
         }      
-      diseases.push(disease);
       }
+      diseases.push(disease);
     }
     return diseases;
   },

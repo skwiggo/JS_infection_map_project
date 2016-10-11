@@ -32,9 +32,19 @@ Map.prototype = {
   getRandomFact: function(facts){
     return Math.floor((Math.random() * 5));
   },
+  markerOffset: function(){
+    var rng = Math.floor(Math.random() * 2);
+    var offset = Math.random() * 2;
+    if(rng === 1) offset * -1;
+    // console.log(rng);
+    return offset;
+  },
 
   addMarker: function(country, map, disease) {
     var contentio = this.getContentString(disease, country);
+    var offset = this.markerOffset();
+    var coords = {lat: (country.coords.lat + offset), lng: (country.coords.lng + offset)};
+    // console.log("marker", country);
     
     var customIcon = {
       url: setIcon(disease.name),
@@ -42,7 +52,7 @@ Map.prototype = {
       scaledSize: setIconSize(country.mortality)
     };
     var marker = new google.maps.Marker({
-      position: country.coords,
+      position: coords,
       map: this.googleMap,
       icon: customIcon
     });
@@ -98,7 +108,7 @@ function setIcon(diseaseName){
 
 
 function setIconSize(mortality){
-  console.log(mortality.toLowerCase());
+  // console.log(mortality.toLowerCase());
   switch(mortality){
     case "low": 
       return new google.maps.Size(12, 22);
