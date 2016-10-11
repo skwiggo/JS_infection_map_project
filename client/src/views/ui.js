@@ -15,7 +15,7 @@ var UI = function() {
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('disease-select').value = "disabled";
+    var dropdown = document.getElementById('#disease-selector').value = "disabled";
     var dropdown2 = document.querySelector('#diseasios');
     dropdown2.style.display = "none";
     dropdown2.value = "disabled";
@@ -26,7 +26,7 @@ var UI = function() {
   var viewAllBtn = document.getElementById('view-all');
   viewAllBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('disease-select').value = "disabled";
+    var dropdown = document.getElementById('#disease-selector').value = "disabled";
     var dropdown2 = document.querySelector('#diseasios');
     dropdown2.style.display = "none";
     dropdown2.value = "disabled";
@@ -47,11 +47,19 @@ UI.prototype = {
 
   selectDropdown: function (map, newThis) {
     var self = newThis;
-    var select = document.querySelector('select');
-    select.onchange = function() {
-      var value = (select.selectedIndex);
-      self.handleSelectChanged(event, self.diseases, map, value, select);
-    }.bind(this);  
+    var diseaseSelector = document.querySelector('#disease-select');
+    var diseasioSelector = document.querySelector("#diseasio-selector");
+    var selectorOfDiseases = document.querySelector("#selector-of-diseases");
+    diseaseSelector.onchange = function() {
+      var value = diseaseSelector.selectedIndex;
+      self.handleSelectChanged(event, self.diseases, map, value, diseaseSelector);
+    };  
+    diseasioSelector.onchange = function(){
+      if(diseasioSelector.style.display === "block"){
+        var value = diseasioSelector.selectedIndex;
+        self.handleSelectChanged(event, self.diseases, map, value, diseasioSelector)
+      }
+    }
   },
   showAll: function(diseaseList, map){
     for(disease of diseaseList){
@@ -71,7 +79,7 @@ UI.prototype = {
     this.addDropdown(map, select, value);
   },
   addDropdown: function(map, select) {
-    var dropdown2 = document.querySelector('#diseasios');
+    var dropdown2 = document.querySelector('#diseasio-selector');
     dropdown2.style.display = "block";
     dropdown2.onchange = function(){
       var value = (dropdown2.selectedIndex);
@@ -91,7 +99,7 @@ UI.prototype = {
   },
 
   addDropdownio: function(event, diseases, map) {
-    var dropdown3 = document.querySelector('#diseasiosios');
+    var dropdown3 = document.querySelector('#selector-of-diseases');
     dropdown3.style.visibility = "visible";
     dropdown3.style.display = "block";
     dropdown3.onchange = function() {
