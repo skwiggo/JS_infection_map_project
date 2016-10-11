@@ -12,6 +12,7 @@ var UI = function() {
   this.loadData(diseaseList, map, this.selectDropdown);
 
   var slider = document.getElementById('dateslider');
+  var label = document.getElementById('rangeValLabel');
   slider.oninput = function() {
     if (slider.value === '1800') {
         map.generate19thCenturyMap();
@@ -25,6 +26,7 @@ var UI = function() {
       else {
         map.generate22ndCenturyMap();
       }
+    label.value = slider.value + "s";
   };
  
   var resetBtn = document.getElementById('reset');
@@ -105,7 +107,6 @@ UI.prototype = {
     var dropdown = document.querySelector(id);
     dropdown.style.display = "block";
     this.selectDropdown(map);
-
   },
 
   createMarker: function(country, map, disease) {
@@ -124,19 +125,15 @@ UI.prototype = {
   var countries = disease.presentDay;
   slider.oninput = function() {
     if (slider.value === '1800') {
-        map.deleteMarkers();
         countries = disease.nineteenthCentury;
       }
       else if (slider.value === '1900') {
-        map.deleteMarkers();
         countries = disease.twentiethCentury; 
       }
       else if (slider.value === '2000') {
-        map.deleteMarkers();
         countries = disease.presentDay;
      }
       else {
-        map.deleteMarkers();
         countries = disease.twentySecondCentury;
       }
       label.value = slider.value + "s";   
@@ -144,7 +141,8 @@ UI.prototype = {
         this.createMarker(countries[i], map, disease);    
     }
   }.bind(this);
- }
+  // this.markerDelete();
+ },
 }
 
 module.exports = UI;
