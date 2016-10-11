@@ -7,6 +7,7 @@ var UI = function() {
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
+  map.generate20thCenturyMap();
   map.googleMap.setZoom(2);
   map.generate21stCenturyMap();
   this.loadData(diseaseList, map, this.selectDropdown);
@@ -32,22 +33,22 @@ var UI = function() {
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('#disease-selector').value = "disabled";
-    var dropdown2 = document.querySelector('#diseasios');
+    var dropdown = document.getElementById('#disease-select').value = "disabled";
+    var dropdown2 = document.querySelector('#diseasio-selector');
     dropdown2.style.display = "none";
     dropdown2.value = "disabled";
-    var dropdown3 = document.querySelector('#diseasiosios');
+    var dropdown3 = document.querySelector('#selector-of-diseases');
     dropdown3.style.display = "none";
   };
   
   var viewAllBtn = document.getElementById('view-all');
   viewAllBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('#disease-selector').value = "disabled";
-    var dropdown2 = document.querySelector('#diseasios');
+    var dropdown = document.getElementById('#disease-select').value = "disabled";
+    var dropdown2 = document.querySelector('#diseasio-selector');
     dropdown2.style.display = "none";
     dropdown2.value = "disabled";
-    var dropdown3 = document.querySelector('#diseasiosios');
+    var dropdown3 = document.querySelector('#selector-of-diseases');
     dropdown3.style.display = "none";
     this.showAll(this.diseases, map);
   }.bind(this);
@@ -120,6 +121,7 @@ UI.prototype = {
   },
  
  getCountry: function(disease, map) {
+  console.log(disease)
   var slider = document.querySelector('#dateslider'); 
   var label = document.getElementById('rangeValLabel');
   var countries = disease.presentDay;
