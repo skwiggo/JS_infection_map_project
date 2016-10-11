@@ -34,7 +34,7 @@ Map.prototype = {
   },
 
   addMarker: function(country, map, disease) {
-    var contentio = this.getContentString(disease, country)
+    var contentio = this.getContentString(disease, country);
     
     var customIcon = {
       url: setIcon(disease.name),
@@ -55,8 +55,6 @@ Map.prototype = {
         content: contentio,
         disableAutoPan: true
       });
-      var center = {lat: 42.384902, lng: 11.918695};
-      this.googleMap.setCenter(center);
       infowindow.open(map, marker);
     }.bind(this));
   },

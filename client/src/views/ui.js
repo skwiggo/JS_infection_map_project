@@ -103,7 +103,6 @@ UI.prototype = {
     // map.deleteMarkers();
     var option = dropdown3.options[value].value;
     console.log(option);
->>>>>>> d5f2121b5e8bd046747fba21291055e1e81b4341
     for(disease of diseases) {  
       if(option === disease.name) {
         // console.log(disease)
