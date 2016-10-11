@@ -7,6 +7,7 @@ var UI = function() {
   var diseaseList = new Diseases();
   this.diseases;
   var map = new Map(container, center, 1);
+  map.generate21stCenturyMap();
   map.googleMap.setZoom(2);
 
   this.loadData(diseaseList, map, this.selectDropdown);
@@ -125,6 +126,7 @@ UI.prototype = {
   slider.oninput = function() {
     if (slider.value === '1800') {
         countries = disease.nineteenthCentury;
+        map.generate19thCenturyMap();
         map.deleteMarkers();
       }
       else if (slider.value === '1900') {
@@ -134,9 +136,12 @@ UI.prototype = {
       }
       else if (slider.value === '2000') {
         countries = disease.presentDay;
+        map.generate21stCenturyMap();
+        map.Map();
      }
       else {
         countries; 
+        map.generate22ndCenturyMap();
     }
     for(var i = 0; i < countries.length; i++) { 
       this.createMarker(countries[i], map, disease);
