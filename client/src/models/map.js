@@ -14,11 +14,11 @@ var Map = function(container, coords, zoom) {
 
 Map.prototype = {
   generate19thCenturyMap: function(map) {
-     this.googleMap.set('styles', [
-          {
-            featureType: 'water',
-                elementType: 'geometry',
-                stylers: [
+    this.googleMap.set('styles', [
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [
                   { color: '#7f9eb2' },
                   { saturation: -50 },
                   { invert_lightness: false }
@@ -50,7 +50,7 @@ Map.prototype = {
                     featureType: 'water',
                         elementType: 'geometry',
                         stylers: [
-                          { color: '#0080ff' },
+                          { color: '#4ea1d3' },
                           { saturation: -50 },
                           { invert_lightness: false }
                         ]
