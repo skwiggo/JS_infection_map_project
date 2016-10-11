@@ -39,12 +39,12 @@ var Map = function(container, coords, zoom) {
        });
    }
 
-   var generate20thCenturyMap = function(container, coords, zoom) {
-     this.googleMap = new google.maps.Map(container, {
-         center: coords, 
-         zoom: zoom,
-         disableDefaultUI: true,
-         styles: [
+   
+
+Map.prototype = {
+  generate20thCenturyMap: function(map) {
+    console.log(map)
+     this.googleMap.set('styles', [
              {
                featureType: 'road',
                    elementType: 'geometry',
@@ -77,11 +77,8 @@ var Map = function(container, coords, zoom) {
                      { saturation: 99 }
                    ]
                  }
-              ] 
-          });
-      }
-
-Map.prototype = {
+              ])
+          },
 
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
