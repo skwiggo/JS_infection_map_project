@@ -104,7 +104,7 @@ body {
 
 #reset {
   margin-top: 20px;
-  margin-left: 14px;
+  margin-left: 13px;
   font-size: 14px;
   background-color: #f9f9f9;
   color: #000000;
@@ -118,7 +118,7 @@ body {
 }
 
 .onoffswitch {
-  margin-left: 38px;
+  margin-left: 40px;
   margin-top:40px;
   position: relative; width: 182px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
