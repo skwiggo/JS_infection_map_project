@@ -46,19 +46,28 @@ UI.prototype = {
   },
 
   selectDropdown: function (map, newThis) {
+    console.log("dropdown can be selected")
     var self = newThis;
     var diseaseSelector = document.querySelector('#disease-select');
     var diseasioSelector = document.querySelector("#diseasio-selector");
     var selectorOfDiseases = document.querySelector("#selector-of-diseases");
+
     diseaseSelector.onchange = function() {
+      console.log(this, "has been clicked");
       var value = diseaseSelector.selectedIndex;
-      self.handleSelectChanged(event, self.diseases, map, value, diseaseSelector);
+      self.handleSelectChanged(event, self.diseases, map, value, diseaseSelector, self);
     };  
     diseasioSelector.onchange = function(){
-      if(diseasioSelector.style.display === "block"){
+      console.log("this", this);
+      console.log("self", self);
+      console.log(this, "has been clicked");
         var value = diseasioSelector.selectedIndex;
-        self.handleSelectChanged(event, self.diseases, map, value, diseasioSelector)
-      }
+        self.handleSelectChanged(event, self.diseases, map, value, diseasioSelector, self);
+    };
+    selectorOfDiseases.onchange = function(){
+      console.log(this, "has been clicked");
+        var value = selectorOfDiseases.selectedIndex;
+        self.handleSelectChanged(event, self.diseases, map, value, selectorOfDiseases, self);
     }
   },
   showAll: function(diseaseList, map){
@@ -67,7 +76,9 @@ UI.prototype = {
     }
   },
 
-  handleSelectChanged: function(event, diseases, map, value, select) {
+  handleSelectChanged: function(event, diseases, map, value, select, newThis) {
+    var self = newThis;
+    console.log(value);
     map.deleteMarkers();
     var option = select.options[value].value;
     for(disease of diseases) { 
@@ -76,15 +87,13 @@ UI.prototype = {
         this.getDisease(diseasio, map)
       }
     } 
-    this.addDropdown(map, select, value);
+    this.addDropdown(map, select, self);
   },
-  addDropdown: function(map, select) {
+  addDropdown: function(map, select, newThis) {
+    var self = newThis;
     var dropdown2 = document.querySelector('#diseasio-selector');
     dropdown2.style.display = "block";
-    dropdown2.onchange = function(){
-      var value = (dropdown2.selectedIndex);
-      this.handleSelectChangio(event, this.diseases, map, value, dropdown2)
-    }.bind(this);
+    this.selectDropdown(map, self);
 
   },
   handleSelectChangio: function(event, diseases, map, value, dropdown2) {
