@@ -133,6 +133,37 @@ Map.prototype = {
                                  }
                               ])
                           },
+                          generate22ndCenturyMap: function(map) {
+                             this.googleMap.set('styles', [
+                                  {
+                                    featureType: 'water',
+                                        elementType: 'geometry',
+                                        stylers: [
+                                          { color: '#a6172d' },
+                                          { saturation: -50 },
+                                          { invert_lightness: false }
+                                        ]
+                                      }, {
+                                        featureType: 'landscape.natural.landcover',
+                                        elementType: 'geometry.fill',
+                                        stylers: [
+                                          { color: '#4f953b'},
+                                          { saturation: -50 },
+                                          { invert_lightness: false }
+                                        ]
+                                      }, {
+                                        featureType: 'landscape.natural.terrain',
+                                        elementType: 'geometry.fill',
+                                        stylers: [
+                                          { hue: '#3F4B3B' },
+                                          { gamma: 6 },
+                                          { saturation: -100 },
+                                          { lightness: 0 }
+                                        ]
+                                         }
+                                      ])
+                                  },
+
   
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
