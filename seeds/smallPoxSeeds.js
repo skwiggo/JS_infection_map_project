@@ -184,10 +184,8 @@ var smallPoxSeeds =  {
         }
       ],
         twentiethCentury: [{
-<<<<<<< HEAD
         name: "UK", 
         coords: {lat: 55.378051, 
-<<<<<<< HEAD
             lng: -3.435973},
         mortality: "none"             
         },  
