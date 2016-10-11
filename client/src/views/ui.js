@@ -118,28 +118,30 @@ UI.prototype = {
       this.getCountry(diseasio, map);
     }
   },
- 
+
  getCountry: function(disease, map) {
   var slider = document.querySelector('#dateslider'); 
   var countries = disease.nineteenthCentury;
   slider.oninput = function() {
     if (slider.value === '1800') {
-        countries = disease.nineteenthCentury;
         map.deleteMarkers();
+        countries = disease.nineteenthCentury;   
       }
       else if (slider.value === '1900') {
+        map.deleteMarkers();
         countries = disease.twentiethCentury;
         map.generate20thCenturyMap();
-        map.deleteMarkers();
       }
       else if (slider.value === '2000') {
+        map.deleteMarkers();
         countries = disease.presentDay;
      }
-      else {
-        countries; 
-    }
-    for(var i = 0; i < countries.length; i++) { 
-      this.createMarker(countries[i], map, disease);
+      else if (slider.value === '2100'){
+        map.deleteMarkers();
+        countries = disease.nineteenthCentury;
+      }
+      for(country of countries) {   
+        this.createMarker(country, map, disease);
     }
   }.bind(this);
  }
