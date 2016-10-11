@@ -8,8 +8,74 @@ var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
       zoom: zoom,
-      disableDefaultUI: true,
-      styles: [
+      disableDefaultUI: true 
+       });
+   }
+
+Map.prototype = {
+  generate19thCenturyMap: function(map) {
+     this.googleMap.set('styles', [
+          {
+            featureType: 'water',
+                elementType: 'geometry',
+                stylers: [
+                  { color: '#7f9eb2' },
+                  { saturation: -50 },
+                  { invert_lightness: false }
+                ]
+              }, {
+                featureType: 'landscape.natural.landcover',
+                elementType: 'geometry.fill',
+                stylers: [
+                  { color: '#fcbe32'},
+                  { saturation: -50 },
+                  { invert_lightness: false }
+                ]
+              }, {
+                featureType: 'landscape.natural.terrain',
+                elementType: 'geometry.fill',
+                stylers: [
+                  { hue: '#3F4B3B' },
+                  { gamma: 6 },
+                  { saturation: -100 },
+                  { lightness: 0 }
+                ]
+                 }
+              ])
+          },
+
+          generate20thCenturyMap: function(map) {
+             this.googleMap.set('styles', [
+                  {
+                    featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [
+                          { color: '#0080ff' },
+                          { saturation: -50 },
+                          { invert_lightness: false }
+                        ]
+                      }, {
+                        featureType: 'landscape.natural.landcover',
+                        elementType: 'geometry.fill',
+                        stylers: [
+                          { color: '#4f953b'},
+                          { saturation: -50 },
+                          { invert_lightness: false }
+                        ]
+                      }, {
+                        featureType: 'landscape.natural.terrain',
+                        elementType: 'geometry.fill',
+                        stylers: [
+                          { hue: '#3F4B3B' },
+                          { gamma: 6 },
+                          { saturation: -100 },
+                          { lightness: 0 }
+                        ]
+                         }
+                      ])
+                  },
+                  generate21stCenturyMap: function(map) {
+                     this.googleMap.set('styles', [
           {
             featureType: 'road',
                 elementType: 'geometry',
@@ -34,50 +100,41 @@ var Map = function(container, coords, zoom) {
                   { saturation: -100 },
                   { lightness: 0 }
                 ]
-              }, 
-           ] 
-       });
-   }
+                                         }
+                                      ])
+                                  },
+                          generate22ndCenturyMap: function(map) {
+                             this.googleMap.set('styles', [
+                                  {
+                                    featureType: 'water',
+                                        elementType: 'geometry',
+                                        stylers: [
+                                          { color: '#a6172d' },
+                                          { saturation: -50 },
+                                          { invert_lightness: false }
+                                        ]
+                                      }, {
+                                        featureType: 'landscape.natural.landcover',
+                                        elementType: 'geometry.fill',
+                                        stylers: [
+                                          { color: '#8c9184'},
+                                          { saturation: -100 },
+                                          { invert_lightness: false }
+                                        ]
+                                      }, {
+                                        featureType: 'landscape.natural.terrain',
+                                        elementType: 'geometry.fill',
+                                        stylers: [
+                                          { hue: '#8c9184' },
+                                          { gamma: 6 },
+                                          { saturation: -100 },
+                                          { lightness: 0 }
+                                        ]
+                                         }
+                                      ])
+                                  },
 
-Map.prototype = {
-  generate20thCenturyMap: function(map) {
-    console.log(map)
-     this.googleMap.set('styles', [
-             {
-               featureType: 'road',
-                   elementType: 'geometry',
-                   stylers: [
-                     { color: '#111111' },
-                     { weight: 1.6 }
-                   ]
-                 }, {
-                   featureType: 'road',
-                   elementType: 'labels',
-                   stylers: [
-                     { saturation: -100 },
-                     { invert_lightness: true }
-                   ]
-                 }, {
-                   featureType: 'landscape.natural.landcover',
-                   elementType: 'geometry',
-                   stylers: [
-                     { hue: '#f0f0f0' },
-                     { gamma: 1.4 },
-                     { saturation: 82 },
-                     { lightness: 96 }
-                   ]
-                 }, {
-                   featureType: 'poi.school',
-                   elementType: 'geometry',
-                   stylers: [
-                     { hue: '#777fff' },
-                     { lightness: -15 },
-                     { saturation: 99 }
-                   ]
-                 }
-              ])
-          },
-
+  
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
     var contentString = '<div id="infoWindowStyles">'+
