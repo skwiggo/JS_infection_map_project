@@ -33,12 +33,9 @@ var UI = function() {
     dropdown3.style.display = "none";
     this.showAll(this.diseases, map);
   }.bind(this);
-
 }
 
-
 UI.prototype = {
-
   loadData: function(diseaseList, map, callback){
     diseaseList.all(function(data){
       var self = this;
@@ -103,7 +100,6 @@ UI.prototype = {
 
   handleSelectChangioio: function(event, diseases, map, value, dropdown3) {
     var option = dropdown3.options[value].value;
-    console.log(option);
     for(disease of diseases) {  
       if(option === disease.name) {
         var diseasio = [disease];
@@ -121,13 +117,13 @@ UI.prototype = {
       this.getCountry(diseasio, map);
     }
   },
-
  getCountry: function(disease, map) {
    var slider = document.getElementById("dateslider");
    var countries = disease.nineteenthCentury;
    
    if (slider.value === "1900") {
      countries = disease.twentiethCentury;
+     map.generate20thCenturyMap();
      // console.log(countries);
    }
    else if (slider.value === "2000") {
