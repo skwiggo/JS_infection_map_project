@@ -32,7 +32,8 @@ var UI = function() {
     var dropdown3 = document.querySelector('#diseasiosios');
     dropdown3.style.display = "none";
     // need to add in line that adds all markers for all diseases
-  };
+    this.showAll(this.diseases, map);
+  }.bind(this);
 
 }
 
@@ -54,6 +55,11 @@ UI.prototype = {
       var value = (select.selectedIndex);
       self.handleSelectChanged(event, self.diseases, map, value, select);
     }.bind(this);  
+  },
+  showAll: function(diseaseList, map){
+    for(disease of diseaseList){
+      this.getCountry(disease, map);
+    }
   },
 
   handleSelectChanged: function(event, diseases, map, value, select) {
