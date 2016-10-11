@@ -8,34 +8,7 @@ var Map = function(container, coords, zoom) {
   this.googleMap = new google.maps.Map(container, {
       center: coords, 
       zoom: zoom,
-      disableDefaultUI: true,
-      styles: [
-          {
-            featureType: 'road',
-                elementType: 'geometry',
-                stylers: [
-                  { color: '#5A9367' },
-                  { weight: 10 }
-                ]
-              }, {
-                featureType: 'landscape.natural.landcover',
-                elementType: 'geometry.fill',
-                stylers: [
-                  { color: '#3F4B3B'},
-                  { saturation: -100 },
-                  { invert_lightness: false }
-                ]
-              }, {
-                featureType: 'landscape.natural.terrain',
-                elementType: 'geometry.fill',
-                stylers: [
-                  { hue: '#3F4B3B' },
-                  { gamma: 1.4 },
-                  { saturation: -100 },
-                  { lightness: 0 }
-                ]
-              }, 
-           ] 
+      disableDefaultUI: true 
        });
    }
 
@@ -101,36 +74,35 @@ Map.prototype = {
                          }
                       ])
                   },
-                  generate20thCenturyMap: function(map) {
+                  generate21stCenturyMap: function(map) {
                      this.googleMap.set('styles', [
-                          {
-                            featureType: 'water',
-                                elementType: 'geometry',
-                                stylers: [
-                                  { color: '#0080ff' },
-                                  { saturation: -50 },
-                                  { invert_lightness: false }
-                                ]
-                              }, {
-                                featureType: 'landscape.natural.landcover',
-                                elementType: 'geometry.fill',
-                                stylers: [
-                                  { color: '#4f953b'},
-                                  { saturation: -50 },
-                                  { invert_lightness: false }
-                                ]
-                              }, {
-                                featureType: 'landscape.natural.terrain',
-                                elementType: 'geometry.fill',
-                                stylers: [
-                                  { hue: '#3F4B3B' },
-                                  { gamma: 6 },
-                                  { saturation: -100 },
-                                  { lightness: 0 }
-                                ]
-                                 }
-                              ])
-                          },
+          {
+            featureType: 'road',
+                elementType: 'geometry',
+                stylers: [
+                  { color: '#5A9367' },
+                  { weight: 10 }
+                ]
+              }, {
+                featureType: 'landscape.natural.landcover',
+                elementType: 'geometry.fill',
+                stylers: [
+                  { color: '#3F4B3B'},
+                  { saturation: -100 },
+                  { invert_lightness: false }
+                ]
+              }, {
+                featureType: 'landscape.natural.terrain',
+                elementType: 'geometry.fill',
+                stylers: [
+                  { hue: '#3F4B3B' },
+                  { gamma: 1.4 },
+                  { saturation: -100 },
+                  { lightness: 0 }
+                ]
+                                         }
+                                      ])
+                                  },
                           generate22ndCenturyMap: function(map) {
                              this.googleMap.set('styles', [
                                   {
@@ -145,15 +117,15 @@ Map.prototype = {
                                         featureType: 'landscape.natural.landcover',
                                         elementType: 'geometry.fill',
                                         stylers: [
-                                          { color: '#4f953b'},
-                                          { saturation: -50 },
+                                          { color: '#8c9184'},
+                                          { saturation: -100 },
                                           { invert_lightness: false }
                                         ]
                                       }, {
                                         featureType: 'landscape.natural.terrain',
                                         elementType: 'geometry.fill',
                                         stylers: [
-                                          { hue: '#3F4B3B' },
+                                          { hue: '#8c9184' },
                                           { gamma: 6 },
                                           { saturation: -100 },
                                           { lightness: 0 }
