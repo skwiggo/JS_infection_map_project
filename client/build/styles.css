@@ -165,4 +165,19 @@ body {
   right: 0px; 
 }
 
+#dateslider {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 200px;
+}
+
+#sliderheader {
+  margin-top: 30px;
+  margin-left: 60px;
+  font-family: helvetica;
+}
+
+#rangeValLabel {
+  font-family: helvetica;
+}
 
