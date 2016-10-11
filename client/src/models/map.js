@@ -39,8 +39,6 @@ var Map = function(container, coords, zoom) {
        });
    }
 
-   
-
 Map.prototype = {
   generate19thCenturyMap: function(map) {
      this.googleMap.set('styles', [
@@ -234,6 +232,7 @@ Map.prototype = {
     this.clearMarkers();
     markers = [];
   }
+  
 }
 
 
