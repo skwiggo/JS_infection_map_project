@@ -91,7 +91,7 @@ UI.prototype = {
       tuberculosisUl.appendChild(listItem);
     }
     else if(listItem.innerText === "HIV/AIDS") {
-      var hivAidsUl = document.getElementById('HIV/AIDS');
+      var hivAidsUl = document.getElementById('HIV');
       hivAidsUl.appendChild(listItem);
     }
     else {
