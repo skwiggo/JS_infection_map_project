@@ -72,6 +72,69 @@ var smallPoxSeeds =  {
         },
 
         {
+          name: "Italy", 
+          coords: {lat: 41.87194, 
+                  lng: 12.56738},
+          mortality: "medium"             
+        },
+        
+        {
+          name: "Portugal", 
+          coords: {lat: 39.399872, 
+                  lng: -8.224454},
+          mortality: "low"             
+        },
+
+        {
+          name: "Germany", 
+          coords: {lat: 51.165691, 
+                  lng: 10.451526},
+          mortality: "medium"             
+        },
+
+        {
+          name: "Poland", 
+          coords: {lat: 51.919438, 
+                  lng: 19.145136},
+          mortality: "low"             
+        },
+
+        {
+          name: "Ukraine", 
+          coords: {lat: 48.379433, 
+                  lng: 31.16558},
+          mortality: "medium"             
+        },
+
+        {
+          name: "Belarus", 
+          coords: {lat: 53.709807, 
+                  lng: 27.953389},
+          mortality: "low"             
+        },
+
+        {
+          name: "Romania", 
+          coords: {lat: 45.943161, 
+                  lng: 24.96676},
+          mortality: "low"             
+        },
+
+        {
+          name: "Ireland", 
+          coords: {lat: 53.41291, 
+                  lng: -8.24389},
+          mortality: "low"             
+        },
+
+        {
+          name: "Lithuania", 
+          coords: {lat: 55.169438, 
+                  lng: 23.881275},
+          mortality: "high"             
+        },
+
+        {
         name: "Mexico", 
         coords: {lat: 23.634501, 
         lng: -102.552784},

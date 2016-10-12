@@ -84,7 +84,7 @@ body {
 }
 
 .sidenav select {
-  margin-top: 20px;
+  margin-top: 70px;
   width: 77%;
   margin-left: 26px;
   padding: 8px 8px 8px 32px;
@@ -127,7 +127,7 @@ body {
 
 .onoffswitch {
   margin-left: 44px;
-  margin-top:630px;
+  margin-top:610px;
   position: fixed; 
   width: 182px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -156,13 +156,13 @@ body {
 .onoffswitch-inner:before {
   content: "MAP";
   padding-left: 25px;
-  background-color: #F53939; color: #FFFFFF;
+  background-color: #c03546; color: #FFFFFF;
 }
 
 .onoffswitch-inner:after {
   content: "CHART";
   padding-right: 25px;
-  background-color: #F53939; color: #FFFFFF;
+  background-color: #c03546; color: #FFFFFF;
   text-align: right;
 }
 
@@ -187,14 +187,14 @@ body {
 #slider {
   position: absolute; 
   z-index:99;
-  margin-top: 645px;
-  margin-left: 425px;
+  margin-top: 628px;
+  margin-left: 416px;
   width: 730px;
   height: 50px;
   border-style: solid;
   background-color: black;
   border-radius: 10px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 #dateslider {
@@ -209,28 +209,36 @@ body {
   color: white;
 }
 
+#selectedDiseases {
+  margin-top: 35px;
+}
+
 #Tuberculosis {
   color: #30A9DE;
   font-family: helvetica;
   list-style-type: square;
+  margin-left: 15px;
 }
 
 #Smallpox {
   color: #4f953b;
   font-family: helvetica;
   list-style-type: square;
+  margin-left: 15px;
 }
 
 #HIV-AIDS {
   color: #c03546;
   font-family: helvetica;
   list-style-type: square;
+  margin-left: 15px;
 }
 
 #Zika {
   color: #e97f02;
   font-family: helvetica;
   list-style-type: square;
+  margin-left: 15px;
 }
 
 #headingDiv {

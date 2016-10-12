@@ -233,9 +233,23 @@ var hivSeeds = {
                                           },
 
                                           {
+                                            name: "Ghana", 
+                                            coords: {lat:   7.946527, 
+                                                    lng:  -1.023194},
+                                            mortality: "high"             
+                                          },
+
+                                          {
                                             name: "Sudan", 
                                             coords: {lat: 12.862807, 
                                                     lng: 30.217636},
+                                            mortality: "high"             
+                                          },
+
+                                          {
+                                            name: "Nigeria", 
+                                            coords: {lat:   9.081999, 
+                                                    lng: 8.675277},
                                             mortality: "high"             
                                           },
 
@@ -266,14 +280,35 @@ var hivSeeds = {
                                                       lng: -3.435973},
                                               mortality: "low"       
                                             },  
-                                              
+
                                             { 
-                                              name: "France", 
-                                              coords: {lat: 46.227638, 
-                                                      lng: 2.213749},
-                                              mortality: "low"      
+                                              name: "Mali", 
+                                              coords: {lat: 17.570692, 
+                                                      lng:  -3.996166},
+                                              mortality: "medium"             
                                             },
 
+                                            {
+                                              name: "Nigeria", 
+                                              coords: {lat:   9.081999, 
+                                                      lng: 8.675277},
+                                              mortality: "high"             
+                                            },
+
+                                            {
+                                              name: "Ghana", 
+                                              coords: {lat:   7.946527, 
+                                                      lng:  -1.023194},
+                                              mortality: "high"             
+                                            },
+
+                                            { 
+                                              name: "Niger", 
+                                              coords: {lat: 17.607789, 
+                                                      lng:  8.081666},
+                                              mortality: "high"             
+                                            },
+                                    
                                             {
                                               name: "Spain", 
                                               coords: {lat: 40.463667, 
@@ -339,23 +374,9 @@ var hivSeeds = {
                                              
                                             {
                                               name: "China", 
-                                              coords: {lat: 1.352083, 
-                                                      lng: 103.819836},
-                                              mortality: "low"
-                                            },
-
-                                            {
-                                              name: "Italy", 
-                                              coords: {lat: 41.87194, 
-                                                      lng: 12.56738},
-                                              mortality: "low"
-                                            },
-                                            
-                                            {
-                                              name: "Portugal", 
-                                              coords: {lat: 39.399872, 
-                                                      lng: -8.224454},
-                                              mortality: "low"
+                                              coords: {lat:   35.86166, 
+                                                      lng: 104.195397},
+                                              mortality: "medium"
                                             },
 
                                             {
@@ -373,13 +394,6 @@ var hivSeeds = {
                                             },
 
                                             {
-                                              name: "Ukraine", 
-                                              coords: {lat: 48.379433, 
-                                                      lng: 31.16558},
-                                              mortality: "low"
-                                            },
-
-                                            {
                                               name: "Belarus", 
                                               coords: {lat: 53.709807, 
                                                       lng: 27.953389},
@@ -390,13 +404,6 @@ var hivSeeds = {
                                               name: "Romania", 
                                               coords: {lat: 45.943161, 
                                                       lng: 24.96676},
-                                              mortality: "low"
-                                            },
-
-                                            {
-                                              name: "Ireland", 
-                                              coords: {lat: 53.41291, 
-                                                      lng: -8.24389},
                                               mortality: "low"
                                             },
 
@@ -419,13 +426,6 @@ var hivSeeds = {
                                               coords: {lat: -25.274398, 
                                                       lng:  133.775136},
                                               mortality: "low"
-                                            },
-                                             
-                                            {
-                                              name: "Sweden", 
-                                              coords: {lat: 60.128161, 
-                                                      lng: 18.643501},
-                                              mortality: "low" 
                                             },
 
                                             {

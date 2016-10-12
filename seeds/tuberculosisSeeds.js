@@ -84,20 +84,6 @@ var tuberculosisSeeds = {
                                     lng: -95.712891},
                            mortality: "high"             
                          },
-                         
-                         {
-                           name: "South Africa", 
-                           coords: {lat: -30.559482, 
-                                    lng: 22.937506},
-                           mortality: "medium"             
-                         },
-
-                         {
-                           name: "DR Congo", 
-                           coords: {lat: -2.930652, 
-                                    lng: 23.285279},
-                           mortality: "low"
-                         },
 
                           {
                             name: "India", 
@@ -105,13 +91,6 @@ var tuberculosisSeeds = {
                                     lng: 78.96288},
                             mortality: "high"             
                           },
-
-                        {
-                          name: "Argentina", 
-                          coords: {lat: -38.416097, 
-                                   lng: -63.616672},
-                          mortality: "medium"             
-                        },
                         
                         {
                           name: "Brazil", 
@@ -134,25 +113,68 @@ var tuberculosisSeeds = {
                           mortality: "low"             
                         }],
     
-    twentiethCentury: [{
-                           name: "South Africa", 
-                           coords: {lat: -30.559482, 
-                                    lng: 22.937506},
-                           mortality: "medium"             
-                         },
-
-                         {
-                           name: "DR Congo", 
-                           coords: {lat: -2.930652, 
-                                    lng: 23.285279},
-                           mortality: "low"
-                         },
-
+    twentiethCentury: [
                           {
                             name: "Russia", 
                             coords: {lat: 62.333724,  
                                      lng: 92.189755},
                             mortality: "medium"             
+                          },
+
+                          {
+                            name: "Egypt", 
+                            coords: {lat: 26.820553, 
+                                    lng: 30.802498},
+                            mortality: "medium"  
+                          },
+
+                          {
+                            name: "Ukraine", 
+                            coords: {lat: 48.379433, 
+                                    lng:  31.16558},
+                            mortality: "medium"  
+                          },
+
+                          {
+                            name: "Turkey", 
+                            coords: {lat:   38.963745, 
+                                    lng:  35.243322},
+                            mortality: "medium"  
+                          },
+
+                          {
+                            name: "Romania", 
+                            coords: {lat: 45.943161, 
+                                    lng:  24.96676},
+                            mortality: "low"  
+                          },
+
+                          {
+                            name: "Bulgaria", 
+                            coords: {lat:   42.733883, 
+                                    lng:    25.48583},
+                            mortality: "low"  
+                          },
+
+                          {
+                            name: "Afghanistan", 
+                            coords: {lat:  33.93911, 
+                                    lng: 67.709953},
+                            mortality: "medium"  
+                          },
+
+                          {
+                            name: "Algeria", 
+                            coords: {lat: 28.033886, 
+                                    lng: 1.659626},
+                            mortality: "low"
+                          },
+
+                          {
+                            name: "Morocco", 
+                            coords: {lat: 31.791702, 
+                                    lng: -7.09262},
+                            mortality: "low"
                           },
 
                           {

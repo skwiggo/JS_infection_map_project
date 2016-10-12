@@ -7,7 +7,6 @@ var UI = function() {
   this.diseases;
   var diseaseList = new Diseases();
   this.buttonPressed = false;
-  // var selectedDiseases = []; 
 
   //map
   var container = document.getElementById('map');
@@ -57,10 +56,8 @@ var UI = function() {
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     this.removeMapMarkers(map);
-    // console.log("reset button context - ", this)
     this.buttonPressed = false;
     this.htmlUpdate();
-    // console.log(this.buttonPressed);
     selectedDiseases = [];
     diseaseSelector.selectedIndex = null;
     for (var i = 0; i < diseaseSelector.options.length; i++){
@@ -130,7 +127,6 @@ UI.prototype = {
   addOutputs: function(div){
     for(var disease of this.diseases){
       var ul = this.createUl(disease);
-      // console.log(ul)
       div.appendChild(ul);
     }
   },
