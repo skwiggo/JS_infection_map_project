@@ -5,7 +5,6 @@ body {
   width: 100%;
 }
 
-
 #map {
   position: absolute;
   top: 0;
@@ -17,20 +16,20 @@ body {
 }
 
 #infoWindowImage {
-  width: 90px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
 }
 
 .gm-style-iw {
   width:372px !important;
-  background-color: #c9d6de;
+  background-color: #FFFFFF;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
   font-family: sans-serif;
   top: 0 !important;
   left:0 !important;
-  border-radius: 2px 2px 0 0;
+  border-radius: 7px 7px 0 0;
 }
 
 #bodyContent {
@@ -96,7 +95,7 @@ body {
   transition: 0.3s
 }
 
-#view-all {
+#viewAllBtn {
   margin-top: 20px;
   margin-left: 37px;
   font-size: 14px;
@@ -142,9 +141,10 @@ body {
 }
 
 .onoffswitch {
-  margin-left: 40px;
-  margin-top:40px;
-  position: relative; width: 182px;
+  margin-left: 44px;
+  margin-top:630px;
+  position: fixed; 
+  width: 182px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
@@ -175,7 +175,11 @@ body {
 }
 
 .onoffswitch-inner:after {
+<<<<<<< HEAD
   content: "CHARTS";
+=======
+  content: "CHART";
+>>>>>>> develop
   padding-right: 25px;
   background-color: #F53939; color: #FFFFFF;
   text-align: right;
@@ -224,14 +228,72 @@ body {
   color: white;
 }
 
+<<<<<<< HEAD
+=======
+#Tuberculosis {
+  color: #30A9DE;
+  font-family: helvetica;
+  list-style-type: square;
+}
+
+#Smallpox {
+  color: #4f953b;
+  font-family: helvetica;
+  list-style-type: square;
+}
+
+#HIV-AIDS {
+  color: #c03546;
+  font-family: helvetica;
+  list-style-type: square;
+}
+
+#Zika {
+  color: #e97f02;
+  font-family: helvetica;
+  list-style-type: square;
+}
+
+#headingDiv {
+   width: 45%;
+   margin-right: 0px;
+}
+ 
+#subheadingDiv {
+  width: 45%;
+  height: 100px;
+}
+
+#bodycontentDiv {
+  margin-right: 0px;
+  margin-top: 100px;
+}
+
+#infoWindowImageDiv {
+  width: 120px;
+  height: 100px;
+  margin-left: 170px;
+  margin-right: 5px;
+  margin-top: -130px;
+  margin-bottom: 25px;
+} 
+
+>>>>>>> develop
 #chart {
   visibility: hidden;
   z-index: 100;
   position: absolute;
   top: 0;
   left: 22%;
+<<<<<<< HEAD
   margin: 0;
   padding: 0;
   width: 80%;
+=======
+  right: 33%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+>>>>>>> develop
   height: 100%; 
 }
