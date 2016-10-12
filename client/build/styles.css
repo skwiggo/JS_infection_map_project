@@ -217,20 +217,24 @@ body {
 #Tuberculosis {
   color: #30A9DE;
   font-family: helvetica;
+  list-style-type: square;
 }
 
 #Smallpox {
   color: #4f953b;
   font-family: helvetica;
+  list-style-type: square;
 }
 
 #HIV {
   color: #c03546;
   font-family: helvetica;
+  list-style-type: square;
 }
 
 #Zika {
   color: #e97f02;
   font-family: helvetica;
+  list-style-type: square;
 }
 
