@@ -256,3 +256,15 @@ body {
   margin-top: -130px;
   margin-bottom: 25px;
 } 
+
+#chart {
+  visibility: hidden;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 22%;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  height: 100%; 
+}
