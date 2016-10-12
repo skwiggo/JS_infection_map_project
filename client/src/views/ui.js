@@ -12,11 +12,14 @@ var UI = function() {
   map.generate21stCenturyMap();
   this.loadData(diseaseList, map, this.selectDropdown);
 
-  var chartbtn = document.getElementById('chartbutton');
-  console.log(chartbtn);
+  var chartbtn = document.getElementById('myonoffswitch');
   chartbtn.onclick = function() {
-    console.log(chart);
-    chart.style.visibility = "visible";
+    if (chart.style.visibility == 'visible') {
+     chart.style.visibility = 'hidden';  
+    }
+    else {
+      chart.style.visibility = "visible";
+    }
   }
 
   var slider = document.getElementById('dateslider');

@@ -175,7 +175,7 @@ body {
 }
 
 .onoffswitch-inner:after {
-  content: "INFO";
+  content: "CHARTS";
   padding-right: 25px;
   background-color: #F53939; color: #FFFFFF;
   text-align: right;
@@ -225,12 +225,13 @@ body {
 }
 
 #chart {
-  z-index:98;
+  visibility: hidden;
+  z-index: 100;
   position: absolute;
   top: 0;
   left: 22%;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 80%;
   height: 100%; 
 }
