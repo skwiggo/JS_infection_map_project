@@ -1,5 +1,5 @@
 var zombieSeeds = {
-                      name: "zombies",   
+                      name: "Zombies",   
                       nineteenthCentury: [],     
                       twentiethCentury: [],
                       presentDay: [],

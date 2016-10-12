@@ -30,8 +30,8 @@ var UI = function() {
       }
       else if (slider.value === '2000') {
         map.generate21stCenturyMap();
-     }
-      else {
+      }
+      else if (slider.value === '2100') {
         map.generate22ndCenturyMap();
       }
     label.value = slider.value + "s";
@@ -116,22 +116,36 @@ UI.prototype = {
     map.deleteMarkers();
   },
   addMarkersForDisease: function(disease, map) {
-    // selectedDiseases.push(disease); 
     var diseaseSelector = document.getElementById('diseaseSelect');
     diseaseSelector.options[diseaseSelector.selectedIndex].disabled = true;
-    var ul = document.getElementById("selectedDiseases");
-    var li = document.createElement("li");
-    // console.log(disease)
-    li.appendChild(document.createTextNode(disease.name));
-    ul.appendChild(li);
+    var listItem = document.createElement("li");
+    listItem.innerText = disease.name;
+    if(listItem.innerText === "Smallpox") {
+      var smallpoxUl = document.getElementById('Smallpox');
+      smallpoxUl.appendChild(listItem);
+    }
+    else if(listItem.innerText === "Tuberculosis") {
+      var tuberculosisUl = document.getElementById('Tuberculosis');
+      tuberculosisUl.appendChild(listItem);
+    }
+    else if(listItem.innerText === "HIV/AIDS") {
+      var hivAidsUl = document.getElementById('HIV');
+      hivAidsUl.appendChild(listItem);
+    }
+    else {
+      var zikaUl = document.getElementById('Zika');
+      zikaUl.appendChild(listItem);
+    }    
+    var label = document.getElementById('rangeValLabel');
     var slider = document.getElementById('dateslider');
     var countries = getCountries(slider.value, disease);
     for (var i = 0; i < countries.length; i++){
       map.addMarker(countries[i], map, disease);
-    }
+    } label.value = slider.value + "s";
   },
   sliderUpdated: function(map){
     var slider = document.getElementById('dateslider');
+    var label = document.getElementById('rangeValLabel');
     slider.oninput = function() {
       this.removeMapMarkers(map);
       updateMap(slider.value, map);
