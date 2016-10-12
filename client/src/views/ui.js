@@ -28,8 +28,8 @@ var UI = function() {
       }
       else if (slider.value === '2000') {
         map.generate21stCenturyMap();
-     }
-      else {
+      }
+      else if (slider.value === '2100') {
         map.generate22ndCenturyMap();
       }
     label.value = slider.value + "s";
@@ -98,14 +98,16 @@ UI.prototype = {
       var zikaUl = document.getElementById('Zika');
       zikaUl.appendChild(listItem);
     }    
+    var label = document.getElementById('rangeValLabel');
     var slider = document.getElementById('dateslider');
     var countries = getCountries(slider.value, disease);
     for (var i = 0; i < countries.length; i++){
       map.addMarker(countries[i], map, disease);
-    }
+    } label.value = slider.value + "s";
   },
   sliderUpdated: function(map){
     var slider = document.getElementById('dateslider');
+    var label = document.getElementById('rangeValLabel');
     slider.oninput = function() {
       map.deleteMarkers();
       updateMap(slider.value, map);
@@ -114,7 +116,7 @@ UI.prototype = {
         for (var c = 0; c < countries.length; c++){
           map.addMarker(countries[c], map, selectedDiseases[i]);
         } 
-      }
+      }label.value = slider.value + "s";
     }
   }
 }
