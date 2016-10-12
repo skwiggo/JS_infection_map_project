@@ -132,8 +132,9 @@ body {
 
 .onoffswitch {
   margin-left: 40px;
-  margin-top:40px;
-  position: relative; width: 182px;
+  margin-top:630px;
+  position: fixed; 
+  width: 182px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
