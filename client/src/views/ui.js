@@ -42,7 +42,7 @@ var UI = function() {
   var ul = document.getElementById("selectedDiseases");
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
-    map.deleteMarkers();
+    this.removeMapMarkers(map);
     console.log("reset button context - ", this)
     this.buttonPressed = false;
     console.log(this.buttonPressed);
@@ -67,6 +67,12 @@ UI.prototype = {
   selectDropdown: function (map) {
       var diseaseSelector = document.getElementById('diseaseSelect');
       diseaseSelector.onchange = function() {
+    if(this.buttonPressed){
+      this.htmlUpdate();
+      this.removeMapMarkers(map);
+      selectedDiseases = [];
+      this.buttonPressed = false;
+    }
         var disease = this.diseases[diseaseSelector.selectedIndex -1];
         selectedDiseases.push(disease);
         this.addMarkersForDisease(disease, map);
@@ -76,8 +82,8 @@ UI.prototype = {
     var viewAllBtn = document.getElementById('viewAllBtn');
     var slider = document.getElementById('dateslider');
     viewAllBtn.onclick = function(){
-      var ul = document.getElementById("selectedDiseases");
-      ul.innerHTML = "";
+      this.htmlUpdate();
+      this.removeMapMarkers(map);
         console.log(this.buttonPressed);
       if(this.buttonPressed != true){
         console.log(this.buttonPressed);
@@ -91,6 +97,13 @@ UI.prototype = {
       this.buttonPressed = true;
       this.sliderUpdated(map);
     }.bind(UI.prototype);
+  },
+  htmlUpdate: function(){
+    var ul = document.getElementById("selectedDiseases");
+    ul.innerHTML = "";
+  },
+  removeMapMarkers: function(map){
+    map.deleteMarkers();
   },
   addMarkersForDisease: function(disease, map) {
     // selectedDiseases.push(disease); 
@@ -109,7 +122,7 @@ UI.prototype = {
   sliderUpdated: function(map){
     var slider = document.getElementById('dateslider');
     slider.oninput = function() {
-      map.deleteMarkers();
+      this.removeMapMarkers(map);
       updateMap(slider.value, map);
       for (var i = 0; i < selectedDiseases.length; i++){
         var countries = getCountries(slider.value, selectedDiseases[i]); 
@@ -117,7 +130,7 @@ UI.prototype = {
           map.addMarker(countries[c], map, selectedDiseases[i]);
         } 
       }
-    }
+    }.bind(this);
   }
 }
 
