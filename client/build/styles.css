@@ -5,6 +5,7 @@ body {
   width: 100%;
 }
 
+
 #map {
   position: absolute;
   top: 0;
@@ -21,19 +22,15 @@ body {
 }
 
 .gm-style-iw {
-  width:100%;
+  width:372px !important;
   background-color: #c9d6de;
   text-align: center;
-  height: 250px;
-  width: 80px;
   font-size: 12px;
   font-weight: bold;
   font-family: sans-serif;
-  padding: none;
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
+  top: 0 !important;
+  left:0 !important;
+  border-radius: 2px 2px 0 0;
 }
 
 .gm-style {
@@ -47,7 +44,7 @@ body {
 }
 
 #infoWindowStyles {
-  height: 200px;
+  height: 150px;
   width: 320px;
 }
 
@@ -104,7 +101,7 @@ body {
   transition: 0.3s
 }
 
-#view-all {
+#viewAllBtn {
   margin-top: 20px;
   margin-left: 37px;
   font-size: 14px;

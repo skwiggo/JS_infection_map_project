@@ -10,29 +10,19 @@
   <div id="mySidenav" class="sidenav">  
   <img id="logo" src='http://vignette4.wikia.nocookie.net/left4dead/images/d/d2/Biohazard_symbol.png/revision/latest?cb=20101101203629'/>
   <div id="logo-title">INFECTED</div>
-    <div id="dropdown">
-      <select id="disease-select" class="diseases">
+    <div>
+      <select id="diseaseSelect" class="diseases">
         <option value="disabled" selected disabled>Select Disease</option>
-        <option value="Tuberculosis">Tuberculosis</option>
         <option value="Smallpox">Smallpox</option>
+        <option value="Tuberculosis">Tuberculosis</option>
         <option value="Zika">Zika</option>
         <option value="HIV/AIDS">HIV/AIDS</option>
       </select>
-      <select id="diseasio-selector">
-        <option value="disabled" selected disabled>Select Disease</option>
-        <option value="Tuberculosis">Tuberculosis</option>
-        <option value="Smallpox">Smallpox</option>
-        <option value="Zika">Zika</option>
-        <option value="HIV/AIDS">HIV/AIDS</option>
-      </select>
-      <select id="selector-of-diseases">
-        <option selected disabled>Select Disease</option>
-        <option value="Tuberculosis">Tuberculosis</option>
-        <option value="Smallpox">Smallpox</option>
-        <option value="Zika">Zika</option>
-        <option value="HIV/AIDS">HIV/AIDS</option>
-      </select>
-      <button id="view-all">View All</button>
+      <!--diseases selected from the dropdown will show here-->
+      <ul id="selectedDiseases"></ul>
+    </div>
+    <div>
+      <button id="viewAllBtn">View All</button>
       <button id="reset">Reset</button>
     </div>
     <div class="onoffswitch">
@@ -43,13 +33,14 @@
         </label>
     </div>
   </div>
+
   <div id="slider">
-  <input type="range" id="dateslider" min="1800" value="2000" max="2100" 
+    <input type="range" id="dateslider" min="1800" value="2000" max="2100" 
     step="100">
     <output for="dateslider" id="rangeValLabel" style="font-style: normal;">2000s</output>
   </div>
 
-    <div id="map"></div>
+  <div id="map"></div>
 
 </body>
 </html>

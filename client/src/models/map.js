@@ -1,6 +1,4 @@
 var markers = [];
-
-// keep outside of constructor to only display one infowindow at a time
 var infowindow = null;
 
 var Map = function(container, coords, zoom) {
@@ -42,7 +40,6 @@ Map.prototype = {
       }
     ])
   },
-
   generate20thCenturyMap: function(map) {
     this.googleMap.set('styles', [
       {
@@ -137,15 +134,14 @@ Map.prototype = {
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h1 id="heading">'+ disease.name + '</h1>'+
-      '<h3 id="subHeading">' + country.name + '</h3>' +
-      '<h3 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h3>' +
+      '<h3 id="heading">'+ disease.name + '</h3>'+
+      '<h4 id="subHeading">' + country.name + '</h4>' +
+      '<h4 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h4>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
       +
       '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
     return contentString;
   },
-
   getRandomFact: function(facts){
     return Math.floor((Math.random() * 5));
   },
@@ -162,7 +158,6 @@ Map.prototype = {
     var latOffset = this.markerOffset();
     var lngOffset = this.markerOffset();
     var coords = {lat: (country.coords.lat + latOffset), lng: (country.coords.lng + lngOffset)};
-    
     var customIcon = {
       url: setIcon(disease.name),
       // TODO: update when century becomes selectable
@@ -181,7 +176,6 @@ Map.prototype = {
       infowindow = new google.maps.InfoWindow({
         content: contentio,
         disableAutoPan: true
-
       });
       infowindow.open(map, marker);  
     }.bind(this));
@@ -198,13 +192,11 @@ Map.prototype = {
     this.clearMarkers();
     markers = [];
   }
-  
 }
 
 function setIcon(diseaseName){
   switch(diseaseName.toLowerCase()){
     case "tuberculosis": 
-    console.log("image here")
       return "http://i.imgur.com/B8rOsNP.png";
       break;
     case "smallpox": 
@@ -223,7 +215,6 @@ function setIcon(diseaseName){
 }
 
 function setIconSize(mortality){
-  // console.log(mortality.toLowerCase());
   switch(mortality){
     case "low": 
       return new google.maps.Size(18, 22);
