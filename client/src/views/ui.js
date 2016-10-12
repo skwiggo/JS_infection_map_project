@@ -17,6 +17,7 @@ var UI = function() {
   this.loadData(diseaseList, map, this.selectDropdown);
 
   var slider = document.getElementById('dateslider');
+  var label = document.getElementById('rangeValLabel');
   slider.oninput = function() {
     if (slider.value === '1800') {
         map.generate19thCenturyMap();
@@ -30,6 +31,7 @@ var UI = function() {
       else {
         map.generate22ndCenturyMap();
       }
+    label.value = slider.value + "s";
   };
 
   // UI Elements
