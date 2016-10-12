@@ -5,6 +5,7 @@ var tbFacts = require('./facts/tbFacts.js');
 var spFacts = require('./facts/spFacts.js');
 var zFacts = require('./facts/zFacts.js');
 var hivFacts = require('./facts/hivFacts.js');
+var zombFacts = require('./facts/zombFacts.js')
 
 var Diseases = function() {
 
@@ -15,11 +16,13 @@ var Diseases = function() {
   var smallpoxFacts = new spFacts();
   var zikaFacts = new zFacts();
   var HIVFacts = new hivFacts();
+  var zombieFacts = new zombFacts();
 
   this.addFacts(tuberculiosisFacts);
   this.addFacts(smallpoxFacts);
   this.addFacts(zikaFacts);
   this.addFacts(HIVFacts);
+  this.addFacts(zombieFacts);
 
 }
 

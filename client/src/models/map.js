@@ -131,15 +131,16 @@ Map.prototype = {
   },
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
+    console.log(disease.facts)
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
+      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>' +
       '<h3 id="heading">'+ disease.name + '</h3>'+
       '<h4 id="subHeading">' + country.name + '</h4>' +
       '<h4 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h4>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
-      +
-      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
+      ;
     return contentString;
   },
   getRandomFact: function(facts){
@@ -175,6 +176,7 @@ Map.prototype = {
       }
       infowindow = new google.maps.InfoWindow({
         content: contentio,
+        position: {lat: 32.584902, lng: 70.918695},
         disableAutoPan: true
       });
       infowindow.open(map, marker);  
@@ -207,6 +209,9 @@ function setIcon(diseaseName){
       break;
     case "zika": 
       return "http://i.imgur.com/2dVBZGd.png";
+      break;
+    case "zombies": 
+      return "https://cdn4.iconfinder.com/data/icons/aami-flat-smileys/64/smile-61-512.png";
       break;
     default:
       return null;
