@@ -1,10 +1,11 @@
 var Map = require('../models/map');
 var Diseases = require('../models/diseases');
 
+var selectedDiseases = [];
+
 var UI = function() {  
   //diseases
   var diseaseList = new Diseases();
-  // var selectedDiseases = []; 
 
   //map
   var container = document.getElementById('map');
@@ -49,7 +50,6 @@ var UI = function() {
   };
 }
 
-var selectedDiseases = [];
 UI.prototype = {
   loadData: function(diseaseList, map){
     diseaseList.all(function(data){
@@ -78,7 +78,6 @@ UI.prototype = {
     }.bind(UI.prototype);
   },
   addMarkersForDisease: function(disease, map) {
-    // selectedDiseases.push(disease); 
     var diseaseSelector = document.getElementById('diseaseSelect');
     diseaseSelector.options[diseaseSelector.selectedIndex].disabled = true;
     var ul = document.getElementById("selectedDiseases");
