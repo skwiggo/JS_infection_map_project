@@ -4,8 +4,10 @@ var Diseases = require('../models/diseases');
 var selectedDiseases = [];
 
 var UI = function() {  
-  //diseases
+  this.diseases;
   var diseaseList = new Diseases();
+  this.buttonPressed = false;
+  // var selectedDiseases = []; 
 
   //map
   var container = document.getElementById('map');
@@ -45,14 +47,17 @@ var UI = function() {
   var ul = document.getElementById("selectedDiseases");
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
-    map.deleteMarkers();
+    this.removeMapMarkers(map);
+    // console.log("reset button context - ", this)
+    this.buttonPressed = false;
+    // console.log(this.buttonPressed);
     ul.innerHTML = '';
     selectedDiseases = [];
     diseaseSelector.selectedIndex = null;
     for (var i = 0; i < diseaseSelector.options.length; i++){
       diseaseSelector.options[i].disabled = false;
     }
-  };
+  }.bind(UI.prototype);
 }
 
 UI.prototype = {
@@ -67,8 +72,19 @@ UI.prototype = {
   selectDropdown: function (map) {
       var diseaseSelector = document.getElementById('diseaseSelect');
       diseaseSelector.onchange = function() {
+    if(this.buttonPressed){
+      console.log(selectedDiseases);
+      if(selectedDiseases.length >= 4){
+        this.htmlUpdate();
+      }
+      this.removeMapMarkers(map);
+      selectedDiseases = [];
+      this.buttonPressed = false;
+    };
         var disease = this.diseases[diseaseSelector.selectedIndex -1];
+        // console.log(disease)
         selectedDiseases.push(disease);
+        console.log(diseaseSelector.value)
         this.addMarkersForDisease(disease, map);
       }.bind(UI.prototype);  
   },
@@ -76,11 +92,33 @@ UI.prototype = {
     var viewAllBtn = document.getElementById('viewAllBtn');
     var slider = document.getElementById('dateslider');
     viewAllBtn.onclick = function(){
-      for (var i = 0; i < this.diseases.length; i++){
-        console.log(this.diseases[i].name);
-        this.addMarkersForDisease(this.diseases[i], map);
+        // console.log(this.buttonPressed);
+      if(this.buttonPressed != true){
+        // console.log(this.buttonPressed);
+      this.htmlUpdate();
+      this.removeMapMarkers(map);
+        for (var i = 0; i < this.diseases.length; i++){
+          // console.log(this.diseases[i].name);
+          console.log(this.diseases)
+          this.addMarkersForDisease(this.diseases[i], map);
+          selectedDiseases.push(this.diseases[i]);
+
+        }
       }
+      this.buttonPressed = true;
+      this.sliderUpdated(map);
     }.bind(UI.prototype);
+  },
+  htmlUpdate: function(){
+    var ul = document.getElementById("selectedDiseases");
+    ul.innerHTML = "";
+    var diseaseSelector = document.getElementById('diseaseSelect');
+    for (var i = 0; i < diseaseSelector.options.length; i++){
+      diseaseSelector.options[i].disabled = false;
+    }
+  },
+  removeMapMarkers: function(map){
+    map.deleteMarkers();
   },
   addMarkersForDisease: function(disease, map) {
     var diseaseSelector = document.getElementById('diseaseSelect');
@@ -114,7 +152,7 @@ UI.prototype = {
     var slider = document.getElementById('dateslider');
     var label = document.getElementById('rangeValLabel');
     slider.oninput = function() {
-      map.deleteMarkers();
+      this.removeMapMarkers(map);
       updateMap(slider.value, map);
       if (slider.value === '2100') {
         for (var disease of this.diseases) {
