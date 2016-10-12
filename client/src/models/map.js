@@ -135,12 +135,12 @@ Map.prototype = {
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
+      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>' +
       '<h3 id="heading">'+ disease.name + '</h3>'+
       '<h4 id="subHeading">' + country.name + '</h4>' +
       '<h4 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h4>' +
       '<div id="bodyContent">' + disease.facts[i].comment + '</div>' 
-      +
-      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>';
+      ;
     return contentString;
   },
   getRandomFact: function(facts){
