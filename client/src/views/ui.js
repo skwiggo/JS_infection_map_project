@@ -70,7 +70,7 @@ UI.prototype = {
     if(this.buttonPressed){
       console.log(selectedDiseases);
       if(selectedDiseases.length >= 4){
-        this.htmlUpdate();
+        // this.htmlUpdate();
       }
       this.removeMapMarkers(map);
       selectedDiseases = [];
@@ -105,12 +105,26 @@ UI.prototype = {
     }.bind(UI.prototype);
   },
   htmlUpdate: function(){
-    var ul = document.getElementById("selectedDiseases");
-    ul.innerHTML = "";
+    var div = document.getElementById("selectedDiseases");
+    div.innerHTML = "";
+    this.addOutputs(div);
     var diseaseSelector = document.getElementById('diseaseSelect');
     for (var i = 0; i < diseaseSelector.options.length; i++){
       diseaseSelector.options[i].disabled = false;
     }
+  },
+  addOutputs: function(div){
+    for(var disease of this.diseases){
+      var ul = this.createUl(disease);
+      console.log(ul)
+      div.appendChild(ul);
+    }
+  },
+  createUl: function(disease){
+    var ul = document.createElement("ul");
+    ul.id = disease.name;
+    ul.innerText = disease.name;
+    return ul;
   },
   removeMapMarkers: function(map){
     map.deleteMarkers();
@@ -121,7 +135,9 @@ UI.prototype = {
     var listItem = document.createElement("li");
     listItem.innerText = disease.name;
     if(listItem.innerText === "Smallpox") {
+      var outputDiseases = document.getElementById("selectedDiseases");
       var smallpoxUl = document.getElementById('Smallpox');
+      console.log(smallpoxUl)
       smallpoxUl.appendChild(listItem);
     }
     else if(listItem.innerText === "Tuberculosis") {
