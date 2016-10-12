@@ -76,7 +76,8 @@ UI.prototype = {
     var viewAllBtn = document.getElementById('viewAllBtn');
     var slider = document.getElementById('dateslider');
     viewAllBtn.onclick = function(){
-      console.log(this)
+      var ul = document.getElementById("selectedDiseases");
+      ul.innerHTML = "";
         console.log(this.buttonPressed);
       if(this.buttonPressed != true){
         console.log(this.buttonPressed);
