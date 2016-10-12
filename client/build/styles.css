@@ -131,9 +131,9 @@ body {
 }
 
 .onoffswitch {
-  margin-left: 45px;
-  margin-top:630px;
-  position: fixed; width: 182px;
+  margin-left: 40px;
+  margin-top:40px;
+  position: relative; width: 182px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
@@ -212,3 +212,24 @@ body {
   font-family: helvetica;
   color: white;
 }
+
+#Tuberculosis {
+  color: #30A9DE;
+  font-family: helvetica;
+}
+
+#Smallpox {
+  color: #4f953b;
+  font-family: helvetica;
+}
+
+#HIV {
+  color: #c03546;
+  font-family: helvetica;
+}
+
+#Zika {
+  color: #e97f02;
+  font-family: helvetica;
+}
+
