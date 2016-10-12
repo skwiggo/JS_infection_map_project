@@ -131,7 +131,7 @@ Map.prototype = {
   },
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
-
+    console.log(disease);
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -159,6 +159,7 @@ Map.prototype = {
     return offset;
   },
   addMarker: function(country, map, disease) {
+    console.log(disease.name)
     var contentio = this.getContentString(disease, country);
     var latOffset = this.markerOffset();
     var lngOffset = this.markerOffset();
@@ -201,6 +202,7 @@ Map.prototype = {
 }
 
 function setIcon(diseaseName){
+  console.log(diseaseName)
   switch(diseaseName.toLowerCase()){
     case "tuberculosis": 
       return "http://i.imgur.com/B8rOsNP.png";
@@ -208,7 +210,7 @@ function setIcon(diseaseName){
     case "smallpox": 
       return "http://i.imgur.com/jyZWRe6.png";
       break;
-    case "hiv/aids": 
+    case "hiv-aids": 
       return "http://i.imgur.com/VQht9IV.png";
       break;
     case "zika": 

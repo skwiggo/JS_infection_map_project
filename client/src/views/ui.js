@@ -71,18 +71,15 @@ UI.prototype = {
   selectDropdown: function (map) {
       var diseaseSelector = document.getElementById('diseaseSelect');
       diseaseSelector.onchange = function() {
-        console.log(this)
-    if(this.buttonPressed){
-      console.log("pressed")
-      console.log(selectedDiseases);
+        console.log(selectedDiseases)
       if(selectedDiseases.length >= 4){
         console.log("triggered")
         this.htmlUpdate();
-      }
+      this.buttonPressed = false;
+      
       this.removeMapMarkers(map);
       selectedDiseases = [];
-      this.buttonPressed = false;
-    };
+    }
         var disease = this.diseases[diseaseSelector.selectedIndex -1];
         // console.log(disease)
         selectedDiseases.push(disease);
