@@ -31,6 +31,11 @@ var UI = function() {
      }
       else {
         map.generate22ndCenturyMap();
+        for (var disease of this.diseases) {
+          if (disease.name === "Zombies") {
+            this.addMarkersForDisease(disease, map)
+          }
+        }
       }
     label.value = slider.value + "s";
   };
@@ -109,13 +114,20 @@ UI.prototype = {
     slider.oninput = function() {
       map.deleteMarkers();
       updateMap(slider.value, map);
+      if (slider.value === '2100') {
+        for (var disease of this.diseases) {
+          if (disease.name === "Zombies") {
+            this.addMarkersForDisease(disease, map)
+          }
+        }
+      }
       for (var i = 0; i < selectedDiseases.length; i++){
         var countries = getCountries(slider.value, selectedDiseases[i]); 
         for (var c = 0; c < countries.length; c++){
           map.addMarker(countries[c], map, selectedDiseases[i]);
         } 
       }
-    }
+    }.bind(this);
   }
 }
 

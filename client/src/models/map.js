@@ -131,6 +131,7 @@ Map.prototype = {
   },
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
+    console.log(disease.facts)
     var contentString = '<div id="infoWindowStyles">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -207,6 +208,9 @@ function setIcon(diseaseName){
       break;
     case "zika": 
       return "http://i.imgur.com/2dVBZGd.png";
+      break;
+    case "zombies": 
+      return "https://cdn4.iconfinder.com/data/icons/aami-flat-smileys/64/smile-61-512.png";
       break;
     default:
       return null;
