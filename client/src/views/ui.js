@@ -43,9 +43,9 @@ var UI = function() {
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     this.removeMapMarkers(map);
-    console.log("reset button context - ", this)
+    // console.log("reset button context - ", this)
     this.buttonPressed = false;
-    console.log(this.buttonPressed);
+    // console.log(this.buttonPressed);
     ul.innerHTML = '';
     selectedDiseases = [];
     diseaseSelector.selectedIndex = null;
@@ -68,13 +68,18 @@ UI.prototype = {
       var diseaseSelector = document.getElementById('diseaseSelect');
       diseaseSelector.onchange = function() {
     if(this.buttonPressed){
-      this.htmlUpdate();
+      console.log(selectedDiseases);
+      if(selectedDiseases.length >= 4){
+        this.htmlUpdate();
+      }
       this.removeMapMarkers(map);
       selectedDiseases = [];
       this.buttonPressed = false;
-    }
+    };
         var disease = this.diseases[diseaseSelector.selectedIndex -1];
+        // console.log(disease)
         selectedDiseases.push(disease);
+        console.log(diseaseSelector.value)
         this.addMarkersForDisease(disease, map);
       }.bind(UI.prototype);  
   },
@@ -82,13 +87,14 @@ UI.prototype = {
     var viewAllBtn = document.getElementById('viewAllBtn');
     var slider = document.getElementById('dateslider');
     viewAllBtn.onclick = function(){
+        // console.log(this.buttonPressed);
+      if(this.buttonPressed != true){
+        // console.log(this.buttonPressed);
       this.htmlUpdate();
       this.removeMapMarkers(map);
-        console.log(this.buttonPressed);
-      if(this.buttonPressed != true){
-        console.log(this.buttonPressed);
         for (var i = 0; i < this.diseases.length; i++){
           // console.log(this.diseases[i].name);
+          console.log(this.diseases)
           this.addMarkersForDisease(this.diseases[i], map);
           selectedDiseases.push(this.diseases[i]);
 
@@ -102,7 +108,7 @@ UI.prototype = {
     var ul = document.getElementById("selectedDiseases");
     ul.innerHTML = "";
     var diseaseSelector = document.getElementById('diseaseSelect');
-    diseaseSelector.selectedIndex = null;
+    // diseaseSelector.selectedIndex = null;
     for (var i = 0; i < diseaseSelector.options.length; i++){
       diseaseSelector.options[i].disabled = false;
     }
@@ -116,6 +122,7 @@ UI.prototype = {
     diseaseSelector.options[diseaseSelector.selectedIndex].disabled = true;
     var ul = document.getElementById("selectedDiseases");
     var li = document.createElement("li");
+    // console.log(disease)
     li.appendChild(document.createTextNode(disease.name));
     ul.appendChild(li);
     var slider = document.getElementById('dateslider');
