@@ -32,11 +32,6 @@ body {
   border-radius: 7px 7px 0 0;
 }
 
-.gm-style {
-  margin: none;
-  background-color: #c9d6de;
-}
-
 #bodyContent {
   padding: 5px
   width: 50px;
@@ -239,10 +234,10 @@ body {
 }
 
 #headingDiv {
-  width: 45%;
-  margin-right: 0px;
+   width: 45%;
+   margin-right: 0px;
 }
-
+ 
 #subheadingDiv {
   width: 45%;
   height: 100px;
@@ -260,4 +255,4 @@ body {
   margin-right: 5px;
   margin-top: -130px;
   margin-bottom: 25px;
-}
+} 
