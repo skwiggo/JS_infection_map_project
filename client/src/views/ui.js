@@ -121,14 +121,14 @@ UI.prototype = {
   addOutputs: function(div){
     for(var disease of this.diseases){
       var ul = this.createUl(disease);
-      console.log(ul)
+      // console.log(ul)
       div.appendChild(ul);
     }
   },
   createUl: function(disease){
     var ul = document.createElement("ul");
     ul.id = disease.name;
-    ul.innerText = disease.name;
+    console.log(ul)
     return ul;
   },
   removeMapMarkers: function(map){
@@ -142,24 +142,24 @@ UI.prototype = {
     if(listItem.innerText === "Smallpox") {
       var outputDiseases = document.getElementById("selectedDiseases");
       var smallpoxUl = document.getElementById('Smallpox');
-      console.log(smallpoxUl)
       smallpoxUl.appendChild(listItem);
     }
     else if(listItem.innerText === "Tuberculosis") {
       var tuberculosisUl = document.getElementById('Tuberculosis');
       tuberculosisUl.appendChild(listItem);
     }
-    else if(listItem.innerText === "HIV/AIDS") {
-      var hivAidsUl = document.getElementById('HIV');
+    else if(listItem.innerText === "HIV-AIDS") {
+      var hivAidsUl = document.getElementById('HIV-AIDS');
       hivAidsUl.appendChild(listItem);
     }
-    else {
+    else if(listItem.innerText === "Zika") {
       var zikaUl = document.getElementById('Zika');
       zikaUl.appendChild(listItem);
     }    
     var label = document.getElementById('rangeValLabel');
     var slider = document.getElementById('dateslider');
     var countries = getCountries(slider.value, disease);
+    console.log(disease);
     for (var i = 0; i < countries.length; i++){
       map.addMarker(countries[i], map, disease);
     } label.value = slider.value + "s";

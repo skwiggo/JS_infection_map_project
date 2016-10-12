@@ -131,14 +131,12 @@ Map.prototype = {
   },
   getContentString: function(disease, country) {
     var i = this.getRandomFact(disease.facts);
-    console.log(disease.facts)
-    var contentString = '<div id="infoWindowStyles">' +
-      '<div id="siteNotice">' +
-      '</div>' +
-      '<div id="headingDiv">' +
-      '<h3 id="heading">' + disease.name + '</h3>' +
-      '</div>' +
-      '<div id="subheadingDiv">' +
+
+    var contentString = '<div id="infoWindowStyles">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<img id="infoWindowImage" src="' + disease.facts[i].image + '"/>' +
+      '<h3 id="heading">'+ disease.name + '</h3>'+
       '<h4 id="subHeading">' + country.name + '</h4>' +
       '<h4 id="subHeading">' + "Infection Rate: " + country.mortality.toUpperCase() + '</h4>' +
       '</div>' +
