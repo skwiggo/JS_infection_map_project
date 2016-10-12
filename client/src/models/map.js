@@ -1,4 +1,8 @@
 var markers = [];
+var nineteenth =[];
+var twentieth =[];
+var present =[];
+var twentysecond =[];
 
 // keep outside of constructor to only display one infowindow at a time
 var infowindow = null;
@@ -174,6 +178,7 @@ Map.prototype = {
       icon: customIcon
     });
     markers.push(marker);
+  
     marker.addListener('click', function() {
       if (infowindow) {
         infowindow.close();
@@ -191,14 +196,55 @@ Map.prototype = {
       markers[i].setMap(map);
     }
   },
+
+  setMapOnArray: function(array, map) {
+    for(var i = 0; i < array.length; i++) {
+      array[i].setMap(map);
+    }
+  },
+  
   clearMarkers: function() {
     this.setMapOnAll(null);
   },
+  
   deleteMarkers: function() {
     this.clearMarkers();
     markers = [];
+  },
+
+  markersPush: function(slider) {
+    for (marker of markers) {
+      if (slider.value === "1800") {
+      nineteenth.push(marker);
+    } else if (slider.value === "1900") {
+      twentieth.push(marker);
+    } else if (slider.value === "2000") {
+      present.push(marker);
+    } else if (slider.value === "2100") {
+      twentysecond.push(marker);
+    }
   }
-  
+},
+
+markersClear: function(slider) { 
+    if (slider.value === "1800") {
+    this.setMapOnArray(twentieth, null);
+    this.setMapOnArray(present, null);
+    this.setMapOnArray(twentysecond, null);
+  } else if (slider.value === "1900") {
+    this.setMapOnArray(nineteenth, null);
+    this.setMapOnArray(present, null);
+    this.setMapOnArray(twentysecond, null);
+  } else if (slider.value === "2000") {
+    this.setMapOnArray(nineteenth, null);
+    this.setMapOnArray(twentieth, null);
+    this.setMapOnArray(twentysecond, null);
+  } else if (slider.value === "2100") {
+    this.setMapOnArray(nineteenth, null);
+    this.setMapOnArray(twentieth, null);
+    this.setMapOnArray(present, null);
+    }
+  }
 }
 
 function setIcon(diseaseName){
