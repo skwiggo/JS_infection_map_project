@@ -32,6 +32,11 @@ var ColumnChart = function() {
     ],
   xAxis: {
       categories: ["19th Century", "20th Century", "Present Day", "22nd Century"]
+    },
+  yAxis: {
+    title: {
+      text: "Number of Infected Countries"
+    }
   }
   });
 }
