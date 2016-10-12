@@ -169,5 +169,118 @@ var zombieSeeds = {
                                               coords: {lat: 51.165691, 
                                                       lng: 10.451526},
                                               mortality: "high"             
-                                            } ] 
+                                            },
+
+                                            {
+                                              name: "UK", 
+                                              coords: {lat: 55.378051, 
+                                                       lng: -3.435973},
+                                              mortality: "high"             
+                                              },  
+                                                
+                                              { 
+                                                name: "France", 
+                                                coords: {lat: 46.227638, 
+                                                         lng: 2.213749},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Spain", 
+                                                coords: {lat: 40.463667, 
+                                                        lng: -3.74922},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Italy", 
+                                                coords: {lat: 41.87194, 
+                                                        lng: 12.56738},
+                                                mortality: "high"             
+                                              },
+                                              
+                                              {
+                                                name: "Portugal", 
+                                                coords: {lat: 39.399872, 
+                                                        lng: -8.224454},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Germany", 
+                                                coords: {lat: 51.165691, 
+                                                        lng: 10.451526},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Poland", 
+                                                coords: {lat: 51.919438, 
+                                                        lng: 19.145136},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Ukraine", 
+                                                coords: {lat: 48.379433, 
+                                                        lng: 31.16558},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Norway", 
+                                                coords: {lat: 60.472024,  
+                                                         lng: 8.468946},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Latvia", 
+                                                coords: {lat: 56.879635,  
+                                                         lng: 24.603189},
+                                                mortality: "high"             
+                                              },
+
+
+                                              {
+                                                name: "Belarus", 
+                                                coords: {lat: 53.709807, 
+                                                        lng: 27.953389},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Australia", 
+                                                coords: {lat: -25.274398, 
+                                                        lng: 133.775136},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Greenland", 
+                                                coords: {lat: 71.706936, 
+                                                        lng: -42.604303 },
+                                                mortality: "high"             
+                                              }, 
+
+                                              {
+                                                name: "Kazakhstan", 
+                                                coords: {lat: 48.019573, 
+                                                        lng: 66.923684},
+                                                mortality: "high"             
+                                              },
+
+                                              {
+                                                name: "Botswana", 
+                                                coords: {lat: -22.328474, 
+                                                        lng: 24.684866},
+                                                mortality: "high"             
+                                              }, 
+
+                                              {
+                                                name: "Canada", 
+                                                coords: {lat: 56.130366, 
+                                                        lng: -106.346771},
+                                                mortality: "high"             
+                                              },] 
       }
