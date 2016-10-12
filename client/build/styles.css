@@ -32,11 +32,6 @@ body {
   border-radius: 7px 7px 0 0;
 }
 
-.gm-style {
-  margin: none;
-  background-color: #c9d6de;
-}
-
 #bodyContent {
   padding: 5px
   width: 50px;
@@ -165,7 +160,7 @@ body {
 }
 
 .onoffswitch-inner:after {
-  content: "INFO";
+  content: "CHART";
   padding-right: 25px;
   background-color: #F53939; color: #FFFFFF;
   text-align: right;
@@ -239,10 +234,10 @@ body {
 }
 
 #headingDiv {
-  width: 45%;
-  margin-right: 0px;
+   width: 45%;
+   margin-right: 0px;
 }
-
+ 
 #subheadingDiv {
   width: 45%;
   height: 100px;
@@ -260,4 +255,16 @@ body {
   margin-right: 5px;
   margin-top: -130px;
   margin-bottom: 25px;
+} 
+
+#chart {
+  visibility: hidden;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 22%;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  height: 100%; 
 }

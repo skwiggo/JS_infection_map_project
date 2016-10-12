@@ -19,6 +19,16 @@ var UI = function() {
 
   this.loadData(diseaseList, map, this.selectDropdown);
 
+  var chartbtn = document.getElementById('myonoffswitch');
+  chartbtn.onclick = function() {
+    if (chart.style.visibility == 'visible') {
+     chart.style.visibility = 'hidden';  
+    }
+    else {
+      chart.style.visibility = "visible";
+    }
+  }
+
   var slider = document.getElementById('dateslider');
   var label = document.getElementById('rangeValLabel');
   slider.oninput = function() {
