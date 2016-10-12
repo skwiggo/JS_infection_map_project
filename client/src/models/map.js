@@ -175,6 +175,7 @@ Map.prototype = {
       }
       infowindow = new google.maps.InfoWindow({
         content: contentio,
+        position: {lat: 32.584902, lng: 70.918695},
         disableAutoPan: true
       });
       infowindow.open(map, marker);  
