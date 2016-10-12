@@ -44,14 +44,13 @@ var UI = function() {
 
   // UI Elements
   var diseaseSelector = document.getElementById('diseaseSelect');
-  var ul = document.getElementById("selectedDiseases");
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     this.removeMapMarkers(map);
     // console.log("reset button context - ", this)
     this.buttonPressed = false;
+    this.htmlUpdate();
     // console.log(this.buttonPressed);
-    ul.innerHTML = '';
     selectedDiseases = [];
     diseaseSelector.selectedIndex = null;
     for (var i = 0; i < diseaseSelector.options.length; i++){
@@ -72,10 +71,13 @@ UI.prototype = {
   selectDropdown: function (map) {
       var diseaseSelector = document.getElementById('diseaseSelect');
       diseaseSelector.onchange = function() {
+        console.log(this)
     if(this.buttonPressed){
+      console.log("pressed")
       console.log(selectedDiseases);
       if(selectedDiseases.length >= 4){
-        // this.htmlUpdate();
+        console.log("triggered")
+        this.htmlUpdate();
       }
       this.removeMapMarkers(map);
       selectedDiseases = [];
@@ -99,7 +101,7 @@ UI.prototype = {
       this.removeMapMarkers(map);
         for (var i = 0; i < this.diseases.length; i++){
           // console.log(this.diseases[i].name);
-          console.log(this.diseases)
+          console.log(this.diseases);
           this.addMarkersForDisease(this.diseases[i], map);
           selectedDiseases.push(this.diseases[i]);
 
@@ -135,6 +137,7 @@ UI.prototype = {
     map.deleteMarkers();
   },
   addMarkersForDisease: function(disease, map) {
+    console.log(disease)
     var diseaseSelector = document.getElementById('diseaseSelect');
     diseaseSelector.options[diseaseSelector.selectedIndex].disabled = true;
     var listItem = document.createElement("li");
