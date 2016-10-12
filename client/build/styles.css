@@ -126,6 +126,21 @@ body {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+#chartbutton {
+  margin-top: 20px;
+  margin-left: 13px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  color: #000000;
+  border-style: solid;
+  border-color: #818181;
+  border-radius: 5px;
+  padding: 2px;
+  padding-left:22px;
+  padding-right:22px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 .onoffswitch {
   margin-left: 40px;
   margin-top:40px;
@@ -207,4 +222,15 @@ body {
 #rangeValLabel {
   font-family: helvetica;
   color: white;
+}
+
+#chart {
+  z-index:98;
+  position: absolute;
+  top: 0;
+  left: 22%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; 
 }

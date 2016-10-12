@@ -3,6 +3,7 @@ var Diseases = require('../models/diseases');
 
 var UI = function() {  
   var container = document.getElementById('map');
+  var chart = document.getElementById('chart');
   var center = {lat: 32.584902, lng: 70.918695};
   var diseaseList = new Diseases();
   this.diseases;
@@ -10,6 +11,13 @@ var UI = function() {
   map.googleMap.setZoom(2);
   map.generate21stCenturyMap();
   this.loadData(diseaseList, map, this.selectDropdown);
+
+  var chartbtn = document.getElementById('chartbutton');
+  console.log(chartbtn);
+  chartbtn.onclick = function() {
+    console.log(chart);
+    chart.style.visibility = "visible";
+  }
 
   var slider = document.getElementById('dateslider');
   var label = document.getElementById('rangeValLabel');
@@ -51,7 +59,7 @@ var UI = function() {
     dropdown3.style.display = "none";
     this.showAll(this.diseases, map);
   }.bind(this);
-}
+};
 
 UI.prototype = {
   loadData: function(diseaseList, map, callback){
