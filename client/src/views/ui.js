@@ -167,6 +167,7 @@ UI.prototype = {
           map.addMarker(countries[c], map, selectedDiseases[i]);
         } 
       }
+      label.value = slider.value + "s";
     }.bind(this);
   }
 }
