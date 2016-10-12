@@ -81,10 +81,24 @@ UI.prototype = {
     // selectedDiseases.push(disease); 
     var diseaseSelector = document.getElementById('diseaseSelect');
     diseaseSelector.options[diseaseSelector.selectedIndex].disabled = true;
-    var ul = document.getElementById("selectedDiseases");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(disease.name));
-    ul.appendChild(li);
+    var listItem = document.createElement("li");
+    listItem.innerText = disease.name;
+    if(listItem.innerText === "Smallpox") {
+      var smallpoxUl = document.getElementById('Smallpox');
+      smallpoxUl.appendChild(listItem);
+    }
+    else if(listItem.innerText === "Tuberculosis") {
+      var tuberculosisUl = document.getElementById('Tuberculosis');
+      tuberculosisUl.appendChild(listItem);
+    }
+    else if(listItem.innerText === "HIV/AIDS") {
+      var hivAidsUl = document.getElementById('HIV/AIDS');
+      hivAidsUl.appendChild(listItem);
+    }
+    else {
+      var zikaUl = document.getElementById('Zika');
+      zikaUl.appendChild(listItem);
+    }    
     var slider = document.getElementById('dateslider');
     var countries = getCountries(slider.value, disease);
     for (var i = 0; i < countries.length; i++){
