@@ -11,6 +11,22 @@ var UI = function() {
   map.googleMap.setZoom(2);
   map.generate21stCenturyMap();
   this.loadData(diseaseList, map, this.selectDropdown);
+
+  var slider = document.getElementById('dateslider');
+  slider.oninput = function() {
+    if (slider.value === '1800') {
+        map.generate19thCenturyMap();
+      }
+      else if (slider.value === '1900') {
+        map.generate20thCenturyMap();
+      }
+      else if (slider.value === '2000') {
+        map.generate21stCenturyMap();
+     }
+      else {
+        map.generate22ndCenturyMap();
+      }
+  };
  
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
@@ -107,12 +123,10 @@ UI.prototype = {
       if (slider.value === '1800') {
         map.deleteMarkers();
         countries = disease.nineteenthCentury;
-        map.generate19thCenturyMap();
       }
       else if (slider.value === '1900') {
         map.deleteMarkers();
-        countries = disease.twentiethCentury;
-        map.generate20thCenturyMap();
+        countries = disease.twentiethCentury; 
       }
       else if (slider.value === '2000') {
         map.deleteMarkers();
@@ -122,11 +136,10 @@ UI.prototype = {
       else {
         map.deleteMarkers();
         countries = disease.twentySecondCentury;
-        map.generate22ndCenturyMap();
-    } 
-    label.value = slider.value + "s";
-    for(var i = 0; i < countries.length; i++) { 
-      this.createMarker(countries[i], map, disease);
+      }
+      label.value = slider.value + "s";   
+      for(var i = 0; i < countries.length; i++) { 
+        this.createMarker(countries[i], map, disease);    
     }
   }.bind(this);
  }

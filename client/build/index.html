@@ -45,11 +45,7 @@
   </div>
   <div id="slider">
   <input type="range" id="dateslider" min="1800" value="2000" max="2100" 
-    step="100" oninput="
-    function updateTextInput(val) {
-      document.getElementById('rangeValLabel').value = val; 
-    }
-    updateTextInput(this.value) + 's';">
+    step="100">
     <output for="dateslider" id="rangeValLabel" style="font-style: normal;">2000s</output>
   </div>
 
