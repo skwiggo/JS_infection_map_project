@@ -2,14 +2,18 @@ var Map = require('../models/map');
 var Diseases = require('../models/diseases');
 
 var UI = function() {  
+  //diseases
+  var diseaseList = new Diseases();
+  // var selectedDiseases = []; 
+
+  //map
   var container = document.getElementById('map');
   var center = {lat: 32.584902, lng: 70.918695};
-  var diseaseList = new Diseases();
-  this.diseases;
   var map = new Map(container, center, 1);
   map.generate20thCenturyMap();
   map.googleMap.setZoom(2);
   map.generate21stCenturyMap();
+
   this.loadData(diseaseList, map, this.selectDropdown);
 
   var slider = document.getElementById('dateslider');
@@ -27,126 +31,113 @@ var UI = function() {
         map.generate22ndCenturyMap();
       }
   };
- 
+
+  // UI Elements
+  var diseaseSelector = document.getElementById('diseaseSelect');
+  var ul = document.getElementById("selectedDiseases");
   var resetBtn = document.getElementById('reset');
   resetBtn.onclick = function (){
     map.deleteMarkers();
-    var dropdown = document.getElementById('#disease-select').value = "disabled";
-    var dropdown2 = document.querySelector('#diseasio-selector');
-    dropdown2.style.display = "none";
-    dropdown2.value = "disabled";
-    var dropdown3 = document.querySelector('#selector-of-diseases');
-    dropdown3.style.display = "none";
+    ul.innerHTML = '';
+    selectedDiseases = [];
+    diseaseSelector.selectedIndex = null;
+    for (var i = 0; i < diseaseSelector.options.length; i++){
+      diseaseSelector.options[i].disabled = false;
+    }
   };
-  
-  var viewAllBtn = document.getElementById('view-all');
-  viewAllBtn.onclick = function (){
-    map.deleteMarkers();
-    var dropdown = document.getElementById('#disease-select').value = "disabled";
-    var dropdown2 = document.querySelector('#diseasio-selector');
-    dropdown2.style.display = "none";
-    dropdown2.value = "disabled";
-    var dropdown3 = document.querySelector('#selector-of-diseases');
-    dropdown3.style.display = "none";
-    this.showAll(this.diseases, map);
-  }.bind(this);
 }
 
+var selectedDiseases = [];
 UI.prototype = {
-  loadData: function(diseaseList, map, callback){
+  loadData: function(diseaseList, map){
     diseaseList.all(function(data){
         this.diseases = data;
-        callback(map);
+        this.selectDropdown(map);
+        this.showAll(map);
+        this.sliderUpdated(map);
     }.bind(UI.prototype));
   },
-
   selectDropdown: function (map) {
-    console.log("dropdown can be selected")
-    var diseaseSelector = document.querySelector('#disease-select');
-    var diseasioSelector = document.querySelector("#diseasio-selector");
-    var selectorOfDiseases = document.querySelector("#selector-of-diseases");
-
-    diseaseSelector.onchange = function() {
-      console.log(this, "has been clicked");
-      var value = diseaseSelector.selectedIndex;
-      var id = "#diseasio-selector"
-      this.handleSelectChanged(event, this.diseases, map, value, diseaseSelector, id);
-    }.bind(UI.prototype);  
-    diseasioSelector.onchange = function(){
-      console.log(this, "has been clicked");
-        var value = diseasioSelector.selectedIndex;
-        var id = "#selector-of-diseases";
-        this.handleSelectChanged(event, this.diseases, map, value, diseasioSelector, id);
+      var diseaseSelector = document.getElementById('diseaseSelect');
+      diseaseSelector.onchange = function() {
+        var disease = this.diseases[diseaseSelector.selectedIndex -1];
+        selectedDiseases.push(disease);
+        this.addMarkersForDisease(disease, map);
+      }.bind(UI.prototype);  
+  },
+  showAll: function (map) {
+    var viewAllBtn = document.getElementById('viewAllBtn');
+    var slider = document.getElementById('dateslider');
+    viewAllBtn.onclick = function(){
+      for (var i = 0; i < this.diseases.length; i++){
+        console.log(this.diseases[i].name);
+        this.addMarkersForDisease(this.diseases[i], map);
+      }
     }.bind(UI.prototype);
-    selectorOfDiseases.onchange = function(){
-      console.log(this, "has been clicked");
-        var value = selectorOfDiseases.selectedIndex;
-        this.handleSelectChanged(event, this.diseases, map, value, selectorOfDiseases);
-    }.bind(UI.prototype)
   },
-  showAll: function(diseaseList, map){
-    for(disease of diseaseList){
-      this.getCountry(disease, map);
+  addMarkersForDisease: function(disease, map) {
+    // selectedDiseases.push(disease); 
+    var diseaseSelector = document.getElementById('diseaseSelect');
+    diseaseSelector.options[diseaseSelector.selectedIndex].disabled = true;
+    var ul = document.getElementById("selectedDiseases");
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(disease.name));
+    ul.appendChild(li);
+    var slider = document.getElementById('dateslider');
+    var countries = getCountries(slider.value, disease);
+    for (var i = 0; i < countries.length; i++){
+      map.addMarker(countries[i], map, disease);
     }
   },
-
-  handleSelectChanged: function(event, diseases, map, value, select, id) {
-    map.deleteMarkers();
-    console.log(diseases)
-    var option = select.options[value].value;
-    for(disease of diseases) { 
-      if(option === disease.name) {
-        var diseasio = [disease];
-        this.getDisease(diseasio, map, id)
+  sliderUpdated: function(map){
+    var slider = document.getElementById('dateslider');
+    slider.oninput = function() {
+      map.deleteMarkers();
+      updateMap(slider.value, map);
+      for (var i = 0; i < selectedDiseases.length; i++){
+        var countries = getCountries(slider.value, selectedDiseases[i]); 
+        for (var c = 0; c < countries.length; c++){
+          map.addMarker(countries[c], map, selectedDiseases[i]);
+        } 
       }
-    } 
-    if(id) this.addDropdown(map, select, id);   
-  },
-  addDropdown: function(map, select, id) {
-    var dropdown = document.querySelector(id);
-    dropdown.style.display = "block";
-    this.selectDropdown(map);
-
-  },
-
-  createMarker: function(country, map, disease) {
-      map.addMarker(country, map, disease);
-  },
-
-  getDisease: function(disease, map) { 
-    for(diseasio of disease) {
-      this.getCountry(diseasio, map);
     }
-  },
- 
- getCountry: function(disease, map) {
-  console.log(disease)
-  var slider = document.querySelector('#dateslider'); 
-  var label = document.getElementById('rangeValLabel');
-  var countries = disease.presentDay;
-  slider.oninput = function() {
-    if (slider.value === '1800') {
-        map.deleteMarkers();
-        countries = disease.nineteenthCentury;
-      }
-      else if (slider.value === '1900') {
-        map.deleteMarkers();
-        countries = disease.twentiethCentury; 
-      }
-      else if (slider.value === '2000') {
-        map.deleteMarkers();
-        countries = disease.presentDay;
-     }
-      else {
-        map.deleteMarkers();
-        countries = disease.twentySecondCentury;
-      }
-      label.value = slider.value + "s";   
-      for(var i = 0; i < countries.length; i++) { 
-        this.createMarker(countries[i], map, disease);    
-    }
-  }.bind(this);
- }
+  }
+}
+
+function getCountries(century, disease){
+  var c;
+  switch(century){
+    case '1800': 
+      c = disease.nineteenthCentury;
+      break; 
+    case '1900': 
+      c = disease.twentiethCentury;
+      break;
+    case '2000': 
+      c = disease.presentDay;
+      break;
+    case '2100': 
+      c = disease.twentySecondCentury;
+      break;  
+  }
+  return c;
+}
+
+function updateMap(century, map){
+  switch(century){
+    case '1800': 
+      map.generate19thCenturyMap();
+      break; 
+    case '1900': 
+      map.generate20thCenturyMap();
+      break;
+    case '2000': 
+      map.generate21stCenturyMap();
+      break;
+    case '2100': 
+      map.generate22ndCenturyMap();
+      break;  
+  }
 }
 
 module.exports = UI;
