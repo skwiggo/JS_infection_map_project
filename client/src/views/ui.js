@@ -101,6 +101,11 @@ UI.prototype = {
   htmlUpdate: function(){
     var ul = document.getElementById("selectedDiseases");
     ul.innerHTML = "";
+    var diseaseSelector = document.getElementById('diseaseSelect');
+    diseaseSelector.selectedIndex = null;
+    for (var i = 0; i < diseaseSelector.options.length; i++){
+      diseaseSelector.options[i].disabled = false;
+    }
   },
   removeMapMarkers: function(map){
     map.deleteMarkers();
